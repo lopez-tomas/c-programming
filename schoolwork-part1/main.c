@@ -6,9 +6,19 @@
 
 int main()
 {
-    // Exercise 1's variables
-    int numberToFactor; // it could be 0
+    // Exercise 1 - Variables
+    int numberToFactor; // It could be 0
     double factoredNumber;
 
+    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user");
+    do {
+
+    } while();
+
     return 0;
+}
+
+void exerciseTitle(char message[]) {
+    system("cls");
+    printf("%s\n", message);
 }
