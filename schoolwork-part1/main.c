@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#define MAX_FACT 170
+#define MAX_FACT_TO_PRINT 13
 
 int main()
 {
