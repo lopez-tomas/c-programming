@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 #include "main.h"
 #define MAX_FACT 170
 #define MAX_FACT_TO_PRINT 13
@@ -12,7 +13,7 @@ int main()
 
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user");
     do {
-
+        exit()
     } while();
 
     return 0;
