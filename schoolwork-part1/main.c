@@ -8,6 +8,7 @@ int main()
 {
     // Exercise 1's variables
     int numberToFactor; // it could be 0
+    double factoredNumber;
 
     return 0;
 }
