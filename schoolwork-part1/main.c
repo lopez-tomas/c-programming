@@ -11,10 +11,19 @@ int main()
     int numberToFactor; // It could be 0
     double factoredNumber;
 
-    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
+    // Exercise 3 - Variables
+    int numberX;
+    float tol;
+
+//    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
+//    do {
+//        print
+//    } while( continueOperating() );
+
+    exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
     do {
-        exit()
-    } while();
+
+    } while( continueOperating() );
 
     return 0;
 }
