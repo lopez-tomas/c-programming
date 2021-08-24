@@ -11,7 +11,7 @@ int main()
     int numberToFactor; // It could be 0
     double factoredNumber;
 
-    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user");
+    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
         exit()
     } while();
@@ -22,4 +22,19 @@ int main()
 void exerciseTitle(char message[]) {
     system("cls");
     printf("%s\n", message);
+}
+
+char continueOperating() {
+    char x;
+
+    do {
+        printf("Do you want to continue here? [Y/n]: ");
+        fflush(stdin);
+        scanf("%c", &x);
+        printf("\n");
+
+        x = tolower(x);
+    } while(x != 'y' && x != 'n');
+
+    return x;
 }
