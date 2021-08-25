@@ -39,6 +39,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
+		<Unit filename="naturalExponential.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="naturalExponential.h" />
+		<Unit filename="potency.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="potency.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
