@@ -1,12 +1,18 @@
+#ifdef _WIN32
+#define CLEAR "cls"
+#else // In any other OS
+#define CLEAR "clear"
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
+#include <ctype.h>
+//#include <windows.h> -> Use it for Windows
 #include "main.h"
 #define MAX_FACT 170
 #define MAX_FACT_TO_PRINT 13
 
-int main()
-{
+int main() {
     // Exercise 1 - Variables
     int numberToFactor; // It could be 0
     double factoredNumber;
@@ -23,13 +29,15 @@ int main()
     exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
     do {
 
-    } while( continueOperating() );
+    } while( !continueOperating() );
 
     return 0;
 }
 
 void exerciseTitle(char message[]) {
-    system("cls");
+//    system("cls"); -> Use it for Windows
+//    system("clear"); // -> Use it for Linux
+    system(CLEAR);
     printf("%s\n", message);
 }
 

@@ -4,3 +4,19 @@
 
 1629748705 d:\tomás\university(2021)\2c\programming\c-programming\schoolwork-part1\factorial.h
 
+1630012003 source:/home/frozen/Documents/projects/c-programming/schoolwork-part1/factorial.c
+	"factorial.h"
+
+1630012003 /home/frozen/Documents/projects/c-programming/schoolwork-part1/factorial.h
+
+1630012003 source:/home/frozen/Documents/projects/c-programming/schoolwork-part1/naturalExponential.c
+	"naturalExponential.h"
+	"factorial.h"
+
+1630012003 /home/frozen/Documents/projects/c-programming/schoolwork-part1/naturalExponential.h
+
+1630012003 source:/home/frozen/Documents/projects/c-programming/schoolwork-part1/potency.c
+	"potency.h"
+
+1630012003 /home/frozen/Documents/projects/c-programming/schoolwork-part1/potency.h
+
