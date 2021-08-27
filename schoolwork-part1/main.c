@@ -24,6 +24,11 @@ int main() {
     double tolRoot,
            squareRootOfNumber;
 
+    /// Exercise 6 - Variables
+    int numberSinus;
+    double tolSinus,
+           sinusOfNumber;
+
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
         numberToFactor = enterNumberToFactor(MAX_FACT);
@@ -48,6 +53,15 @@ int main() {
 
         squareRootOfNumber = squareRootOf(numberRoot, tolRoot);
         printf("square root of %d with TOL: %lf is %lf", numberRoot, tolRoot, squareRootOfNumber);
+    } while ( continueOperating() == 'y' );
+
+    exerciseTitle("Exercise 6 - Calculate sinus of a given number and TOL.");
+    do {
+        numberSinus = numberForSinus();
+        tolSinus = enterTol();
+
+        sinusOfNumber = sinusOf(numberSinus, tolSinus);
+        printf("sinus of %d with TOL: %lf is %lf", numberSinus, tolSinus, sinusOfNumber);
     } while ( continueOperating() == 'y' );
 
     return 0;
