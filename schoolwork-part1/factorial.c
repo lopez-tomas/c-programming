@@ -1,3 +1,9 @@
+#ifdef _WIN32
+#define CLEAR "cls"
+#else // In any other OS
+#define CLEAR "clear"
+#endif
+
 #include "factorial.h"
 
 double factorialOf(int x) {
@@ -15,10 +21,15 @@ double factorialOf(int x) {
 
 int enterNumberToFactor(int maxNumberToFactor) {
     int num;
+    int aux = 0;
 
     do {
+        if (aux == 1) {
+            system(CLEAR);
+        }
         printf("Enter a number to factor [0 - %d]: ", maxNumberToFactor);
         scanf(" %d", &num);
+        aux = 1;
     } while(num < 0 || num > maxNumberToFactor);
 
     return num;
@@ -26,8 +37,8 @@ int enterNumberToFactor(int maxNumberToFactor) {
 
 void printFactoredNumber(int baseNumber, double factoredNumber, int maxFactoredNumber) {
     if(baseNumber <= maxFactoredNumber) {
-        printf("%d factor is %.2lf", baseNumber, factoredNumber);
+        printf("The factorial of %d is %.2lf", baseNumber, factoredNumber);
     } else {
-        printf("%d factor is %le", baseNumber, factoredNumber);
+        printf("The factorial of %d is %le", baseNumber, factoredNumber);
     }
 }
