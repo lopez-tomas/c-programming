@@ -27,3 +27,20 @@ float enterTol() {
 
     return tol;
 }
+
+int raiseNumber(int number, int exponent) {
+    int raisedNumber = number;
+    int i;
+
+    if (exponent == 0) {
+        return 1;
+    }
+    if (exponent == 1) {
+        return number;
+    }
+
+    for(i = 2; i <= exponent; i++) {
+        raisedNumber *= number;
+    }
+    return raisedNumber;
+}
