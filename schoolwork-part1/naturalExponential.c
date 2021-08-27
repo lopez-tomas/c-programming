@@ -7,11 +7,11 @@
 #define MIN_FLOAT 0.000001
 
 double calculateNaturalExponential(int x, double tol) {
-    double e = 1,
+    double e = 0,
            term,
            factoredExponent;
     int numRaised;
-    int exponent = 1;
+    int exponent = 0;
 
     do {
         numRaised = raiseNumber(x, exponent);
@@ -30,14 +30,15 @@ double calculateNaturalExponentialWithMath(int x, double tol) {
     double e = 1,
            term,
            factoredExponent;
+    double num = x;
     double numRaised;
-    int exponent = 1;
+    double exponent = 1;
 
     do {
-        numRaised = pow(x, exponent);
+        numRaised = pow(num, exponent);
         factoredExponent = factorialOf(exponent);
 
-        term = (float)numRaised / factoredExponent;
+        term = numRaised / factoredExponent;
 
         e += term;
         exponent++;
