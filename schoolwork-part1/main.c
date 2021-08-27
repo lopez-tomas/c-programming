@@ -23,7 +23,7 @@ int main() {
         numberToFactor = enterNumberToFactor(MAX_FACT);
         factoredNumber = factorialOf(numberToFactor);
 
-        printf("%le", factoredNumber);
+        printFactoredNumber(numberToFactor, factoredNumber, MAX_FACT_TO_PRINT);
     } while( continueOperating() == 'y' );
 
 //    exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
