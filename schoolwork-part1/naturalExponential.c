@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "naturalExponential.h"
 #include "factorial.h"
 
@@ -14,6 +15,26 @@ double calculateNaturalExponential(int x, double tol) {
 
     do {
         numRaised = raiseNumber(x, exponent);
+        factoredExponent = factorialOf(exponent);
+
+        term = (float)numRaised / factoredExponent;
+
+        e += term;
+        exponent++;
+    } while(term > tol);
+
+    return e;
+}
+
+double calculateNaturalExponentialWithMath(int x, double tol) {
+    double e = 1,
+           term,
+           factoredExponent;
+    double numRaised;
+    int exponent = 1;
+
+    do {
+        numRaised = pow(x, exponent);
         factoredExponent = factorialOf(exponent);
 
         term = (float)numRaised / factoredExponent;
