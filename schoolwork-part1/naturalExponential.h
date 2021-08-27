@@ -3,9 +3,9 @@
 
 #include "factorial.h"
 
-double calculateNaturalExponential(int x, float tol);
+double calculateNaturalExponential(int x, double tol);
 int enterNumber();
-float enterTol();
+double enterTol();
 int raiseNumber(int number, int exponent);
 
 #endif // NATURALEXPONENTIAL
