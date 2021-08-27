@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "naturalExponential.h"
 #include "factorial.h"
 
