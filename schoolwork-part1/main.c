@@ -4,9 +4,6 @@
 #define CLEAR "clear"
 #endif
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 //#include <windows.h> -> Use it for Windows
 #include "main.h"
 #define MAX_FACT 170
