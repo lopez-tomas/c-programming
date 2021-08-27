@@ -6,20 +6,29 @@
 
 double sinusOf(int number, double tol) {
     int exponent = 3,
-        numberRaised;
+        numberRaised,
+        flag = 1;
     double factoredNumber,
-           term = number;
+           term,
+           sinus = number; // sin(1) = 0.8414709848079
 
     do {
         numberRaised = raiseNumber(number, exponent);
         factoredNumber = factorialOf(exponent);
-
-        term -= numberRaised / factoredNumber;
-
         exponent += 2;
-    } while( absolute(term) > tol );
 
-    return term;
+        if( flag ) {
+            term = (float)numberRaised / factoredNumber;
+            sinus -= term;
+            flag = 0;
+        } else {
+            term = (float)numberRaised / factoredNumber;
+            sinus += term;
+            flag = 1;
+        }
+    } while( term > tol );
+
+    return sinus;
 }
 
 int numberForSinus() {
