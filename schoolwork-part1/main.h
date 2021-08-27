@@ -6,6 +6,7 @@
 #include <ctype.h>
 
 #include "factorial.h"
+#include "naturalExponential.h"
 
 void exerciseTitle(char message[]);
 char continueOperating();
