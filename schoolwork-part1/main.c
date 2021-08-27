@@ -18,15 +18,18 @@ int main() {
     int numberX;
     float tol;
 
-//    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
-//    do {
-//        print
-//    } while( continueOperating() );
-
-    exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
+    exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
+        numberToFactor = enterNumberToFactor(MAX_FACT);
+        factoredNumber = factorialOf(numberToFactor);
 
-    } while( !continueOperating() );
+        printf("%le", factoredNumber);
+    } while( continueOperating() == 'y' );
+
+//    exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
+//    do {
+//
+//    } while( !continueOperating() );
 
     return 0;
 }
@@ -42,9 +45,9 @@ char continueOperating() {
     char x;
 
     do {
-        printf("Do you want to continue here? [Y/n]: ");
+        printf("\n\nDo you want to continue here? [Y/n]: ");
         fflush(stdin);
-        scanf("%c", &x);
+        scanf(" %c", &x);
         printf("\n");
 
         x = tolower(x);
