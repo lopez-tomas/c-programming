@@ -47,6 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="potency.h" />
+		<Unit filename="squareRoot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="squareRoot.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
