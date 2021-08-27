@@ -4,6 +4,8 @@
 #define CLEAR "clear"
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "factorial.h"
 
 double factorialOf(int x) {
