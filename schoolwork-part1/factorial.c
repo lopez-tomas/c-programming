@@ -12,3 +12,14 @@ double factorialOf(int x) {
     }
     return factorial;
 }
+
+int enterNumberToFactor(int maxNumberToFactor) {
+    int num;
+
+    do {
+        printf("Enter a number to factor [0 - %d]: ", maxNumberToFactor);
+        scanf(" %d", &num);
+    } while(num < 0 || num > maxNumberToFactor);
+
+    return num;
+}
