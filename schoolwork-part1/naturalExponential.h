@@ -1,7 +1,6 @@
 #ifndef NATURALEXPONENTIAL
 #define NATURALEXPONENTIAL
 
-#include <stdio.h>
 #include "factorial.h"
 
 double calculateNaturalExponential(int x, float tol);
