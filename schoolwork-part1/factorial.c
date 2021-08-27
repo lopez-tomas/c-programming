@@ -23,3 +23,11 @@ int enterNumberToFactor(int maxNumberToFactor) {
 
     return num;
 }
+
+void printFactoredNumber(int baseNumber, double factoredNumber, int maxFactoredNumber) {
+    if(baseNumber <= maxFactoredNumber) {
+        printf("%d factor is %.2lf", baseNumber, factoredNumber);
+    } else {
+        printf("%d factor is %le", baseNumber, factoredNumber);
+    }
+}
