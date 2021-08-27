@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "sinus.h"
 #include "naturalExponential.h"
 #include "factorial.h"
@@ -18,6 +20,15 @@ double sinusOf(int number, double tol) {
     } while( absolute(term) > tol );
 
     return term;
+}
+
+int numberToSinus() {
+    int num;
+
+    printf("Enter a number to find its sinus: ");
+    scanf(" %d", &num);
+
+    return num;
 }
 
 double absolute(double value) {
