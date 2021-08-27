@@ -5,7 +5,21 @@
 #define MIN_FLOAT 0.000001
 
 double calculateNaturalExponential(int x, float tol) {
+    double e = 0,
+           term,
+           factoredExponent;
+    int numRaised;
+    int exponent = 0;
 
+    do {
+        numRaised = raiseNumber(x, exponent);
+        factoredExponent = factorialOf(exponent);
+        term = numRaised / factoredExponent;
+
+        e += term;
+    } while(term > tol);
+
+    return e;
 }
 
 int enterNumber() {
