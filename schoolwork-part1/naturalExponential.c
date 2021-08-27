@@ -3,6 +3,7 @@
 #include "factorial.h"
 
 #define MAX_FLOAT 1
+#define MIN_FLOAT 0.000001
 
 double calculateNaturalExponential(int x, double tol) {
     double e = 1,
@@ -37,9 +38,9 @@ double enterTol() {
     double tol;
 
     do {
-        printf("Enter the desired tolerance [ <= %d]: ", MAX_FLOAT);
+        printf("Enter the desired tolerance [ %d - %f ]: ", MAX_FLOAT, MIN_FLOAT);
         scanf(" %lf", &tol);
-    } while( tol > MAX_FLOAT);
+    } while( tol > MAX_FLOAT || tol < MIN_FLOAT );
 
     return tol;
 }
