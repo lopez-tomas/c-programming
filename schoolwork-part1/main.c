@@ -16,7 +16,8 @@ int main() {
 
     // Exercise 3 - Variables
     int numberX;
-    float tol;
+    double tol,
+           naturalExponential;
 
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
@@ -26,10 +27,14 @@ int main() {
         printFactoredNumber(numberToFactor, factoredNumber, MAX_FACT_TO_PRINT);
     } while( continueOperating() == 'y' );
 
-//    exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
-//    do {
-//
-//    } while( !continueOperating() );
+    exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
+    do {
+        numberX = enterNumber();
+        tol = enterTol();
+
+        naturalExponential = calculateNaturalExponential(numberX, tol);
+        printf("e^%d with a TOL: %lf is %lf", numberX, tol, naturalExponential);
+    } while( continueOperating() == 'y' );
 
     return 0;
 }
