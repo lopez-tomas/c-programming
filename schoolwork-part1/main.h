@@ -5,8 +5,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "factorial.h"
-#include "naturalExponential.h"
+#include "factorial.h" /// Exercise 1
+#include "naturalExponential.h" /// Exercise 3
+#include "squareRoot.h" /// Exercise 4
 
 void exerciseTitle(char message[]);
 char continueOperating();
