@@ -22,7 +22,7 @@ double sinusOf(int number, double tol) {
     return term;
 }
 
-int numberToSinus() {
+int numberForSinus() {
     int num;
 
     printf("Enter a number to find its sinus: ");
