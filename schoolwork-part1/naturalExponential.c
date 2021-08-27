@@ -3,21 +3,22 @@
 #include "factorial.h"
 
 #define MAX_FLOAT 1
-#define MIN_FLOAT 0.000001
 
-double calculateNaturalExponential(int x, float tol) {
-    double e = 0,
+double calculateNaturalExponential(int x, double tol) {
+    double e = 1,
            term,
            factoredExponent;
     int numRaised;
-    int exponent = 0;
+    int exponent = 1;
 
     do {
         numRaised = raiseNumber(x, exponent);
         factoredExponent = factorialOf(exponent);
-        term = numRaised / factoredExponent;
+
+        term = (float)numRaised / factoredExponent;
 
         e += term;
+        exponent++;
     } while(term > tol);
 
     return e;
@@ -32,13 +33,13 @@ int enterNumber() {
     return num;
 }
 
-float enterTol() {
-    float tol;
+double enterTol() {
+    double tol;
 
     do {
-        printf("Enter the desired tolerance [%d - %f]: ", MAX_FLOAT, MIN_FLOAT);
-        scanf(" %f", &tol);
-    } while( tol > MAX_FLOAT || tol < MIN_FLOAT);
+        printf("Enter the desired tolerance [ <= %d]: ", MAX_FLOAT);
+        scanf(" %lf", &tol);
+    } while( tol > MAX_FLOAT);
 
     return tol;
 }
@@ -54,7 +55,7 @@ int raiseNumber(int number, int exponent) {
         return number;
     }
 
-    for(i = 2; i <= exponent; i++) {
+    for(i = 1; i < exponent; i++) {
         raisedNumber *= number;
     }
     return raisedNumber;
