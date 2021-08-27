@@ -11,7 +11,8 @@ double calculateNaturalExponential(int x, float tol) {
 int enterNumber() {
     int num;
 
-    do {}
+    printf("Enter your number to calculate e^x: ");
+    scanf(" %d", &num);
 
     return num;
 }
