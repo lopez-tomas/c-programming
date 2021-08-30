@@ -12,3 +12,11 @@ int isPerfectSquare(int number) {
     }
     return answer;
 }
+
+void isInFibonacci(int number, int answer) {
+    if (answer) {
+        printf("The number %d is in Fibonacci Series.");
+    } else {
+        printf("The number %d isn't in Fibonacci Series.");
+    }
+}
