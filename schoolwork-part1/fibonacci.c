@@ -11,23 +11,29 @@ int enterInteger() {
     return num;
 }
 
-int isPerfectSquare(int number) {
-    int answer = 0,
+int isInFibonacci(int number) {
+    int firstOne = 0,
+        secondOne = 1,
+        result,
+        answer = 0,
         i;
 
-    for (i = 1; i < number; i++) {
-        if ( i*i == number ) {
-            answer = 1;
-            return answer;
+    for(i = 1; i <= number; i++) {
+        result = firstOne + secondOne;
+        firstOne = secondOne;
+        secondOne = result;
+
+        if (result == number) {
+            return answer = 1;
         }
     }
     return answer;
 }
 
-void isInFibonacci(int number, int answer) {
+void printAnswerFibonacci(int number, int answer) {
     if (answer) {
-        printf("The number %d is in Fibonacci Series.");
+        printf("The number %d is in Fibonacci Sequence.", number);
     } else {
-        printf("The number %d isn't in Fibonacci Series.");
+        printf("The number %d isn't in Fibonacci Sequence.", number);
     }
 }

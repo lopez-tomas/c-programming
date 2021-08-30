@@ -3,6 +3,7 @@
 
 int enterInteger();
 int isPerfectSquare(int number);
-void isInFibonacci(int number, int answer);
+int isInFibonacci(int number);
+void printAnswerFibonacci(int number, int answer);
 
 #endif // FIBONACCI_H
