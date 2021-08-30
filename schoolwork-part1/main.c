@@ -14,6 +14,11 @@ int main() {
     int numberToFactor; // It could be 0
     double factoredNumber;
 
+    /// Exercise 2 - Combinatorial
+    int numberN,
+        numberM;
+    double combinatorial;
+
     /// Exercise 3 - Natural Exponential
     int numberX;
     double tol,
