@@ -23,7 +23,7 @@ int enterNumberM(int n) {
     return m;
 }
 
-double combinatorialOf(int n, int m) {
+unsigned long long int combinatorialOf(int n, int m) {
     double combinatorial,
            mFactored,
            nFactored,

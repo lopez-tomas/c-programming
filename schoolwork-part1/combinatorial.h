@@ -3,6 +3,6 @@
 
 int enterNumberN();
 int enterNumberM(int n);
-double combinatorialOf(int n, int m);
+unsigned long long int combinatorialOf(int n, int m);
 
 #endif // COMBINATORIAL_H
