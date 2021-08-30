@@ -36,10 +36,22 @@
 		<ResourceCompiler>
 			<Add option="-g -lm" />
 		</ResourceCompiler>
+		<Unit filename="combinatorial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="combinatorial.h" />
+		<Unit filename="exercise7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="exercise7.h" />
 		<Unit filename="factorial.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="factorial.h" />
+		<Unit filename="fibonacci.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fibonacci.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -60,6 +72,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="squareRoot.h" />
+		<Unit filename="successiveSums.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="successiveSums.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
