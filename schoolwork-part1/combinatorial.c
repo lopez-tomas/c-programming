@@ -24,9 +24,9 @@ int enterNumberM(int n) {
 }
 
 double combinatorialOf(int n, int m) {
-    double combinatorial;
+    double combinatorial,
            mFactored,
-           nFactored
+           nFactored,
            diffFactored;
 
     mFactored = factorialOf(m);
