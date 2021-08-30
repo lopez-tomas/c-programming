@@ -37,6 +37,10 @@ int main() {
     double tolSinus,
            sinusOfNumber;
 
+    /// Exercise 7 - Classification
+    int numberToClassify,
+        classifiedNumber;
+
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
         numberToFactor = enterNumberToFactor();
@@ -88,6 +92,14 @@ int main() {
 
         sinusOfNumber = sinusOf(numberSinus, tolSinus);
         printf("sinus of %d with TOL: %lf is %lf", numberSinus, tolSinus, sinusOfNumber);
+    } while ( continueOperating() == 'y' );
+
+    exerciseTitle("Exercise 7 - Determine if a given number is PERFECT, DEFICIENT or ABUNDANT.");
+    do {
+        numberToClassify = enterInteger();
+        classifiedNumber = numberClassification(numberToClassify);
+
+        printClassification(numberToClassify, classifiedNumber);
     } while ( continueOperating() == 'y' );
 
     return 0;
