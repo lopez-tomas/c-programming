@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "fibonacci.h"
 
 int isPerfectSquare(int number) {
