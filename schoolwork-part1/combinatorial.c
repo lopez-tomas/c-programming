@@ -1,4 +1,5 @@
 #include "combinatorial.h"
+#include "factorial.h"
 
 int enterNumberN() {
     int n;
@@ -21,5 +22,21 @@ int enterNumberM(int n) {
 
     return m;
 }
+
+double combinatorialOf(int n, int m) {
+    double combinatorial;
+           mFactored,
+           nFactored
+           diffFactored;
+
+    mFactored = factorialOf(m);
+    nFactored = factorialOf(n);
+    diffFactored = factorialOf(m - n);
+
+    combinatorial = (mFactored) / (nFactored * diffFactored);
+
+    return combinatorial;
+}
+
 
 
