@@ -1,6 +1,0 @@
-#ifndef SUCCESSIVESUMS_H
-#define SUCCESSIVESUMS_H
-
-
-
-#endif // SUCCESSIVESUMS_H
