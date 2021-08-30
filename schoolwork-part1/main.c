@@ -28,6 +28,10 @@ int main() {
     double tolRoot,
            squareRootOfNumber;
 
+    /// Exercise 5 - Fibonacci;
+    int integerNumber,
+        answerFibonacci;
+
     /// Exercise 6 - Sinus
     int numberSinus;
     double tolSinus,
@@ -68,6 +72,13 @@ int main() {
 
         squareRootOfNumber = squareRootOf(numberRoot, tolRoot);
         printf("square root of %d with TOL: %lf is %lf", numberRoot, tolRoot, squareRootOfNumber);
+    } while ( continueOperating() == 'y' );
+
+    exerciseTitle("Exercise 5 - Determine if a given integer number is in Fibonacci Sequence.");
+    do {
+        integerNumber = enterInteger();
+        answerFibonacci = isInFibonacci(integerNumber);
+        printAnswerFibonacci(integerNumber, answerFibonacci);
     } while ( continueOperating() == 'y' );
 
     exerciseTitle("Exercise 6 - Calculate sinus of a given number and TOL.");
