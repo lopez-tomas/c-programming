@@ -41,6 +41,11 @@ int main() {
     int numberToClassify,
         classifiedNumber;
 
+    /// Exercise 8 - Successive Sums
+    int numberA,
+        numberB;
+    unsigned long long int result;
+
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
         numberToFactor = enterNumberToFactor();
@@ -101,6 +106,15 @@ int main() {
 
         printClassification(numberToClassify, classifiedNumber);
     } while ( continueOperating() == 'y' );
+
+    exerciseTitle("Exercise 8 - Calculate the product of two natural numbers with Successive Sums.");
+    do {
+        numberA = enterNaturalNumber();
+        numberB = enterNaturalNumber();
+        result = productWithSuccessiveSums(numberA, numberB);
+
+        printf("%d x %d = %llu", numberA, numberB, result);
+    } while( continueOperating() == 'y' );
 
     return 0;
 }
