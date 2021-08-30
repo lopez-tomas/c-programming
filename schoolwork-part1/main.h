@@ -12,6 +12,7 @@
 #include "fibonacci.h" /// Exercise 5 - Fibonacci
 #include "sinus.h" /// Exercise 6 - Sinus
 #include "exercise7.h" /// Exercise 7 - Perfect, Deficient or Abundant number
+#include "successiveSums.h" /// Exercise 8 - Product with Successive Sums
 
 void exerciseTitle(char message[]);
 char continueOperating();
