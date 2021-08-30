@@ -17,7 +17,7 @@ double calculateNaturalExponential(int x, double tol) {
         numRaised = raiseNumber(x, exponent);
         factoredExponent = factorialOf(exponent);
 
-        term = (float)numRaised / factoredExponent;
+        term = (double)numRaised / factoredExponent;
 
         e += term;
         exponent++;
