@@ -17,7 +17,8 @@ int main() {
     /// Exercise 3 - Variables
     int numberX;
     double tol,
-           naturalExponential;
+           naturalExponential,
+           naturalExponentialWithMath;
 
     /// Exercise 4 - Variables
     int numberRoot;
@@ -43,7 +44,9 @@ int main() {
         tol = enterTol();
 
         naturalExponential = calculateNaturalExponential(numberX, tol);
-        printf("e^%d with a TOL: %lf is %lf", numberX, tol, naturalExponential);
+        naturalExponentialWithMath = calculateNaturalExponentialWithMath(numberX, tol);
+        printf("e^%d with a TOL: %lf is %lf\n", numberX, tol, naturalExponential);
+        printf("e^%d with a TOL: %lf is %lf", numberX, tol, naturalExponentialWithMath);
     } while( continueOperating() == 'y' );
 
     exerciseTitle("Exercise 4 - Calculate square root of a given number and TOL.");
