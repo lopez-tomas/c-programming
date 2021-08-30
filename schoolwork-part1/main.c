@@ -10,22 +10,22 @@
 #define MAX_FACT_TO_PRINT 13
 
 int main() {
-    /// Exercise 1 - Variables
+    /// Exercise 1 - Factorial
     int numberToFactor; // It could be 0
     double factoredNumber;
 
-    /// Exercise 3 - Variables
+    /// Exercise 3 - Natural Exponential
     int numberX;
     double tol,
            naturalExponential,
            naturalExponentialWithMath;
 
-    /// Exercise 4 - Variables
+    /// Exercise 4 - Square Root
     int numberRoot;
     double tolRoot,
            squareRootOfNumber;
 
-    /// Exercise 6 - Variables
+    /// Exercise 6 - Sinus
     int numberSinus;
     double tolSinus,
            sinusOfNumber;
