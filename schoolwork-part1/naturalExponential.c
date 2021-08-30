@@ -27,12 +27,12 @@ double calculateNaturalExponential(int x, double tol) {
 }
 
 double calculateNaturalExponentialWithMath(int x, double tol) {
-    double e = 1,
+    double e = 0,
            term,
            factoredExponent;
     double num = x;
     double numRaised;
-    double exponent = 1;
+    double exponent = 0;
 
     do {
         numRaised = pow(num, exponent);
