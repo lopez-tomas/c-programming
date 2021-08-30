@@ -6,18 +6,16 @@
 
 //#include <windows.h> -> Use it for Windows
 #include "main.h"
-#define MAX_FACT 170
-#define MAX_FACT_TO_PRINT 13
 
 int main() {
     /// Exercise 1 - Factorial
-    int numberToFactor; // It could be 0
-    double factoredNumber;
+    unsigned int numberToFactor; // It could be 0
+    unsigned long long int factoredNumber;
 
     /// Exercise 2 - Combinatorial
     int numberN,
         numberM;
-    double combinatorial;
+    unsigned long long int combinatorial;
 
     /// Exercise 3 - Natural Exponential
     int numberX;
@@ -37,10 +35,19 @@ int main() {
 
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
-        numberToFactor = enterNumberToFactor(MAX_FACT);
+        numberToFactor = enterNumberToFactor();
         factoredNumber = factorialOf(numberToFactor);
 
-        printFactoredNumber(numberToFactor, factoredNumber, MAX_FACT_TO_PRINT);
+        printFactoredNumber(numberToFactor, factoredNumber);
+    } while( continueOperating() == 'y' );
+
+    exerciseTitle("Exercise 2 - Calculate combinatorial of m with n.");
+    do {
+        numberN = enterNumberN();
+        numberM = enterNumberM(numberN);
+        combinatorial = combinatorialOf(numberN, numberM);
+
+        printf("Combinatorial of %d with %d is %llu", numberM, numberN, combinatorial);
     } while( continueOperating() == 'y' );
 
     exerciseTitle("Exercise 3 - Calculate e^x with a given X and a TOL.");
