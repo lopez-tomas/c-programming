@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "combinatorial.h"
 #include "factorial.h"
 
