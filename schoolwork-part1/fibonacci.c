@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include "fibonacci.h"
 
+int enterInteger() {
+    int num;
+    do {
+        printf("Enter an integer ( > 0 ): ");
+        scanf(" %d", &num);
+    } while(num <= 0);
+
+    return num;
+}
+
 int isPerfectSquare(int number) {
     int answer = 0,
         i;
