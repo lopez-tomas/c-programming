@@ -5,10 +5,11 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "factorial.h" /// Exercise 1
-#include "naturalExponential.h" /// Exercise 3
-#include "squareRoot.h" /// Exercise 4
-#include "sinus.h" /// Exercise 6
+#include "factorial.h" /// Exercise 1 - Factorial
+#include "combinatorial.h" /// Exercise 2 - Combinatorial
+#include "naturalExponential.h" /// Exercise 3 - Natural Exponential
+#include "squareRoot.h" /// Exercise 4 - Square Root
+#include "sinus.h" /// Exercise 6 - Sinus
 
 void exerciseTitle(char message[]);
 char continueOperating();
