@@ -1,8 +1,8 @@
 #ifndef FACTORIAL_H
 #define FACTORIAL_H
 
-double factorialOf(int x);
-int enterNumberToFactor(int maxNumberToFactor);
-void printFactoredNumber(int baseNumber, double factoredNumber, int maxFactoredNumber);
+unsigned long long int factorialOf(unsigned int x);
+unsigned int enterNumberToFactor();
+void printFactoredNumber(unsigned int baseNumber, unsigned long long int factoredNumber);
 
 #endif // FACTORIAL_H
