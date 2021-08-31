@@ -33,3 +33,12 @@ int obtainQuotient(int numberA, int numberB) {
 int obtainRemainder(int numberA int numberB) {
     return numberA % numberB;
 }
+
+void printQuotient(int numberA, int numberB, int quotient) {
+    printf("%d / %d = %d", numberA, numberB, quotient);
+}
+
+void printRemainder(int numberA, int numberB, int remainder) {
+    printf("%d % %d = %d", numberA, numberB, remainder);
+}
+
