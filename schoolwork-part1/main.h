@@ -13,6 +13,7 @@
 #include "sinus.h" /// Exercise 6 - Sinus
 #include "exercise7.h" /// Exercise 7 - Perfect, Deficient or Abundant number
 #include "successiveSums.h" /// Exercise 8 - Product with Successive Sums
+#include "division.h" /// Exercise 9 - Division: Quotient & Remainder
 
 void exerciseTitle(char message[]);
 char continueOperating();
