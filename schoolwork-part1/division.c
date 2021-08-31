@@ -29,3 +29,7 @@ int obtainQuotient(int numberA, int numberB) {
 
     return numberA / numberB
 }
+
+int obtainRemainder(int numberA int numberB) {
+    return numberA % numberB;
+}
