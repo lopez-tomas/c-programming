@@ -14,6 +14,7 @@
 #include "exercise7.h" /// Exercise 7 - Perfect, Deficient or Abundant number
 #include "successiveSums.h" /// Exercise 8 - Product with Successive Sums
 #include "division.h" /// Exercise 9 - Division: Quotient & Remainder
+#include "macros.h" /// Exercise MACROS
 
 void exerciseTitle(char message[]);
 char continueOperating();
