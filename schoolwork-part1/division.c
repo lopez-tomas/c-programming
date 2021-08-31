@@ -11,6 +11,17 @@ int enterNumberA() {
     return num;
 }
 
+int enterNumberB() {
+    int num;
+
+    do {
+        printf("Enter number B (it couldn't be 0): ");
+        scanf(" %d", &num);
+    } while(num == 0);
+
+    return num;
+}
+
 int obtainQuotient(int numberA, int numberB) {
     if(numberA == 0) {
         return 0;
