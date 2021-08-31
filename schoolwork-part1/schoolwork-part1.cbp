@@ -40,6 +40,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="combinatorial.h" />
+		<Unit filename="division.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="division.h" />
 		<Unit filename="exercise7.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,6 +56,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fibonacci.h" />
+		<Unit filename="macros.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="macros.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
