@@ -46,6 +46,12 @@ int main() {
         numberB;
     unsigned long long int result;
 
+    /// Exercise 9 - Quotient & Remainder
+    int numberDivisionA,
+        numberDivisionB,
+        quotient,
+        remainder;
+
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
         numberToFactor = enterNumberToFactor();
