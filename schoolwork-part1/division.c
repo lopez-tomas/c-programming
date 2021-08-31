@@ -27,18 +27,18 @@ int obtainQuotient(int numberA, int numberB) {
         return 0;
     }
 
-    return numberA / numberB
+    return numberA / numberB;
 }
 
-int obtainRemainder(int numberA int numberB) {
+int obtainRemainder(int numberA, int numberB) {
     return numberA % numberB;
 }
 
 void printQuotient(int numberA, int numberB, int quotient) {
-    printf("%d / %d = %d", numberA, numberB, quotient);
+    printf("%d / %d = %d\n", numberA, numberB, quotient);
 }
 
 void printRemainder(int numberA, int numberB, int remainder) {
-    printf("%d % %d = %d", numberA, numberB, remainder);
+    printf("%d %% %d = %d\n", numberA, numberB, remainder);
 }
 
