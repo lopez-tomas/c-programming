@@ -54,6 +54,7 @@ int main() {
 
     /// Exercise MACROS
     int toAbsolute;
+    float intPart;
 
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
@@ -141,6 +142,10 @@ int main() {
     do {
         toAbsolute = enterNumberA();
         printf("%d to Abs is %d", toAbsolute, toAbsoluteValue(toAbsolute));
+
+        printf("Enter a float number: ");
+        scanf(" %f", &intPart);
+        printf("%f its int part is %d", intPart, returnIntPart(intPart));
 
     } while ( continueOperating() == 'y' );
 
