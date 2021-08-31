@@ -148,15 +148,26 @@ int main() {
         printf("%f its int part is %d\n", intPart, returnIntPart(intPart));
         printf("%f its decimal part is %f", intPart, returnDecimalPart(intPart));
 
-        char c = '1';
-        if( IS_MAYUS(c) ) {
-            printf("%c is mayus.", c);
-        } else if ( IS_MINUS(c) ) {
-            printf("%c is minus.", c);
+        char c = ' ';
+        if ( IS_LETTER(c) ) {
+            printf("%c is a letter.", c);
+            if ( IS_MAYUS(c) ) {
+                printf("%c is MAYUS.", c);
+            } else if ( IS_MINUS(c) ) {
+                printf("%c is minus.", c);
+            }
+        } else if ( IS_NUMBER(c) ) {
+            printf("%c is a number.", c);
+        } else if ( IS_WHITE(c) ) {
+            printf("%c is white space", c);
+        } else {
+            printf("%c is nothing?", c);
         }
-//        else if ( IS_NUMBER(c) ) {
-//            printf("%c is number.", c);
-//        }
+
+        char c2 = 'z';
+        printf("%c to mayus is %c.", c2, TO_MAYUS(c2));
+        char c3 = 'Z';
+        printf("%c to minus is %c.", c3, TO_MINUS(c3));
 
     } while ( continueOperating() == 'y' );
 
