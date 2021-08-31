@@ -145,7 +145,8 @@ int main() {
 
         printf("Enter a float number: ");
         scanf(" %f", &intPart);
-        printf("%f its int part is %d", intPart, returnIntPart(intPart));
+        printf("%f its int part is %d\n", intPart, returnIntPart(intPart));
+        printf("%f its decimal part is %f", intPart, returnDecimalPart(intPart));
 
     } while ( continueOperating() == 'y' );
 
