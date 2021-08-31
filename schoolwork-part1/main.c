@@ -52,6 +52,9 @@ int main() {
         quotient,
         remainder;
 
+    /// Exercise MACROS
+    int toAbsolute;
+
     exerciseTitle("Exercise 1 - Calculate factorial of number entered by user.");
     do {
         numberToFactor = enterNumberToFactor();
@@ -132,6 +135,13 @@ int main() {
 
         printQuotient(numberDivisionA, numberDivisionB, quotient);
         printRemainder(numberDivisionA, numberDivisionB, remainder);
+    } while ( continueOperating() == 'y' );
+
+    exerciseTitle("Exercise MACROS");
+    do {
+        toAbsolute = enterNumberA();
+        printf("%d to Abs is %d", toAbsolute, toAbsoluteValue(toAbsolute));
+
     } while ( continueOperating() == 'y' );
 
     return 0;
