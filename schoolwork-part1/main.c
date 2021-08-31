@@ -122,6 +122,18 @@ int main() {
         printf("%d x %d = %llu", numberA, numberB, result);
     } while( continueOperating() == 'y' );
 
+    exerciseTitle("Exercise 9 - Through division of two given numbers obtain quotient and remainder.");
+    do {
+        numberDivisionA = enterNumberA();
+        numberDivisionB = enterNumberB();
+
+        quotient = obtainQuotient(numberDivisionA, numberDivisionB);
+        remainder = obtainRemainder(numberDivisionA, numberDivisionB);
+
+        printQuotient(numberDivisionA, numberDivisionB, quotient);
+        printRemainder(numberDivisionA, numberDivisionB, remainder);
+    } while ( continueOperating() == 'y' );
+
     return 0;
 }
 
