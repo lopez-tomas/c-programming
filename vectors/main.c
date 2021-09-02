@@ -6,27 +6,18 @@
 #define TAM_INT sizeof(int)
 
 int main() {
-    int vec[] = {1,2,3,4,5,6,7};
-    int cant = 7;
-//    printf("%p\n", &vec);
-    printf("Vector vec[]: \n\n");
-    printArray(vec, cant, sizeof(vec) / TAM_INT);
+    /// Exercise 22 variables - Insert element into array with a given position
+    int testVec[10] = {3, 5, -2, 10, 200, 1, 15, -8, 9, 10},
+        cantElem = 10;
+    int elem = 0,
+        pos = 10,
+        result;
 
-    int vecToFill[100] = {1, 2, 3};
-    int cantElements = 3;
-
-    printf("\nVector vecToFill[]: \n\n");
-    printArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
-
-
-    cantElements = fillArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
-    printf("\nVector vecToFill[]: \n\n");
-    printArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
-
-    cantElements = fillArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
-    printf("\nVector vecToFill[]: \n\n");
-    printArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
-
+    printf("testVec[] without changes: \n\n");
+    printArray(testVec, cantElem, sizeof(testVec) / TAM_INT);
+    result = insertElementInto(testVec, elem, pos, cantElem, sizeof(testVec) / TAM_INT);
+    printf("\n\ntestVec[] with changes: \n\n");
+    printArray(testVec, cantElem, sizeof(testVec) / TAM_INT);
 
     return 0;
 }
