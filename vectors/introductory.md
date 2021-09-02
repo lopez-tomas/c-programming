@@ -2,12 +2,12 @@
 
 ```c
 int vec1[5] = {1,2,3,4,5};
-int vec2[5] = {10,11,12}; // compiler completes with 0s into pos 3 and pos 4.
+int vec2[5] = {10,11,12};                // compiler completes with 0s into pos 3 and pos 4.
 int vec3[5] = {21,22,23,24,25,26,27,28}; // compiler does not take in account pos 5 onwards.
-int vec4[] = {31, 32, 33}; // compiler assings TAM.
-int vec5[]; // it don't have TAM so compiler throws error.
-int vec6[5] = {41, , 42, 43, 44}; it can't assign a 0 in pos 1 because I put more values after. Compilers throws error.
-int vec7[5] = {0}; // compiler initializes all with 0s.
+int vec4[] = {31, 32, 33};               // compiler assings TAM.
+int vec5[];                              // it don't have TAM so compiler throws error.
+int vec6[5] = {41, , 42, 43, 44};        // it can't assign 0 in pos 1 because I put more values after. Compilers throws error.
+int vec7[5] = {0};                       // compiler initializes all with 0s.
 vec3[6] = 7;
 ```
 
