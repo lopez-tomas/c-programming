@@ -3,7 +3,7 @@
 
 void printArray(int* vec, int posAct, int tam) {
     int i;
-    printf("%p\n\n", &vec);
+//    printf("%p\n\n", &vec);
     for(i = 0; i < posAct; i++) {
         printf("pos %d -> %d\n", i, *vec);
         vec++;
