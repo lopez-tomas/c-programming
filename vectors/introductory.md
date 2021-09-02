@@ -38,3 +38,28 @@ printf("%d\n", *v);
 printf("%d\n", *p);
 printf("%d\n\n", v[0]);
 ```
+
+### printArray() test
+
+```c
+int vec[] = {1,2,3,4,5,6,7};
+int cant = 7;
+
+printf("%p\n", &vec);
+printf("Vector vec[]: \n\n");
+printArray(vec, cant, sizeof(vec) / TAM_INT);
+```
+
+### fillArray() test
+
+```c
+int vecToFill[100] = {1, 2, 3};
+int cantElements = 3;
+
+printf("\nVector vecToFill[]: \n\n");
+printArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
+
+cantElements = fillArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
+printf("\nVector vecToFill[]: \n\n");
+printArray(vecToFill, cantElements, sizeof(vecToFill) / TAM_INT);
+```
