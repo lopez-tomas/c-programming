@@ -36,8 +36,8 @@ int fillArray(int* vec, int posAct, int tam) {
 
 int insertElementInto(int* vec, int element, int pos, int posAct, int tam) {
     int realPos,
-        insertingPos = posAct - 1;
-    int *vAux = vec;
+        insertingPos = posAct - 1; // posAct has the position of the next value of my vector, but I don't
+    int *vAux = vec;               // want it, I need the LAST ELEMENT of vector so I decrement it by one.
 
     vec += insertingPos;
     vAux += insertingPos - 1;
@@ -48,12 +48,12 @@ int insertElementInto(int* vec, int element, int pos, int posAct, int tam) {
 
     realPos = pos - 1;
 
-    if( insertingPos == realPos ) {
-        *vec = element;
+    if ( insertingPos == realPos ) { // User's desired position is equal to the position of the last
+        *vec = element;              // element of vector, so I don't have to move other positions.
         return 1;
     }
 
-    while(insertingPos > realPos) {
+    while (insertingPos > realPos) {
         *vec = *vAux;
 
         insertingPos--;
