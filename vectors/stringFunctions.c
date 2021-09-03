@@ -12,3 +12,14 @@ char* str_cpy(char* destiny, char* origin) {
 
     return stringMod;
 }
+
+unsigned int str_len(char* origin) {
+    unsigned int cantChars = 0
+
+    while(*string) {
+        cantChar++;
+        string++;
+    }
+
+    return cantChars;
+}
