@@ -65,3 +65,20 @@ int insertElementInto(int* vec, int element, int pos, int posAct, int tam) {
 
     return 1;
 }
+
+void insertElementIntoOrderedVector(int* vec, int element, int tam) {
+    int *vAux = vec;
+
+    vec += tam - 1;
+    vAux += tam - 2;
+    ///{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
+    ///{ 1, x, 2, 3, 4, 5, 6, 7, 8, 9 } with x = 2
+    while (element < *vec) {
+        *vec = *vAux;
+
+        vec--;
+        vAux--;
+    }
+
+    return 1;
+}
