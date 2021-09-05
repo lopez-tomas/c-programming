@@ -14,11 +14,11 @@ char* str_cpy(char* destiny, char* origin) {
 }
 
 unsigned int str_len(char* origin) {
-    unsigned int cantChars = 0
+    unsigned int cantChars = 0;
 
-    while(*string) {
-        cantChar++;
-        string++;
+    while(*origin) {
+        cantChars++;
+        origin++;
     }
 
     return cantChars;
