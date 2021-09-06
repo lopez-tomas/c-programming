@@ -34,51 +34,65 @@ int fillArray(int* vec, int posAct, int tam) {
     return posAct;
 }
 
-int insertElementInto(int* vec, int element, int pos, int posAct, int tam) {
-    int realPos,
-        insertingPos = posAct - 1; // posAct has the position of the next value of my vector, but I don't
-    int *vAux = vec;               // want it, I need the LAST ELEMENT of vector so I decrement it by one.
+int insertElementInto(int* vec, int element, int pos, int* posAct, int tam) {
+    int insertingPos = *posAct,
+        posElementAct = *posAct;
+    int *vAux = vec;
+
+    if (pos > tam) {
+        return 0;
+    }
 
     vec += insertingPos;
     vAux += insertingPos - 1;
 
-    if ( pos > tam ) {
-        return 0;
-    }
-
-    realPos = pos - 1;
-
-    if ( insertingPos == realPos ) { // User's desired position is equal to the position of the last
-        *vec = element;              // element of vector, so I don't have to move other positions.
+    if (pos == *posAct) {
+        if (*posAct == tam) {
+            *vAux = element;
+        } else {
+            *vec = element;
+            (*posAct)++;
+        }
         return 1;
     }
 
-    while (insertingPos > realPos) {
-        *vec = *vAux;
-
-        insertingPos--;
+    if (pos < *posAct && *posAct == tam) {
         vec--;
         vAux--;
+        posElementAct--;
     }
 
-    *vec = element;
+    while(pos < posElementAct) {
+        *vec = *vAux;
 
-    return 1;
+        vec--;
+        vAux--;
+        posElementAct--;
+    }
+
+    *vec = *vAux;
+    *vAux = element;
+    if (*posAct < tam) {
+        (*posAct)++;
+    }
+
+    return 3;
 }
 
 void insertElementIntoOrderedVector(int* vec, int element, int tam) {
     int *vAux = vec;
+    int posAct = tam - 1;
 
-    vec += tam - 1;
-    vAux += tam - 2;
-    ///{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
-    ///{ 1, x, 2, 3, 4, 5, 6, 7, 8, 9 } with x = 2
-    while (element < *vec) {
+    vec += posAct;
+    vAux += posAct - 1;
+
+    while (posAct >= 0 && element < *vec) {
         *vec = *vAux;
 
         vec--;
         vAux--;
+        posAct--;
     }
 
-    return 1;
+//    return 1;
 }
