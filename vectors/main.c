@@ -4,43 +4,45 @@
 #include "main.h"
 
 #define TAM_INT sizeof(int)
+#define TAM_VEC 10
 
 int main() {
     /// Exercise 22 variables - Insert element into array with a given position
-    int testVec[10] = {3, 5, -2, 10, 200, 1, 15, -8, 9, 10},
-        cantElem = sizeof(testVec) / TAM_INT;
-    int elem = 10000,
-        pos = 10,
-        result;
+    int testVec[TAM_VEC] = {10, 20, 30, 40},
+        numberElements = 4;
+    int elem = 50,
+        pos = numberElements;
 
     /// Exercise 23 variables - Insert element into ascendingly ordered vector without altering the order.
-    int testVec2[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
-        cantElem2 = sizeof(testVec2) / TAM_INT;
-    int elem2 = 5;
+    int testVec2[10] = {10, 20, 30, 40},
+        numberElements2 = 4;
+    int elem2;
 
     /// Exercise 22
     printf("testVec[]: \n\n");
-    printArray(testVec, cantElem, sizeof(testVec) / TAM_INT);
+    printf("Cant. elements: %d\n\n", numberElements);
+    printArray(testVec, numberElements, TAM_VEC);
 
-    result = insertElementInto(testVec, elem, pos, cantElem, cantElem);
+    insertElementInto(testVec, elem, pos, &numberElements, TAM_VEC);
 
-    if ( result ) {
-        printf("\n\ntestVec[] with changes: \n\n");
-        printArray(testVec, cantElem, sizeof(testVec) / TAM_INT);
-    } else {
-        printf("\n\ntestVec[] didn't change.\n\n");
-    }
+    printf("\n\n");
+    printf("Cant. elements: %d\n\n", numberElements);
+    printArray(testVec, numberElements + 1, TAM_VEC + 1);
 
     /// ############################################ ///
 
     /// Exercise 23
     printf("testVec2[]: \n\n");
-    printArray(testVec2, cantElem2, cantElem2);
+    printArray(testVec2, numberElements2 + 1, TAM_VEC + 1);
 
-    insertElementIntoOrderedVector(testVec2, elem2, cantElem2);
+    elem2 = 5;
+    insertElementIntoOrderedVector(testVec2, elem2, &numberElements2, TAM_VEC);
 
     printf("\n\ntestVec2[] inserting %d: \n\n", elem2);
-    printArray(testVec2, cantElem2, cantElem2);
+    printArray(testVec2, numberElements2 + 1, TAM_VEC + 1);
+
+    /// ############################################ ///
+    /// Strings
 
     return 0;
 }
