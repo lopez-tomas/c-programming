@@ -48,5 +48,5 @@ char* str_chr(char* source, int character) {
     while (*source && *source != (char)character) {
         source++;
     }
-    return *source == (char)character ? source : (char *)NULL;
+    return *source == (char)character ? source : source;
 }
