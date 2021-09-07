@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stddef.h>
 #include "stringFunctions.h"
 #include "../schoolwork-part1/macros.h"
@@ -97,8 +98,9 @@ int str_cmp(char* source1, char* source2) {
         source2++;
     }
 
-    return *source1 ?
-                    ( *source2 ? ( *source1 == *source2 ? 0 : *source1 > *source2 ? 1 : -1 ) : 1 )
-                    :
-                    ( *source2 ? -1 : 0 );
+//    return *source1 ?
+//                    ( *source2 ? ( *source1 == *source2 ? 0 : *source1 > *source2 ? 1 : -1 ) : 1 )
+//                    :
+//                    ( *source2 ? -1 : 0 );
+    return *(unsigned char *)source1 - *(unsigned char *)source2;
 }
