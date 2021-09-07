@@ -86,8 +86,8 @@ int main() {
 //    char minus[] = "THIS STRING HAS FULL MAYUS CHARS.";
 
     /// Variables to test str_cmp & str_cmpi
-//    char src1[] = "Abcd";
-//    char src2[] = "abcd";
+//    char src1[] = "hello123";
+//    char src2[] = "hEllo123";
 //    int result;
 
     /// Test for str_len() & str_cat()
