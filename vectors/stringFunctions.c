@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "stringFunctions.h"
 
 char* str_cpy(char* destiny, char* origin) {
@@ -41,4 +42,11 @@ char* str_cat(char* destiny, char* origin) {
     *destiny = '\0';
 
     return stringAux;
+}
+
+char* str_chr(char* source, int character) {
+    while (*source && *source != (char)character) {
+        source++;
+    }
+    return *source == (char)character ? source : (char *)NULL;
 }
