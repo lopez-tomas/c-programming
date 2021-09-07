@@ -44,16 +44,27 @@ int main() {
 
     /// ############################################ ///
     /// Strings
-    char orig[] = "world";
-    char dest[SIZE] = "hello";
-    unsigned int destChars = str_len(dest),
-                 origChars = str_len(orig);
 
-    printf("dest: %s -> %d\n", dest, destChars);
-    printf("orig: %s -> %d\n", orig, origChars);
+    /// Variables to test str_len & str_cat
+//    char orig[] = "world";
+//    char dest[SIZE] = "hello";
+//    unsigned int destChars = str_len(dest),
+//                 origChars = str_len(orig);
 
-    str_cat(dest, orig);
-    printf("%s (%d)", dest, str_len(dest));
+    /// Variables to test str_chr
+    char src[] = "Hello, how are you?";
+    int chr = (int)('x');
+
+//    printf("dest: %s -> %d\n", dest, destChars);
+//    printf("orig: %s -> %d\n", orig, origChars);
+//
+//    str_cat(dest, orig);
+//    printf("%s (%d)", dest, str_len(dest));
+
+    for(int i = 0; i < str_len(src) + 1; i++) {
+        printf("%c -> %p\n", src[i], &src[i]);
+    }
+    printf("\n\n%s -> %c found at %p", src, (char)chr, str_chr(src, chr));
 
     return 0;
 }
