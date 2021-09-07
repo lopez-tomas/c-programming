@@ -149,3 +149,28 @@ int disjointVectors(int* vec1, const int numberElementsVec1, int* vec2, const in
 
     return disjoint;
 }
+
+int symmetricVector(int* vec, const int numElements) {
+    int *vecEnd = vec + numElements - 1;
+    int symmetric = 1;
+
+    /// version 1
+    while ( vec < vecEnd ) {
+        if (*vec != *vecEnd) {
+            return symmetric = 0;
+        }
+        vec++;
+        vecEnd--;
+    }
+    return symmetric;
+
+    /// version 2
+//    while ( vec < vecEnd && *vec == *vecEnd ) {
+//        vec++;
+//        vecEnd--;
+//    }
+//    if ( vec < vecEnd ) {
+//        return symmetric = 0;
+//    }
+//    return symmetric;
+}
