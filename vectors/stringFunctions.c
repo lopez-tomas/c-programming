@@ -23,3 +23,22 @@ unsigned int str_len(char* origin) {
 
     return cantChars;
 }
+
+char* str_cat(char* destiny, char* origin) {
+    char *stringAux = destiny;
+
+    while (*destiny) {
+        destiny++;
+    }
+
+    while (*origin) {
+        *destiny = *origin;
+
+        destiny++;
+        origin++;
+    }
+
+    *destiny = '\0';
+
+    return stringAux;
+}
