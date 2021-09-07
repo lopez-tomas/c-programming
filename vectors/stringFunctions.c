@@ -86,3 +86,19 @@ char* str_upr(char* source) {
 
     return aux;
 }
+
+int str_cmp(char* source1, char* source2) {
+    if (!(*source1) && !(*source2)) {
+        return 0;
+    }
+
+    while (*source1 && *source2 && *source1 == *source2) {
+        source1++;
+        source2++;
+    }
+
+    return *source1 ?
+                    ( *source2 ? ( *source1 == *source2 ? 0 : *source1 > *source2 ? 1 : -1 ) : 1 )
+                    :
+                    ( *source2 ? -1 : 0 );
+}
