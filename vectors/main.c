@@ -52,11 +52,13 @@ int main() {
 //                 origChars = str_len(orig);
 
     /// Variables to test str_chr & str_chr
-    char src[] = "Hello, how are you?";
-    int chr = (int)('x');
-    char chr2 = 'x';
+//    char src[] = "Hello, how are you?";
+//    int chr = (int)('x');
+//    char chr2 = 'x';
 
-    /// Variables to test str_rchr
+    /// Variables to test str_lwr & str_upr
+    char mayus[] = "this string has full minus chars.";
+    char minus[] = "THIS STRING HAS FULL MAYUS CHARS.";
 
 //    printf("dest: %s -> %d\n", dest, destChars);
 //    printf("orig: %s -> %d\n", orig, origChars);
@@ -64,15 +66,20 @@ int main() {
 //    str_cat(dest, orig);
 //    printf("%s (%d)", dest, str_len(dest));
 
-    for(int i = 0; i < str_len(src) + 1; i++) {
-        printf("%c -> %p\n", src[i], &src[i]);
-    }
-    printf("\n%s -> %c found at %p\n\n", src, (char)chr, str_chr(src, chr));
+//    for(int i = 0; i < str_len(src) + 1; i++) {
+//        printf("%c -> %p\n", src[i], &src[i]);
+//    }
+//    printf("\n%s -> %c found at %p\n\n", src, (char)chr, str_chr(src, chr));
+//
+//    for(int i = 0; i < str_len(src) + 1; i++) {
+//        printf("%c -> %p\n", src[i], &src[i]);
+//    }
+//    printf("\n%s -> %c found at %p\n\n", src, chr, str_rchr(src, chr2));
 
-    for(int i = 0; i < str_len(src) + 1; i++) {
-        printf("%c -> %p\n", src[i], &src[i]);
-    }
-    printf("\n%s -> %c found at %p\n\n", src, chr, str_rchr(src, chr2));
+    printf("(original) -> %s\n", minus);
+    printf("(changed)  -> %s\n\n", str_lwr(minus));
+    printf("(original) -> %s\n", mayus);
+    printf("(changed)  -> %s\n\n", str_upr(mayus));
 
     return 0;
 }
