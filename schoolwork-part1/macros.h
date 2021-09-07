@@ -9,8 +9,8 @@
 #define IS_MINUS(c) ( (c) >= 'a' && (c) <= 'z' )
 #define IS_LETTER(c) ( IS_MAYUS(c) || IS_MINUS(c) )
 #define IS_WHITE(c) (c) == ' '
-#define TO_MAYUS(c) ( (c) >= 'a' && (c) <= 'z' ) ? ( ( (c) - 'a' ) + 'A' ) : (c)
-#define TO_MINUS(c) ( (c) >= 'A' && (c) <= 'Z' ) ? ( ( (c) - 'A' ) + 'a' ) : (c)
+#define TO_MAYUS(c) ( ( (c) >= 'a' && (c) <= 'z' ) ? ( ( (c) - 'a' ) + 'A' ) : (c) )
+#define TO_MINUS(c) ( ( (c) >= 'A' && (c) <= 'Z' ) ? ( ( (c) - 'A' ) + 'a' ) : (c) )
 
 int toAbsoluteValue(int x);
 int returnIntPart(float x);
