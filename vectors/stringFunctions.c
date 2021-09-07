@@ -44,11 +44,11 @@ char* str_cat(char* destiny, char* origin) {
     return stringAux;
 }
 
-char* str_chr(char* source, int character) {
+char* str_chr(char* source, char character) {
     while (*source && *source != (char)character) {
         source++;
     }
-    return *source == (char)character ? source : source;
+    return *source == (char)character ? source : NULL;
 }
 
 char* str_rchr(char* source, char character) {
@@ -57,7 +57,7 @@ char* str_rchr(char* source, char character) {
     while (*aux) {
         aux++;
     }
-    while (aux > source && *aux != character) {
+    while (aux > source && *aux != (char)character) {
         aux--;
     }
 
