@@ -1,4 +1,5 @@
 #include <stdio.h>
+//#include <stdlib.h
 #include <stddef.h>
 #include "stringFunctions.h"
 #include "../schoolwork-part1/macros.h"
@@ -93,7 +94,7 @@ int str_cmp(char* source1, char* source2) {
         return 0;
     }
 
-    while (*source1 && *source2 && *source1 == *source2) {
+    while (*source1 && *source1 == *source2) {
         source1++;
         source2++;
     }
@@ -103,4 +104,14 @@ int str_cmp(char* source1, char* source2) {
 //                    :
 //                    ( *source2 ? -1 : 0 );
     return *(unsigned char *)source1 - *(unsigned char *)source2;
+//    return *source1 - *source2;
+}
+
+int str_cmpi(char* source1, char* source2) {
+    while ( *source1 && TO_MINUS(*source1) == TO_MINUS(*source2) ) {
+        source1++;
+        source2++;
+    }
+
+    return TO_MINUS(*(unsigned char *)(source1)) - TO_MINUS(*(unsigned char *)(source2));
 }
