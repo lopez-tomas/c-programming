@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include "stringFunctions.h"
+#include "../schoolwork-part1/macros.h"
 
 char* str_cpy(char* destiny, char* origin) {
     char *stringMod = destiny;
@@ -62,4 +63,26 @@ char* str_rchr(char* source, char character) {
     }
 
     return *aux == character ? aux : NULL;
+}
+
+char* str_lwr(char* source) {
+    char *aux = source;
+
+    while (*source) {
+        *source = TO_MINUS(*source);
+        source++;
+    }
+
+    return aux;
+}
+
+char* str_upr(char* source) {
+    char *aux = source;
+
+    while (*source) {
+        *source = TO_MAYUS(*source);
+        source++;
+    }
+
+    return aux;
 }
