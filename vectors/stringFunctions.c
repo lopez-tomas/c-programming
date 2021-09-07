@@ -50,3 +50,16 @@ char* str_chr(char* source, int character) {
     }
     return *source == (char)character ? source : source;
 }
+
+char* str_rchr(char* source, char character) {
+    char *aux = source;
+
+    while (*aux) {
+        aux++;
+    }
+    while (aux > source && *aux != character) {
+        aux--;
+    }
+
+    return *aux == character ? aux : NULL;
+}
