@@ -103,3 +103,49 @@ void insertElementIntoOrderedVector(int* vec, int element, int* posAct, int tam)
         (*posAct)++;
     }
 }
+
+int disjointVectors(int* vec1, const int numberElementsVec1, int* vec2, const int numberElementsVec2) {
+    int *auxGreater,
+        *auxSmaller,
+        *auxAux;
+    int disjoint = 1,
+        i, j,
+        greater,
+        smaller;
+
+    if (numberElementsVec1 == 0 && numberElementsVec2 == 0) {
+        return disjoint;
+    }
+
+    if (numberElementsVec1 < numberElementsVec2) {
+        greater = numberElementsVec2;
+        smaller = numberElementsVec1;
+
+        auxGreater = vec2;
+        auxAux = auxGreater;
+        auxSmaller = vec1;
+    } else {
+        greater = numberElementsVec1;
+        smaller = numberElementsVec2;
+
+        auxGreater = vec1;
+        auxAux = auxGreater;
+        auxSmaller = vec2;
+    }
+
+    for(i = 0; i < smaller; i++) {
+        auxGreater = auxAux;
+
+        for(j = 0; j < greater; j++) {
+            if (*auxSmaller == *auxGreater) {
+                return disjoint = 0;
+            }
+
+            auxGreater++;
+        }
+
+        auxSmaller++;
+    }
+
+    return disjoint;
+}
