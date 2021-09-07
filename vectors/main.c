@@ -19,6 +19,17 @@ int main() {
 //        numberElements2 = 4;
 //    int elem2;
 
+    /// Exercise - Determine if two given vectors (int) are disjoints/incompatibles or not
+//    int vec1[] = { 10, 20, 30, 40, 50 },
+//        numElem1 = 5;
+//    int vec2[] = { 1, 2, 3, 4, 5, 6, 7, 8, 10 },
+//        numElem2 = 10;
+//    int disjoint;
+
+    /// Exercise - Determine if a vector is symmetric
+//    int vecSymmetric[] = { 1, 2, 3, 3, 2, 1 },
+//        cE = 6;
+
     /// Exercise 22
 //    printf("testVec[]: \n\n");
 //    printf("Cant. elements: %d\n\n", numberElements);
@@ -42,6 +53,21 @@ int main() {
 //    printf("\n\ntestVec2[] inserting %d: \n\n", elem2);
 //    printArray(testVec2, numberElements2 + 1, TAM_VEC + 1);
 
+    /// Exercise - Disjoint/Incompatible vectors
+//    disjoint = disjointVectors(vec1, numElem1, vec2, numElem2);
+//    if (disjoint) {
+//        printf("vec1 & vec2 are disjoint/incompatible vectors.");
+//    } else {
+//        printf("vec1 & vec2 are compatible vectors.");
+//    }
+
+    /// Exercise - Symmetric vector
+//    if (symmetricVector(vecSymmetric, cE)) {
+//        printf("vecSymmetric[] is symmetric.");
+//    } else {
+//        printf("vecSymmetric[] is not symmetric.");
+//    }
+
     /// ############################################ ///
     /// Strings
 
@@ -60,7 +86,7 @@ int main() {
 //    char minus[] = "THIS STRING HAS FULL MAYUS CHARS.";
 
     /// Variables to test str_cmp & str_cmpi
-//    char src1[] = "abcd";
+//    char src1[] = "Abcd";
 //    char src2[] = "abcd";
 //    int result;
 
@@ -93,6 +119,16 @@ int main() {
 
     /// Test for str_cmp()
 //    result = str_cmp(src1, src2);
+//    if (result == 0) {
+//        printf("%s == %s\n", src1, src2);
+//    } else if (result > 0) {
+//        printf("%s > %s\n", src1, src2);
+//    } else {
+//        printf("%s < %s\n", src1, src2);
+//    }
+
+    /// Test for str_cmpi()
+//    result = str_cmpi(src1, src2);
 //    if (result == 0) {
 //        printf("%s == %s\n", src1, src2);
 //    } else if (result > 0) {
