@@ -51,9 +51,12 @@ int main() {
 //    unsigned int destChars = str_len(dest),
 //                 origChars = str_len(orig);
 
-    /// Variables to test str_chr
+    /// Variables to test str_chr & str_chr
     char src[] = "Hello, how are you?";
     int chr = (int)('x');
+    char chr2 = 'x';
+
+    /// Variables to test str_rchr
 
 //    printf("dest: %s -> %d\n", dest, destChars);
 //    printf("orig: %s -> %d\n", orig, origChars);
@@ -64,7 +67,12 @@ int main() {
     for(int i = 0; i < str_len(src) + 1; i++) {
         printf("%c -> %p\n", src[i], &src[i]);
     }
-    printf("\n\n%s -> %c found at %p", src, (char)chr, str_chr(src, chr));
+    printf("\n%s -> %c found at %p\n\n", src, (char)chr, str_chr(src, chr));
+
+    for(int i = 0; i < str_len(src) + 1; i++) {
+        printf("%c -> %p\n", src[i], &src[i]);
+    }
+    printf("\n%s -> %c found at %p\n\n", src, chr, str_rchr(src, chr2));
 
     return 0;
 }
