@@ -57,8 +57,13 @@ int main() {
 //    char chr2 = 'x';
 
     /// Variables to test str_lwr & str_upr
-    char mayus[] = "this string has full minus chars.";
-    char minus[] = "THIS STRING HAS FULL MAYUS CHARS.";
+//    char mayus[] = "this string has full minus chars.";
+//    char minus[] = "THIS STRING HAS FULL MAYUS CHARS.";
+
+    /// Variables to test str_cmp & str_cmpi
+    char src1[] = "abcd";
+    char src2[] = "abcd";
+    int result;
 
 //    printf("dest: %s -> %d\n", dest, destChars);
 //    printf("orig: %s -> %d\n", orig, origChars);
@@ -76,10 +81,19 @@ int main() {
 //    }
 //    printf("\n%s -> %c found at %p\n\n", src, chr, str_rchr(src, chr2));
 
-    printf("(original) -> %s\n", minus);
-    printf("(changed)  -> %s\n\n", str_lwr(minus));
-    printf("(original) -> %s\n", mayus);
-    printf("(changed)  -> %s\n\n", str_upr(mayus));
+//    printf("(original) -> %s\n", minus);
+//    printf("(changed)  -> %s\n\n", str_lwr(minus));
+//    printf("(original) -> %s\n", mayus);
+//    printf("(changed)  -> %s\n\n", str_upr(mayus));
+
+    result = str_cmp(src1, src2);
+    if (result == 0) {
+        printf("%s == %s\n", src1, src2);
+    } else if (result > 0) {
+        printf("%s > %s\n", src1, src2);
+    } else {
+        printf("%s < %s\n", src1, src2);
+    }
 
     return 0;
 }
