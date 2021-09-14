@@ -4,9 +4,9 @@
 
 int main() {
 
-    int mat[ROWS][COLS] = { {1,2,3,4,5}, {1,2,3,4,5}, {1,2,3,4,5}, {1,2,3,4,5}, {1,2,3,4,5} };
-    int numberRows = 5,
-        numberColums = 5;
+    int mat[ROWS][COLS] = { {1,2,3,4,5}, {1,2,3,4,5}, {1,2,3,4,5} };
+    int numberRows = 3,
+        numberColums = 3;
 
     mainDiagonal(mat, numberRows, numberColums);
     printf("\n\n");
