@@ -104,6 +104,31 @@ void insertElementIntoOrderedVector(int* vec, int element, int* posAct, int tam)
     }
 }
 
+void eliminateElement(int* vec, int element, int* posAct, int tam) {
+    int* vAux = vec + 1;
+    int numElem = 1;
+
+    while (*vec != element) {
+        vec++;
+        vAux++;
+        numElem++;
+    }
+
+    if (*posAct == tam && numElem == tam) {
+        (*posAct)--;
+        return;
+    }
+
+    while (numElem < *posAct) {
+        *vec = *vAux;
+
+        vec++;
+        vAux++;
+        numElem++;
+    }
+    (*posAct)--;
+}
+
 int disjointVectors(int* vec1, const int numberElementsVec1, int* vec2, const int numberElementsVec2) {
     int *auxGreater,
         *auxSmaller,
