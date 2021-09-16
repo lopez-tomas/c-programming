@@ -14,21 +14,29 @@ int main() {
 //    int elem = 50,
 //        pos = numberElements;
 //
-//    /// Exercise 23 variables - Insert element into ascendingly ordered vector without altering the order.
+    /// Exercise 23 variables - Insert element into ascendingly ordered vector without altering the order.
 //    int testVec2[10] = {10, 20, 30, 40},
 //        numberElements2 = 4;
 //    int elem2;
 
-    /// Exercise - Determine if two given vectors (int) are disjoints/incompatibles or not
+    /// Exercise 25 variables - Eliminate the first occurrence of a given element within a vector.
+    int testVec25[] = { 3, 5, 7, 9, 11, 13, 15 },
+        numberElements = 7,
+        elementA = 9,
+        elementB = 15;
+
+    /// Exercise Disjoint variables - Determine if two given vectors (int) are disjoints/incompatibles or not
 //    int vec1[] = { 10, 20, 30, 40, 50 },
 //        numElem1 = 5;
 //    int vec2[] = { 1, 2, 3, 4, 5, 6, 7, 8, 10 },
 //        numElem2 = 10;
 //    int disjoint;
 
-    /// Exercise - Determine if a vector is symmetric
+    /// Exercise Symmetric variables - Determine if a vector is symmetric
 //    int vecSymmetric[] = { 1, 2, 3, 3, 2, 1 },
 //        cE = 6;
+
+    /// ############################################ ///
 
     /// Exercise 22
 //    printf("testVec[]: \n\n");
@@ -53,6 +61,19 @@ int main() {
 //    printf("\n\ntestVec2[] inserting %d: \n\n", elem2);
 //    printArray(testVec2, numberElements2 + 1, TAM_VEC + 1);
 
+    /// ############################################ ///
+
+    /// Exercise 25
+    printf("testVec25[] - Number of elements: %d \n\n", numberElements);
+    printArray(testVec25, numberElements + 1, TAM_VEC);
+
+    eliminateElement(testVec25, elementA, &numberElements, TAM_VEC);
+
+    printf("\n\ntestVec25[] eliminating %d - Number of elements: %d \n\n", elementA, numberElements);
+    printArray(testVec25, numberElements + 1, TAM_VEC);
+
+    /// ############################################ ///
+
     /// Exercise - Disjoint/Incompatible vectors
 //    disjoint = disjointVectors(vec1, numElem1, vec2, numElem2);
 //    if (disjoint) {
@@ -60,6 +81,8 @@ int main() {
 //    } else {
 //        printf("vec1 & vec2 are compatible vectors.");
 //    }
+
+    /// ############################################ ///
 
     /// Exercise - Symmetric vector
 //    if (symmetricVector(vecSymmetric, cE)) {
