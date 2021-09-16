@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
-		<Unit filename="stringFunctions.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stringFunctions.h" />
 		<Unit filename="vectors.c">
 			<Option compilerVar="CC" />
 		</Unit>
