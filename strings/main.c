@@ -30,6 +30,10 @@ int main() {
     char palindrome2[] = "Amor a Roma";
     int answerPalindrome;
 
+    /// Variables to test numericValueOf
+    char stringToNumber[] = "-1-\t23";
+    long long int value;
+
     /// ############################################ ///
 
     /// Test for str_len() & str_cat()
@@ -82,10 +86,14 @@ int main() {
     /// Test for isPalindrome()
     answerPalindrome = isPalindrome(palindrome);
     if (answerPalindrome) {
-        printf("\n\"%s\" is a palindrome.\n", palindrome);
+        printf("\n\"%s\" is a palindrome.\n\n", palindrome);
     } else {
-        printf("\n\"%s\" is not a palindrome.\n", palindrome);
+        printf("\n\"%s\" is not a palindrome.\n\n", palindrome);
     }
+
+    /// Test for numericValueOf()
+    value = numericValueOf(stringToNumber);
+    printf("\"%s\" = %lld\n", stringToNumber, value);
 
     return 0;
 }
