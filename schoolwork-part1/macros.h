@@ -23,6 +23,7 @@
 #define TO_MINUS(c) ( ( (c) >= 'A' && (c) <= 'Z' ) ? ( ( (c) - 'A' ) + 'a' ) : (c) )
 #define INT_CAST_FOR_CHAR(c) ( (int)(c) )
 #define CHAR_TO_INT(c) ( (c) - '0' )
+#define IS_SIGN(c) ( (c) == '-' || (c) == '+')
 
 int toAbsoluteValue(int x);
 int returnIntPart(float x);
