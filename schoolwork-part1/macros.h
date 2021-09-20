@@ -37,6 +37,14 @@
                         ( INT_CAST_FOR_CHAR(c) >= 239 && INT_CAST_FOR_CHAR(c) <= 255 ) \
                      )
 
+#define IS_ESCAPE_SECUENCE(c) ( (c) == '\t' || \
+                                (c) == '\r' || \
+                                (c) == '\n' || \
+                                (c) == '\v' || \
+                                (c) == '\a' || \
+                                (c) == '\b' || \
+                                (c) == '\f' \
+                              )
 
 int toAbsoluteValue(int x);
 int returnIntPart(float x);
