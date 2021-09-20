@@ -136,9 +136,9 @@ void eliminateElementOnce(int* vec, int element, int* posAct, int tam) {
 void eliminateElement(int* vec, int element, int* posAct, int tam) {
     int* nextPos = vec + 1;
     int* currentPos = vec;
-//    int* pos;
-    int position = 0, i;
-    int cantElem;
+    int position = 0,
+        i,
+        cantElem;
 
     while (position < *posAct) {
         cantElem = (*posAct) - 1;
