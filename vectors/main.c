@@ -3,7 +3,9 @@
 
 #include "main.h"
 
+#define TAM_INT_VEC(vec) (sizeof(vec))
 #define TAM_INT sizeof(int)
+#define CANT_ELEM_INT_VEC(vec) ( TAM_INT_VEC(vec) / TAM_INT )
 #define TAM_VEC 10
 
 int main() {
@@ -19,10 +21,15 @@ int main() {
 //    int elem2;
 
     /// Exercise 25 variables - Eliminate the first occurrence of a given element within a vector.
-    int testVec25[] = { 3, 5, 7, 9, 11, 13, 15 },
-        numberElements = 7,
-        elementA = 9,
-        elementB = 15;
+//    int testVec25[] = { 3, 5, 7, 9, 11, 13, 15 },
+//        numberElements = 7,
+//        elementA = 9,
+//        elementB = 15;
+
+    /// Exercise 26 variables - Eliminate all occurrences of a given element within a vector.
+    int testVec26[] = { 3, 5, 100, 1 },
+        numberElements26 = CANT_ELEM_INT_VEC(testVec26),
+        element26 = 9;
 
     /// Exercise Disjoint variables - Determine if two given vectors (int) are disjoints/incompatibles or not
 //    int vec1[] = { 10, 20, 30, 40, 50 },
@@ -63,13 +70,24 @@ int main() {
     /// ############################################ ///
 
     /// Exercise 25
-    printf("testVec25[] - Number of elements: %d \n\n", numberElements);
-    printArray(testVec25, numberElements + 1, TAM_VEC);
+//    printf("testVec25[] - Number of elements: %d \n\n", numberElements);
+//    printArray(testVec25, numberElements + 1, TAM_VEC);
+//
+//    eliminateElementOnce(testVec25, elementA, &numberElements, TAM_VEC);
+//
+//    printf("\n\ntestVec25[] eliminating %d - Number of elements: %d \n\n", elementA, numberElements);
+//    printArray(testVec25, numberElements + 1, TAM_VEC);
 
-    eliminateElement(testVec25, elementA, &numberElements, TAM_VEC);
+    /// ############################################ ///
 
-    printf("\n\ntestVec25[] eliminating %d - Number of elements: %d \n\n", elementA, numberElements);
-    printArray(testVec25, numberElements + 1, TAM_VEC);
+    /// Exercise 26
+    printf("testVec26[] - Number of elements: %d \n\n", numberElements26);
+    printArray(testVec26, numberElements26 + 1, TAM_INT_VEC(testVec26));
+
+    eliminateElementOnce(testVec26, element26, &numberElements26, TAM_VEC);
+
+    printf("\n\ntestVec26[] eliminating %d - Number of elements: %d \n\n", 9, numberElements26);
+    printArray(testVec26, numberElements26 + 1, TAM_INT_VEC(testVec26) + 1);
 
     /// ############################################ ///
 
