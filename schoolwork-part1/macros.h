@@ -7,7 +7,12 @@
 #define IS_NUMBER(c) ( (c) >= '0' && (c) <= '9' )
 #define IS_MAYUS(c) ( (c) >= 'A' && (c) <= 'Z' )
 #define IS_MINUS(c) ( (c) >= 'a' && (c) <= 'z' )
-#define IS_LETTER(c) ( IS_MAYUS(c) || IS_MINUS(c) )
+
+#define IS_ACCENTED_LETTER(c) ( ( INT_CAST_FOR_CHAR(c) >= 128 && INT_CAST_FOR_CHAR(c) <= 154 ) || \
+                                ( INT_CAST_FOR_CHAR(c) >= 160 && INT_CAST_FOR_CHAR(c) <= 165 ) \
+                              )
+
+#define IS_LETTER(c) ( IS_MAYUS(c) || IS_MINUS(c) || IS_ACCENTED_LETTER(c) )
 #define IS_WHITE(c) (c) == ' '
 #define TO_MAYUS(c) ( ( (c) >= 'a' && (c) <= 'z' ) ? ( ( (c) - 'a' ) + 'A' ) : (c) )
 #define TO_MINUS(c) ( ( (c) >= 'A' && (c) <= 'Z' ) ? ( ( (c) - 'A' ) + 'a' ) : (c) )
