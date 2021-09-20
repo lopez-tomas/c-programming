@@ -178,3 +178,16 @@ int isPalindrome(char* source) {
 
     return answer = 1;
 }
+
+unsigned long long int numericValueOf(const char* source) {
+    unsigned long long int value = 0;
+
+    while(*source) {
+        value = value * 10 + (int)(*source) - '0';
+        printf("%c = %d\n", *source, (int)(*source) - '0');
+
+        source++;
+    }
+
+    return value;
+}
