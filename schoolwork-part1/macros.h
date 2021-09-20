@@ -21,6 +21,7 @@
 #define IS_WHITE(c) (c) == ' '
 #define TO_MAYUS(c) ( ( (c) >= 'a' && (c) <= 'z' ) ? ( ( (c) - 'a' ) + 'A' ) : (c) )
 #define TO_MINUS(c) ( ( (c) >= 'A' && (c) <= 'Z' ) ? ( ( (c) - 'A' ) + 'a' ) : (c) )
+#define INT_CAST_FOR_CHAR(c) ( (int)(c) )
 
 int toAbsoluteValue(int x);
 int returnIntPart(float x);
