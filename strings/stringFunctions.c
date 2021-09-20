@@ -179,15 +179,48 @@ int isPalindrome(char* source) {
     return answer = 1;
 }
 
-unsigned long long int numericValueOf(const char* source) {
-    unsigned long long int value = 0;
+long long int numericValueOf(const char* source) {
+    long long int value = 0;
+    int sign = 1,
+        whiteFlag = 1;
 
     while(*source) {
-        value = value * 10 + (int)(*source) - '0';
-        printf("%c = %d\n", *source, (int)(*source) - '0');
+        while ( whiteFlag && IS_WHITE(*source) ) {
+            source++;
+        }
+        whiteFlag = 0;
 
-        source++;
+        if ( IS_LETTER(*source) || IS_SYMBOL(*source) || IS_ESCAPE_SECUENCE(*source) || IS_WHITE(*source) ) {
+            return sign * value;
+        }
+
+        if (*source == '-') {
+            sign = -1;
+            source++;
+
+            if ( IS_SIGN(*source) ) {
+                return sign * value;
+            }
+        }
+
+        if (*source == '+') {
+            source++;
+
+            if ( IS_SIGN(*source) ) {
+                return sign * value;
+            }
+        }
+
+        while ( IS_NUMBER(*source) ) {
+            value = value * 10 + CHAR_TO_INT(*source);
+
+            source++;
+
+            if ( IS_SIGN(*source) ) {
+                return sign * value;
+            }
+        }
     }
 
-    return value;
+    return sign * value;
 }
