@@ -25,6 +25,11 @@ int main() {
     char src2[] = "hEllo123";
     int result;
 
+    /// Variables to test isPalindrome
+    char palindrome[] = "A luna ese anula";
+    char palindrome2[] = "Amor a Roma";
+    int answerPalindrome;
+
     /// ############################################ ///
 
     /// Test for str_len() & str_cat()
@@ -67,11 +72,19 @@ int main() {
     /// Test for str_cmpi()
     result = str_cmpi(src1, src2);
     if (result == 0) {
-        printf("%s == %s\n", src1, src2);
+        printf("%s == %s\n\n", src1, src2);
     } else if (result > 0) {
-        printf("%s > %s\n", src1, src2);
+        printf("%s > %s\n\n", src1, src2);
     } else {
-        printf("%s < %s\n", src1, src2);
+        printf("%s < %s\n\n", src1, src2);
+    }
+
+    /// Test for isPalindrome()
+    answerPalindrome = isPalindrome(palindrome);
+    if (answerPalindrome) {
+        printf("\n\"%s\" is a palindrome.\n", palindrome);
+    } else {
+        printf("\n\"%s\" is not a palindrome.\n", palindrome);
     }
 
     return 0;
