@@ -116,6 +116,39 @@ int str_cmpi(char* source1, char* source2) {
     return TO_MINUS(*(unsigned char *)(source1)) - TO_MINUS(*(unsigned char *)(source2));
 }
 
+char* noWhiteSpaces(char* source, unsigned int* length) {
+    char* aux = source;
+
+    char* currentChar = source;
+    char* nextChar = source + 1;
+    int position = 0,
+        i,
+        strLength;
+
+    while (position < *length) {
+        strLength = (*length);
+
+        if ( IS_WHITE(*currentChar) ) {
+            for (i = position; i < strLength; i++) {
+                    *source = *(nextChar);
+                    source++;
+                    nextChar++;
+            }
+            (*length)--;
+            currentChar--;
+            source = currentChar;
+            nextChar = source + 1;
+            position--;
+        }
+        position++;
+        currentChar++;
+        source = currentChar;
+        nextChar = source + 1;
+    }
+
+    return aux;
+}
+
 int isPalindrome(char* source) {
     unsigned int chars = str_len(source) + 1;
     char auxString[chars]; // I don't declare a char* because I need a real copy of my original string to work.
