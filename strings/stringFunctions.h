@@ -12,6 +12,6 @@ int str_cmp(char* source1, char* source2);
 int str_cmpi(char* source1, char* source2);
 char* noWhiteSpaces(char* source, unsigned int* length);
 int isPalindrome(char* source);
-unsigned long long int numericValueOf(const char* source);
+long long int numericValueOf(const char* source);
 
 #endif // STRINGFUNCTIONS_H
