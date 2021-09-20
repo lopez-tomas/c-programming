@@ -104,9 +104,10 @@ void insertElementIntoOrderedVector(int* vec, int element, int* posAct, int tam)
     }
 }
 
-void eliminateElement(int* vec, int element, int* posAct, int tam) {
+void eliminateElementOnce(int* vec, int element, int* posAct, int tam) {
     int* vAux = vec + 1;
-    int numElem = 1;
+    int numElem = 1,
+        flag = 0;
 
     while (*vec != element) {
         vec++;
@@ -114,7 +115,7 @@ void eliminateElement(int* vec, int element, int* posAct, int tam) {
         numElem++;
     }
 
-    if (*posAct == tam && numElem == tam) {
+    if (numElem == *posAct && *vec == element) {
         (*posAct)--;
         return;
     }
@@ -125,8 +126,40 @@ void eliminateElement(int* vec, int element, int* posAct, int tam) {
         vec++;
         vAux++;
         numElem++;
+        flag = 1;
     }
-    (*posAct)--;
+    if (flag) {
+        (*posAct)--;
+    }
+}
+
+void eliminateElement(int* vec, int element, int* posAct, int tam) {
+    int* nextPos = vec + 1;
+    int* currentPos = vec;
+//    int* pos;
+    int position = 0, i;
+    int cantElem;
+
+    while (position < *posAct) {
+        cantElem = (*posAct) - 1;
+
+        if (*currentPos == element) {
+            for (i = position; i < cantElem; i++) {
+                    *vec = *(nextPos);
+                    vec++;
+                    nextPos++;
+            }
+            (*posAct)--;
+            currentPos--;
+            vec = currentPos;
+            nextPos = vec + 1;
+            position--;
+        }
+        position++;
+        currentPos++;
+        vec = currentPos;
+        nextPos = vec + 1;
+    }
 }
 
 int disjointVectors(int* vec1, const int numberElementsVec1, int* vec2, const int numberElementsVec2) {
