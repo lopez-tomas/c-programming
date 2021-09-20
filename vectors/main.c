@@ -27,9 +27,9 @@ int main() {
 //        elementB = 15;
 
     /// Exercise 26 variables - Eliminate all occurrences of a given element within a vector.
-    int testVec26[] = { 3, 5, 100, 1 },
-        numberElements26 = NUM_ELEM_INT_VEC(testVec26),
-        element26 = 9;
+//    int testVec26[] = { 3, 5, 100, 1 },
+//        numberElements26 = NUM_ELEM_INT_VEC(testVec26),
+//        element26 = 9;
 
     /// Exercise Disjoint variables - Determine if two given vectors (int) are disjoints/incompatibles or not
 //    int vec1[] = { 10, 20, 30, 40, 50 },
@@ -81,13 +81,13 @@ int main() {
     /// ############################################ ///
 
     /// Exercise 26
-    printf("testVec26[] - Number of elements: %d \n\n", numberElements26);
-    printArray(testVec26, numberElements26 + 1, INT_VEC_SIZE(testVec26));
-
-    eliminateElementOnce(testVec26, element26, &numberElements26, INT_VEC_SIZE(testVec26));
-
-    printf("\n\ntestVec26[] eliminating %d - Number of elements: %d \n\n", 9, numberElements26);
-    printArray(testVec26, numberElements26 + 1, INT_VEC_SIZE(testVec26) + 1);
+//    printf("testVec26[] - Number of elements: %d \n\n", numberElements26);
+//    printArray(testVec26, numberElements26 + 1, INT_VEC_SIZE(testVec26));
+//
+//    eliminateElementOnce(testVec26, element26, &numberElements26, INT_VEC_SIZE(testVec26));
+//
+//    printf("\n\ntestVec26[] eliminating %d - Number of elements: %d \n\n", 9, numberElements26);
+//    printArray(testVec26, numberElements26 + 1, INT_VEC_SIZE(testVec26) + 1);
 
     /// ############################################ ///
 
