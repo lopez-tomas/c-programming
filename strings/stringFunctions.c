@@ -115,3 +115,33 @@ int str_cmpi(char* source1, char* source2) {
 
     return TO_MINUS(*(unsigned char *)(source1)) - TO_MINUS(*(unsigned char *)(source2));
 }
+
+int isPalindrome(char* source) {
+    unsigned int chars = str_len(source) + 1;
+    char auxString[chars]; // I don't declare a char* because I need a real copy of my original string to work.
+    char* iniString;
+    char* endString;
+    int answer = 0;
+
+    if (chars <= 1) {
+        return answer;
+    }
+
+    str_cpy(auxString, source); // I need a copy of my original string to not modify it.
+    noWhiteSpaces(auxString, &chars);
+
+    chars = str_len(auxString); // re-calculate length of auxString.
+
+    iniString = auxString;
+    endString = auxString + chars - 1;
+
+    while (iniString < endString) {
+        if (TO_MINUS(*iniString) != TO_MINUS(*endString)) {
+            return answer;
+        }
+        iniString++;
+        endString--;
+    }
+
+    return answer = 1;
+}
