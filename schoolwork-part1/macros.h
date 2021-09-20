@@ -25,6 +25,19 @@
 #define CHAR_TO_INT(c) ( (c) - '0' )
 #define IS_SIGN(c) ( (c) == '-' || (c) == '+')
 
+#define IS_SYMBOL(c) (  ( INT_CAST_FOR_CHAR(c) >= 33 && INT_CAST_FOR_CHAR(c) <= 42 ) || \
+                        (c) == ',' || \
+                        (c) == '.' || \
+                        (c) == '/' || \
+                        ( INT_CAST_FOR_CHAR(c) >= 58 && INT_CAST_FOR_CHAR(c) <= 64 ) || \
+                        ( INT_CAST_FOR_CHAR(c) >= 91 && INT_CAST_FOR_CHAR(c) <= 96 ) || \
+                        ( INT_CAST_FOR_CHAR(c) >= 123 && INT_CAST_FOR_CHAR(c) <= 126 ) || \
+                        ( INT_CAST_FOR_CHAR(c) >= 155 && INT_CAST_FOR_CHAR(c) <= 159 ) || \
+                        ( INT_CAST_FOR_CHAR(c) >= 166 && INT_CAST_FOR_CHAR(c) <= 223 ) || \
+                        ( INT_CAST_FOR_CHAR(c) >= 239 && INT_CAST_FOR_CHAR(c) <= 255 ) \
+                     )
+
+
 int toAbsoluteValue(int x);
 int returnIntPart(float x);
 float returnDecimalPart(float x);
