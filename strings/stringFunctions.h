@@ -10,5 +10,7 @@ char* str_lwr(char* source);
 char* str_upr(char* source);
 int str_cmp(char* source1, char* source2);
 int str_cmpi(char* source1, char* source2);
+char* noWhiteSpaces(char* source, unsigned int* length);
+int isPalindrome(char* source);
 
 #endif // STRINGFUNCTIONS_H
