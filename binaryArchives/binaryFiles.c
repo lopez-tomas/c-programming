@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "binaryFiles.h"
 
 int createTestEmployeesLot(const char* fileName) {
@@ -37,7 +38,7 @@ int createTestProfessorsLot(const char* fileName) {
         {89, "Cale Damian", 200.0},
         {99, "Cale Damian", 200.0},
         {10, "Delos German", 150.0}
-    }
+    };
 
     FILE* pf = fopen(fileName, "wb");
     if (!pf) {
@@ -60,7 +61,7 @@ int createTestNoveltiesLot(const char* fileName) {
         {{99, "Cale Damian", 800.0}, 'm'},
         {{10, "Delos German", 150.0}, 'b'},
         {{25, "Lagos Julian", 200.0}, 'a'}
-    }
+    };
 
     FILE* pf = fopen(fileName, "wb");
     if (!pf) {
@@ -116,4 +117,14 @@ int raiseSalary(const char* fileName, char category) {
 
     fclose(pf);
     return 1;
+}
+
+int compareEmployees(const tEmployees* a, const tNovelties* b) {
+    int nameCmp = strcmp(a->completeName, b->completeName);
+
+    if ( nameCmp == 0 ) {
+        return ( a->dni - b->dni );
+    }
+
+    return result;
 }
