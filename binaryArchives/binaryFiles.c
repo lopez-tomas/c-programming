@@ -29,6 +29,26 @@ int createTestEmployeesLot(const char* fileName) {
     return 1;
 }
 
+int createTestProfessorsLot(const char* fileName) {
+    tProfessors prof[] = {
+        {},
+        {},
+        {},
+        {},
+        {}
+    }
+
+    FILE* pf = fopen(fileName, "wb");
+    if (!pf) {
+        return 0;
+    }
+
+    fwrite(emp, sizeof(emp), 1, pf);
+
+    fclose(pf);
+    return 1;
+}
+
 int showEmployeesFile(const char* fileName) {
     FILE* pf = fopen(fileName, "rb");
     tEmployees emp;
