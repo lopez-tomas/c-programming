@@ -3,14 +3,18 @@
 #include "main.h"
 
 int main() {
-    char fileName[] = "archives/employees.dat";
+    /*char fileName[] = "archives/employees.dat";*/
 
-    createTestEmployeesLot(fileName);
+    /*createTestEmployeesLot(fileName);*/
 
-    showEmployeesFile(fileName);
-    raiseSalary(fileName, 'B');
-    puts(" ------------- ");
-    showEmployeesFile(fileName);
+    /*showEmployeesFile(fileName);*/
+    /*raiseSalary(fileName, 'B');*/
+    /*puts(" ------------- ");*/
+    /*showEmployeesFile(fileName);*/
+
+    createTestProfessorsLot("archives/professors.dat");
+    createTestNoveltiesLot("archives/novelties.dat");
+
 
     return 0;
 }
