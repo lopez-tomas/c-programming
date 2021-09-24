@@ -25,6 +25,7 @@ typedef struct {
 }
 
 int createTestEmployeesLot(const char* fileName);
+int createTestProfessorsLot(const char* fileName);
 int showEmployeesFile(const char* fileName); 
 int raiseSalary(const char* fileName, char category);
 
