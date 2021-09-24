@@ -31,7 +31,7 @@ int main() {
     int answerPalindrome;
 
     /// Variables to test numericValueOf
-    char stringToNumber[] = "-1-\t23";
+    char stringToNumber[] = "-1581093\tabc3";
     long long int value;
 
     /// ############################################ ///
