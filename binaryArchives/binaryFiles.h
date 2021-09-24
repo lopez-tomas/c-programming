@@ -2,17 +2,27 @@
 #define BINARYFILES_H
 
 typedef struct {
-	int dni;
+	unsigned dni;
 	char completeName[200];
 	char category;
 	float salary;
-	
 } tEmployees;
 
 typedef struct {
 	unsigned dni;
 	char completeName[200];
 } tStudents;
+
+typedef struct {
+	unsigned dni;
+	char completeName[200];
+	float salary;
+} tProfessor;
+
+typedef struct {
+	tProfessor;
+	char x;
+}
 
 int createTestEmployeesLot(const char* fileName);
 int showEmployeesFile(const char* fileName); 
