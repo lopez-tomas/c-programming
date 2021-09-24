@@ -21,7 +21,7 @@ typedef struct {
 
 typedef struct {
 	tProfessor prof;
-	char novelty;
+	char novelty; // r: registration; c: cancellation; m: modification
 } tNovelties;
 
 int createTestEmployeesLot(const char* fileName);
