@@ -31,11 +31,12 @@ int createTestEmployeesLot(const char* fileName) {
 
 int createTestProfessorsLot(const char* fileName) {
     tProfessors prof[] = {
-        {},
-        {},
-        {},
-        {},
-        {}
+        {20, "Abala Maria", 200.0},
+        {19, "Abala Monica", 300.0},
+        {50, "Beltan Sergio", 200.0},
+        {89, "Cale Damian", 200.0},
+        {99, "Cale Damian", 200.0},
+        {10, "Delos German", 150.0}
     }
 
     FILE* pf = fopen(fileName, "wb");
