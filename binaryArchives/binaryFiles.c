@@ -52,14 +52,14 @@ int createTestProfessorsLot(const char* fileName) {
 
 int createTestNoveltiesLot(const char* fileName) {
     tNovelties nov[] = {
-        {17, "Abala Ana", 300.0, 'a'},
-        {20, "Abala Maria", 250.0, 'm'},
-        {33, "Asraliam Jorge", 300.0, 'a'},
-        {55, "Badom Daniel", 250.0, 'b'},
-        {90, "Cale Damian", 800.0, 'a'},
-        {99, "Cale Damian", 800.0, 'm'},
-        {10, "Delos German", 150.0, 'b'},
-        {25, "Lagos Julian", 200.0, 'a'}
+        {{17, "Abala Ana", 300.0}, 'a'},
+        {{20, "Abala Maria", 250.0}, 'm'},
+        {{33, "Asraliam Jorge", 300.0}, 'a'},
+        {{55, "Badom Daniel", 250.0}, 'b'},
+        {{90, "Cale Damian", 800.0}, 'a'},
+        {{99, "Cale Damian", 800.0}, 'm'},
+        {{10, "Delos German", 150.0}, 'b'},
+        {{25, "Lagos Julian", 200.0}, 'a'}
     }
 
     FILE* pf = fopen(fileName, "wb");
