@@ -20,9 +20,9 @@ typedef struct {
 } tProfessor;
 
 typedef struct {
-	tProfessor;
-	char x;
-}
+	tProfessor prof;
+	char novelty;
+} tNovelties;
 
 int createTestEmployeesLot(const char* fileName);
 int createTestProfessorsLot(const char* fileName);
