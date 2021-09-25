@@ -4,12 +4,12 @@
 
 int createTestEmployeesLot(const char* fileName) {
     tEmployees emp[] = {
-        { 10, "Juan", 'C', 500.0 },
-        { 20, "Maria", 'A', 300.0 },
-        { 30, "Pedro", 'D', 200.0 },
-        { 40, "Daniel", 'B', 150.0 },
-        { 50, "Jorge", 'A', 200.0 },
-        { 60, "Mariana", 'X', 200.0 }
+        {10, "Juan", 'C', 500.0},
+        {20, "Maria", 'A', 300.0},
+        {30, "Pedro", 'D', 200.0},
+        {40, "Daniel", 'B', 150.0},
+        {50, "Jorge", 'A', 200.0},
+        {60, "Mariana", 'X', 200.0}
     };
 
     FILE* pf = fopen(fileName, "wb");
@@ -56,10 +56,10 @@ int createTestNoveltiesLot(const char* fileName) {
         {{17, "Abala Ana", 300.0}, 'a'},
         {{20, "Abala Maria", 250.0}, 'm'},
         {{33, "Asraliam Jorge", 300.0}, 'a'},
-        {{55, "Badom Daniel", 250.0}, 'b'},
+        {{55, "Badom Daniel", 250.0}, 'r'},
         {{90, "Cale Damian", 800.0}, 'a'},
         {{99, "Cale Damian", 800.0}, 'm'},
-        {{10, "Delos German", 150.0}, 'b'},
+        {{10, "Delos German", 150.0}, 'r'},
         {{25, "Lagos Julian", 200.0}, 'a'}
     };
 
@@ -119,12 +119,12 @@ int raiseSalary(const char* fileName, char category) {
     return 1;
 }
 
-int compareEmployees(const tEmployees* a, const tNovelties* b) {
-    int nameCmp = strcmp(a->completeName, b->completeName);
+int compareEmployees(const tProfessors* a, const tNovelties* b) {
+    int nameCmp = strcmp(a->completeName, b->prof.completeName);
 
     if ( nameCmp == 0 ) {
-        return ( a->dni - b->dni );
+        return ( a->dni - b->prof.dni );
     }
 
-    return result;
+    return nameCmp;
 }
