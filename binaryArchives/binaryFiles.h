@@ -21,14 +21,14 @@ typedef struct {
 
 typedef struct {
 	tProfessors prof;
-	char novelty; // r: registration; c: cancellation; m: modification
+	char novelty; // a: add; r: remove; m: modify
 } tNovelties;
 
 int createTestEmployeesLot(const char* fileName);
 int createTestProfessorsLot(const char* fileName);
-int createTestNoveltiesLot(const char* fileName) 
+int createTestNoveltiesLot(const char* fileName);
 int showEmployeesFile(const char* fileName);
 int raiseSalary(const char* fileName, char category);
-int compareEmployees(const tEmployees* a, const tNovelties* b);
+int compareEmployees(const tProfessors* a, const tNovelties* b);
 
 #endif // BINARYFILES_H
