@@ -1,10 +1,17 @@
+# Project folders
 *bin/
 *obj/
+
+# Files
 *.depend
 *.layout
 *.cscope_file_list
-*.o
 *.script
+
+# Compilation files 
+*.o
+
+# Executable
 *main
 
 # Archives extensions
