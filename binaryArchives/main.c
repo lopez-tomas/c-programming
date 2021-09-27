@@ -4,6 +4,7 @@
 
 int main() {
     char employeesFileName[] = "archives/employees.dat";
+    char professorsFileName[] = "archives/professors.dat";
     char noveltiesFileName[] = "archives/novelties.dat";
 
     /*createTestEmployeesLot(employeesFileName);*/
@@ -13,11 +14,10 @@ int main() {
     /*puts(" ------------- ");*/
     /*showEmployeesFile(employeesFileName);*/
 
-    createTestProfessorsLot(employeesFileName);
+    createTestProfessorsLot(professorsFileName);
     createTestNoveltiesLot(noveltiesFileName);
-    showEmployeesFile(employeesFileName);
-    printf("\n\n");
-    showProfessorsFile(employeesFileName);
+
+    showProfessorsFile(professorsFileName);
     printf("\n\n");
     showNoveltiesFile(noveltiesFileName);
 
