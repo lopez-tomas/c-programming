@@ -6,3 +6,7 @@
 *.o
 *.script
 *main
+
+# Archives extensions
+*.txt
+*.dat
