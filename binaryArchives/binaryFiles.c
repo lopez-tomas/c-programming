@@ -103,7 +103,7 @@ int showProfessorsFile(const char* fileName) {
 
     fread(&prof, sizeof(prof), 1, pf);
     while(!feof(pf)) {
-        printf("%u %s %c %5.2f\n", prof.dni, prof.completeName, prof.salary);
+        printf("%u %s %5.2f\n", prof.dni, prof.completeName, prof.salary);
 
         fread(&prof, sizeof(prof), 1, pf);
     }
@@ -122,7 +122,7 @@ int showNoveltiesFile(const char* fileName) {
 
     fread(&nov, sizeof(nov), 1, pf);
     while(!feof(pf)) {
-        printf("%u %s %c %5.2f %c\n", nov.prof.dni, nov.prof.completeName, nov.prof..salary, nov.novelty);
+        printf("%u %s %5.2f %c\n", nov.prof.dni, nov.prof.completeName, nov.prof.salary, nov.novelty);
 
         fread(&nov, sizeof(nov), 1, pf);
     }
