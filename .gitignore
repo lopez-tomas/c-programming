@@ -15,5 +15,4 @@
 *main
 
 # Archives extensions
-*.txt
-*.dat
+*archives
