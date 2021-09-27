@@ -93,6 +93,25 @@ int showEmployeesFile(const char* fileName) {
     return 1;
 }
 
+int showProfessorsFile(const char* fileName) {
+    FILE* pf = fopen(fileName, "rb");
+    tProfessors prof;
+
+    if(!pf) {
+        return 0;
+    }
+
+    fread(&prof, sizeof(prof), 1, pf);
+    while(!feof(pf)) {
+        printf("%u %s %c %5.2f\n", prof.dni, prof.completeName, prof.salary);
+
+        fread(&prof, sizeof(prof), 1, pf);
+    }
+
+    fclose(pf);
+    return 1;
+}
+
 int raiseSalary(const char* fileName, char category) {
     FILE* pf = fopen(fileName, "r+b");
     tEmployees emp;

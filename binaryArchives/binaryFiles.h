@@ -28,6 +28,7 @@ int createTestEmployeesLot(const char* fileName);
 int createTestProfessorsLot(const char* fileName);
 int createTestNoveltiesLot(const char* fileName);
 int showEmployeesFile(const char* fileName);
+int showProfessorsFile(const char* fileName);
 int raiseSalary(const char* fileName, char category);
 int compareEmployees(const tProfessors* a, const tNovelties* b);
 
