@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "binaryFiles.h"
+
+#define LINE_LENGTH 500
 
 int createTestEmployeesLot(const char* fileName) {
     tEmployees emp[] = {
@@ -34,7 +37,7 @@ int createTestProfessorsLot(const char* fileName) {
     tProfessors prof[] = {
         {20, "Abala Maria", 200.0},
         {19, "Abala Monica", 300.0},
-        {50, "Beltan Sergio", 200.0},
+        {50, "Beltran Sergio", 200.0},
         {89, "Cale Damian", 200.0},
         {99, "Cale Damian", 200.0},
         {10, "Delos German", 150.0}
@@ -128,6 +131,26 @@ int showNoveltiesFile(const char* fileName) {
     }
 
     fclose(pf);
+    return 1;
+}
+
+int showErrorsFile(const char* fileName) {
+    tNovelties err;
+    char line[LINE_LENGTH];
+    int line_length = LINE_LENGTH - 1;
+
+    FILE* pf = fopen(fileName, "rt");
+
+    if (!pf) {
+        return 0;
+    }
+
+    while ( fgets(line, line_length, pf) ) {
+        sscanf(line, "%u|%[^|]|%f|%c", &err.prof.dni, err.prof.completeName, &err.prof.salary, &err.novelty);
+        fprintf(stdout, "%u|%s|%5.2f|%c", err.prof.dni, err.prof.completeName, err.prof.salary, err.novelty);
+    }
+    fclose(pf);
+
     return 1;
 }
 
