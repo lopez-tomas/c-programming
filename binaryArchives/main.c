@@ -35,5 +35,13 @@ int main() {
     showErrorsFile(errorsFileName);
     printf("\n");
 
+    short int x = 1;
+    char* cp = &x;
+    if (*(int*)cp == 1) {
+        printf("big endian");
+    } else {
+        printf("little endian");
+    }
+
     return 0;
 }
