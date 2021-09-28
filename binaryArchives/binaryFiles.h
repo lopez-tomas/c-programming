@@ -33,5 +33,6 @@ int showNoveltiesFile(const char* fileName);
 int showErrorsFile(const char* fileName);
 int raiseSalary(const char* fileName, char category);
 int compareEmployees(const tProfessors* a, const tNovelties* b);
+int obtainingNewProfessorsFile(const char* professorsFileName, const char* noveltiesFileName, const char* tmp_professorsFileName, const char* errorsFileName);
 
 #endif // BINARYFILES_H
