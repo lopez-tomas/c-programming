@@ -90,7 +90,6 @@ int showEmployeesFile(const char* fileName) {
     fread(&emp, sizeof(emp), 1, pf);
     while(!feof(pf)) {
         printf("%u %s %c %5.2f\n", emp.dni, emp.completeName, emp.category, emp.salary);
-
         fread(&emp, sizeof(emp), 1, pf);
     }
 
@@ -109,7 +108,6 @@ int showProfessorsFile(const char* fileName) {
     fread(&prof, sizeof(prof), 1, pf);
     while(!feof(pf)) {
         printf("%u %s %5.2f\n", prof.dni, prof.completeName, prof.salary);
-
         fread(&prof, sizeof(prof), 1, pf);
     }
 
@@ -150,6 +148,38 @@ int showErrorsFile(const char* fileName) {
     while ( fgets(line, line_length, pf) ) {
         sscanf(line, "%u|%[^|]|%f|%c", &err.prof.dni, err.prof.completeName, &err.prof.salary, &err.novelty);
         fprintf(stdout, "%u|%s|%5.2f|%c", err.prof.dni, err.prof.completeName, err.prof.salary, err.novelty);
+    }
+    fclose(pf);
+
+    return 1;
+}
+
+void showEmployee(void* pvEmp) {
+    tEmployees* emp = (tEmployees *)pvEmp; // -> working with pointers
+    //tEmployees emp = *(tEmployees *)pvEmp; -> working in local
+    printf("%u %s %c %5.2f\n", emp->dni, emp->completeName, emp->category, emp->salary); // -> working with pointers
+    //printf("%u %s %c %5.2f\n", emp.dni, emp.completeName, emp.category, emp.salary);
+}
+
+void showStudent(void* pvStu) {
+    tStudents* stu = (tStudents *)pvStu;
+    printf("%u %s\n", stu->dni, stu->completeName);
+}
+
+void showProfessor(void* pvProf) {
+    tProfessors* prof = (tProfessors *)pvProf;
+    printf("%u %s %5.2f\n", prof->dni, prof->completeName, prof->salary);
+}
+
+int showFile(const char* fileName, void* buffer, size_t size, void act(void*)) {
+    FILE* pf = fopen(fileName, "rb");
+    if(!pf) {
+        return 0;
+    }
+    fread(buffer, size, 1, pf);
+    while(!feof(pf)) {
+        act(buffer);
+        fread(buffer, size, 1, pf);
     }
     fclose(pf);
 
