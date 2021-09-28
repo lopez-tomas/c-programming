@@ -27,10 +27,18 @@ typedef struct {
 int createTestEmployeesLot(const char* fileName);
 int createTestProfessorsLot(const char* fileName);
 int createTestNoveltiesLot(const char* fileName);
+
 int showEmployeesFile(const char* fileName);
 int showProfessorsFile(const char* fileName);
 int showNoveltiesFile(const char* fileName);
 int showErrorsFile(const char* fileName);
+
+void showEmployee(void* pvEmp);
+void showStudent(void* pvStu);
+void showProfessor(void* pvProf);
+
+int showFile(const char* fileName, void* buffer, size_t size, void act(void*));
+
 int raiseSalary(const char* fileName, char category);
 int compareEmployees(const tProfessors* a, const tNovelties* b);
 int obtainingNewProfessorsFile(const char* professorsFileName, const char* noveltiesFileName, const char* tmp_professorsFileName, const char* errorsFileName);
