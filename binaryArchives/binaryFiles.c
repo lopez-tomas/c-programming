@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
 #include "binaryFiles.h"
 
 #define LINE_LENGTH 500
@@ -188,4 +190,115 @@ int compareEmployees(const tProfessors* a, const tNovelties* b) {
     }
 
     return nameCmp;
+}
+
+int obtainingNewProfessorsFile(const char* professorsFileName, const char* noveltiesFileName, const char* tmp_professorsFileName, const char* errorsFileName) {
+    FILE* pProf, *pNov, *pTemp, *pErr;
+    tProfessors prof;
+    tNovelties nov;
+    int cmp;
+    char novelty;
+
+    pProf = fopen(professorsFileName, "rb");
+    if ( !pProf ) {
+        printf("Error opening %s file.", professorsFileName);
+        return -1;
+    }
+
+    pNov = fopen(noveltiesFileName, "rb");
+    if ( !pNov ) {
+        printf("Error opening %s file.", noveltiesFileName);
+        fclose(pProf);
+        return -2;
+    }
+
+    pTemp = fopen(tmp_professorsFileName, "wb");
+    if ( !pTemp ) {
+        printf("Error creating %s file.", tmp_professorsFileName);
+        fclose(pProf);
+        fclose(pNov);
+        return -3;
+    }
+
+    pErr = fopen(errorsFileName, "wt");
+    if ( !pErr ) {
+        printf("Error creating %s file.", errorsFileName);
+        fclose(pProf);
+        fclose(pNov);
+        fclose(pTemp);
+        return -4;
+    }
+
+    fread(&prof, sizeof(tProfessors), 1, pProf);
+    fread(&nov, sizeof(tNovelties), 1, pNov);
+
+    while ( !feof(pProf) && !feof(pNov) ) {
+        cmp = compareEmployees(&prof, &nov); // -> I must always pass structs by memory direction
+        novelty = tolower(nov.novelty);
+
+        if ( !cmp ) { // -> if( cmp == 0 )
+            if ( novelty == 'r' ) {
+                fread(&nov, sizeof(tNovelties), 1, pNov);
+                fread(&prof, sizeof(tProfessors), 1, pProf);
+
+            } else if ( novelty == 'm' ) {
+                fwrite(&nov.prof, sizeof(tProfessors), 1, pTemp);
+                /*fflush(pTemp); // -> This is not necessary because we are only writing into pTemp*/
+                fread(&nov, sizeof(tNovelties), 1, pNov);
+                fread(&prof, sizeof(tProfessors), 1, pProf);
+
+            } else {
+                fwrite(&prof, sizeof(tProfessors), 1, pTemp);
+                /*fwrite(&nov, sizeof(tNovelties), 1, pErr); // -> If we are using .txt files, we must change this to use fprintf()*/
+                fprintf(pErr, "%u|%s|%5.2f|%c\n", nov.prof.dni, nov.prof.completeName, nov.prof.salary, nov.novelty);
+                fread(&nov, sizeof(tNovelties), 1, pNov);
+            }
+        } else {
+            if ( novelty == 'a' ) {
+                if ( cmp > 0 ) {
+                    fwrite(&nov.prof, sizeof(tProfessors), 1, pTemp);
+                    fread(&nov, sizeof(tNovelties), 1, pNov);
+
+                } else {
+                    fwrite(&prof, sizeof(tProfessors), 1, pTemp);
+                    fread(&prof, sizeof(tProfessors), 1, pProf);
+                }
+            } else {
+                if ( cmp > 0 ) {
+                    fprintf(pErr, "%u|%s|%5.2f|%c\n", nov.prof.dni, nov.prof.completeName, nov.prof.salary, nov.novelty);
+                    fwrite(&prof, sizeof(tProfessors), 1, pTemp);
+                    fread(&nov, sizeof(tNovelties), 1, pNov);
+                    fread(&prof, sizeof(tProfessors), 1, pProf);
+                } else {
+                    fwrite(&prof, sizeof(tProfessors), 1, pTemp);
+                    fread(&prof, sizeof(tProfessors), 1, pProf);
+                }
+            }
+        }
+    }
+
+    while ( !feof(pProf) ) {
+        fwrite(&prof, sizeof(tProfessors), 1, pTemp);
+        fread(&prof, sizeof(tProfessors), 1, pProf);
+    }
+
+    while ( !feof(pNov) ) {
+        novelty = tolower(nov.novelty);
+        if (novelty == 'a') {
+            fwrite(&nov.prof, sizeof(tProfessors), 1, pTemp);
+        } else {
+            fprintf(pErr, "%u|%s|%5.2f|%c\n", nov.prof.dni, nov.prof.completeName, nov.prof.salary, nov.novelty);
+        }
+        fread(&nov, sizeof(tNovelties), 1, pNov);
+    }
+
+    fclose(pProf);
+    fclose(pNov);
+    fclose(pTemp);
+    fclose(pErr);
+
+    remove(professorsFileName);
+    rename(tmp_professorsFileName, professorsFileName);
+
+    return 0;
 }
