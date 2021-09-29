@@ -38,3 +38,12 @@ void showInteger(void* vec) {
 void showFloat(void* vec) {
     printf("%5.2f\n", *(float*)vec);
 }
+
+void showVector(void* vec, size_t element, size_t numberElements, void act(void*)) {
+    int i;
+
+    for (i = 0; i < numberElements; i++) {
+        act(vec);
+        vec+= element;
+    }
+}
