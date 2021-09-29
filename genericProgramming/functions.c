@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "functions.h"
 
 void *mem_move(void *dest, const void *orig, size_t n) {
@@ -28,4 +29,8 @@ void swap(void *s1, void *s2, size_t n) {
        s2++;
        i++;
     }
+}
+
+void showInteger(void* vec) {
+    printf("%d\n", *(int*)vec);
 }
