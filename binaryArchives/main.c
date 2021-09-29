@@ -2,19 +2,30 @@
 #include <stdlib.h>
 #include "main.h"
 
+int add(int a, int b) {
+    return a+b;
+}
+
+int sub(int a, int b) {
+    return a-b;
+}
+
+typedef int (*tOperation)(int, int);
+typedef int (*tCompareFunction)(const void*, const void*);
+
 int main() {
-    char employeesFileName[] = "archives/employees.dat";
+//    char employeesFileName[] = "archives/employees.dat";
     char professorsFileName[] = "archives/professors.dat";
     char noveltiesFileName[] = "archives/novelties.dat";
     char tmp_professorsFileName[] = "archives/tmp_professors.dat";
     char errorsFileName[] = "archives/errors.txt";
 
-    /*createTestEmployeesLot(employeesFileName);*/
-
-    /*showEmployeesFile(employeesFileName);*/
-    /*raiseSalary(employeesFileName, 'B');*/
-    /*puts(" ------------- ");*/
-    /*showEmployeesFile(employeesFileName);*/
+//    createTestEmployeesLot(employeesFileName);
+//
+//    showEmployeesFile(employeesFileName);
+//    raiseSalary(employeesFileName, 'B');
+//    puts(" ------------- ");
+//    showEmployeesFile(employeesFileName);
 
     createTestProfessorsLot(professorsFileName);
     createTestNoveltiesLot(noveltiesFileName);
@@ -25,9 +36,9 @@ int main() {
     printf("\n\n");
     printf("%s file:\n", noveltiesFileName);
     showNoveltiesFile(noveltiesFileName);
-
+//
     obtainingNewProfessorsFile(professorsFileName, noveltiesFileName, tmp_professorsFileName, errorsFileName);
-
+//
     printf("\n\n%s file modified:\n", professorsFileName);
     showProfessorsFile(professorsFileName);
 
@@ -35,13 +46,26 @@ int main() {
     showErrorsFile(errorsFileName);
     printf("\n");
 
-    short int x = 1;
-    char* cp = &x;
-    if (*(int*)cp == 1) {
-        printf("big endian");
-    } else {
-        printf("little endian");
-    }
+    /*short int x = 1;*/
+    /*char* cp = &x;*/
+    /*if (*(int*)cp == 1) {*/
+        /*printf("big endian");*/
+    /*} else {*/
+        /*printf("little endian");*/
+    /*}*/
+
+//    tEmployees emp;
+//    tStudents stu;
+
+    /*void* pFunction;*/
+//    tOperation pFunction = sub;
+//    printf("\nOperation: %d\n\n", pFunction(5, 9));
+//
+//    showFile(employeesFileName, &emp, sizeof(emp), showEmployee);
+//    puts("=============================");
+//    showFile(stude, &emp, sizeof(emp), showEmployee);
+
+//    tStudents vAlu[] = {{1111111, "Hola hola"}, {222222, "chau chau"}, {33333, "hola chau"}};
 
     return 0;
 }
