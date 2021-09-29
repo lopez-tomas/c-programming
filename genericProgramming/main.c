@@ -4,17 +4,17 @@
 
 #include "main.h"
 
-int main()
-{
-    int vecOri[] = {1,2,3,4,5}; // 20
-    int vecDest[7]; // 28
-    int vecDest2[7]; // 28
-
-    int tamOri = sizeof(vecOri) / sizeof(int); // 10
-    int tamDest = sizeof(vecDest) / sizeof(int); // 7
-    int tamMAX = (tamOri > tamDest ? tamDest : tamOri);
-    int cantElem;
-    int i;
+int main() {
+    // Testing memmove() & mem_move() [which is my implemention]
+//    int vecOri[] = {1,2,3,4,5}; // 20
+//    int vecDest[7]; // 28
+//    int vecDest2[7]; // 28
+//
+//    int tamOri = sizeof(vecOri) / sizeof(int); // 10
+//    int tamDest = sizeof(vecDest) / sizeof(int); // 7
+//    int tamMAX = (tamOri > tamDest ? tamDest : tamOri);
+//    int cantElem;
+//    int i;
 
     /*do {*/
         /*printf("Cuantos enteros quiere copiar?\n");*/
@@ -35,19 +35,21 @@ int main()
         /*printf("%d\n", vecDest[i]);*/
     /*}*/
 
-    int vec[] = {1,2,3,4};
-    int vec2[] = {5,6,7,8};
-    intercambio(vec, vec2, sizeof(vec));
-
-    for(i = 0; i < sizeof(vec) / 4; i++) {
-        printf("%d\t%d\n", vec[i], vec2[i]);
-    }
-
-    tAlumnos alu1 = {111111, "Carlos Tovarez"};
-    tAlumnos alu2;
-    intercambio(&alu1, &alu2, sizeof(tAlumnos));
-
-    printf("\n\n%u %s\n", alu2.dni, alu2.apyn);
+    // Testing swap() function
+//    int vec[] = {1,2,3,4};
+//    int vec2[] = {5,6,7,8};
+//    int j;
+//    swap(vec, vec2, sizeof(vec));
+//
+//    for(j = 0; j < sizeof(vec) / 4; j++) {
+//        printf("%d\t%d\n", vec[j], vec2[j]);
+//    }
+//
+//    tAlumnos alu1 = {111111, "Carlos Tovarez"};
+//    tAlumnos alu2;
+//    swap(&alu1, &alu2, sizeof(tAlumnos));
+//
+//    printf("\n\n%u %s\n", alu2.dni, alu2.apyn);
 
     return 0;
 }
