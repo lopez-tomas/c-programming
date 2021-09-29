@@ -34,3 +34,7 @@ void swap(void *s1, void *s2, size_t n) {
 void showInteger(void* vec) {
     printf("%d\n", *(int*)vec);
 }
+
+void showFloat(void* vec) {
+    printf("%5.2f\n", *(float*)vec);
+}
