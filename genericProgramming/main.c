@@ -51,7 +51,7 @@ int main() {
 //
 //    printf("\n\n%u %s\n", alu2.dni, alu2.apyn);
 
-    // Testing showVector() function with showInt() & showFloat() functions:
+    // Testing showVector() function with showInteger() & showFloat() functions:
     int intVec[] = {1, 2, 3, 4, 5};
     float floatVec[] = {0.1, 0.2, 0.3};
 
