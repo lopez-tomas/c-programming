@@ -38,7 +38,7 @@ void showFloat(void* vec) {
 }
 
 void showStudent(void* vec) {
-    t_Students* stu = *(t_Students*)vec;
+    t_Students* stu = (t_Students *)vec;
     printf("%u | %s | %5.2f\n", stu->dni, stu->completeName, stu->grade);
 }
 
