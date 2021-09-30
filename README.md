@@ -11,5 +11,5 @@ I will upload every exercise of C from my classes at university. Using CodeBlock
 4. [arrays](/arrays)
     * Introduction to arrays -> [_HERE_](https://github.com/lopez-tomas/c-programming/blob/main/arrays/introductory.md)
 5. [archives](/archives)
-6. [binaryAchives](/binaryAchives)
+6. [binaryArchives](binaryArchives)
 7. [genericProgramming](/genericProgramming)
