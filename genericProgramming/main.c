@@ -54,12 +54,24 @@ int main() {
     // Testing showVector() function with showInteger() & showFloat() functions:
     int intVec[] = {1, 2, 3, 4, 5};
     float floatVec[] = {0.1, 0.2, 0.3};
+    t_Students students[] = {
+        {25350252, "Modric, Luka", 10.0},
+        {34350252, "Nolan, Cristian", 7.33},
+        {45350256, "Robertone, Leandro", 4.66},
+        {30350252, "Sanchez, Beto", 8.50},
+        {29350252, "Sanchez, Hugo", 4.0},
+        {28350256, "Torres, Johana", 3.33},
+        {35350256, "Xasas, Jorge", 9.66}
+    };
 
     printf("intVec:\n");
     showVector(intVec, sizeof(int), sizeof(intVec) / sizeof(int), showInteger);
 
     printf("\nfloatVec:\n");
     showVector(floatVec, sizeof(float), sizeof(floatVec) / sizeof(float), showFloat);
+
+    printf("\nstudents:\n");
+    showVector(students, sizeof(t_Students), sizeof(students) / sizeof(t_Students), showStudent);
 
     return 0;
 }
