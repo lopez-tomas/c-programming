@@ -4,9 +4,10 @@
 #include <stddef.h>
 
 typedef struct {
-	unsigned dni;
-	char apyn[100];
-} tAlumnos;
+	unsigned dni; // documento nacional de indentidad = national identity document
+	char completeName[100];
+	float grade;
+} t_Students;
 
 void *mem_move(void *dest, const void *orig, size_t n);
 void swap(void *s1, void *s2, size_t n);
