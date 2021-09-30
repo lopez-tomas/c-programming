@@ -37,6 +37,11 @@ void showFloat(void* vec) {
     printf("%5.2f\n", *(float*)vec);
 }
 
+void showStudent(void* vec) {
+    t_Students* stu = *(t_Students*)vec;
+    printf("%u | %s | %5.2f\n", stu->dni, stu->completeName, stu->grade);
+}
+
 void showVector(void* vec, size_t element, size_t numberElements, void act(void*)) {
     int i;
 
