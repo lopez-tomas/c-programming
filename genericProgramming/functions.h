@@ -14,7 +14,7 @@ void swap(void *s1, void *s2, size_t n);
 
 void showInteger(void* vec);
 void showFloat(void* vec);
-void showStudent(void* vec)
+void showStudent(void* vec);
 
 void showVector(void* buffer, size_t element, size_t numberElements, void act(void*));
 
