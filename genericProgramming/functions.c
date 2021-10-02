@@ -51,6 +51,14 @@ void showVector(void* vec, size_t element, size_t numberElements, void act(void*
     }
 }
 
+int descendentIntegers(const void* intA, const void* intB) {
+    return (*(int*)intA - *(int*)intB);
+}
+
+int ascendentIntegers(const void* intA, const void* intB) {
+    return *(int*)intA - *(int*)intB;
+}
+
 void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
     int i;
 
