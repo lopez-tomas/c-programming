@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "functions.h"
 
-void *mem_move(void *dest, const void *orig, size_t n) {
+void *mem_cpy(void *dest, const void *orig, size_t n) {
     int i;
     void* cpy_dest = dest;
 
@@ -15,11 +15,11 @@ void *mem_move(void *dest, const void *orig, size_t n) {
     return dest;
 }
 
-void swap(void *s1, void *s2, size_t n) {
+void swap(void *s1, void *s2, size_t sizeElement) {
     int i;
     char aux;
 
-    for(i = 0; i < n; i++) {
+    for(i = 0; i < sizeElement; i++) {
        aux = *(char*)s2;
        *(char*)s2 = *(char*)s1;
        *(char*)s1 = aux;
