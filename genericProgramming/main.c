@@ -64,14 +64,44 @@ int main() {
         {35350256, "Xasas, Jorge", 9.66}
     };
 
-    printf("intVec:\n");
-    showVector(intVec, sizeof(int), sizeof(intVec) / sizeof(int), showInteger);
+//    printf("intVec:\n");
+//    showVector(intVec, sizeof(int), sizeof(intVec) / sizeof(int), showInteger);
+//
+//    printf("\nfloatVec:\n");
+//    showVector(floatVec, sizeof(float), sizeof(floatVec) / sizeof(float), showFloat);
+//
+//    printf("\nstudents:\n");
+//    showVector(students, sizeof(t_Students), sizeof(students) / sizeof(t_Students), showStudent);
 
-    printf("\nfloatVec:\n");
-    showVector(floatVec, sizeof(float), sizeof(floatVec) / sizeof(float), showFloat);
+    int genericIntVec[] = {3,9,5,1,7,2};
+    float genericFloatVec[] = {3.3, 9.9, 5.5, 1.1, 7.7, 2.2};
 
-    printf("\nstudents:\n");
-    showVector(students, sizeof(t_Students), sizeof(students) / sizeof(t_Students), showStudent);
+    /// INT
+//    showVector(genericIntVec, sizeof(int), sizeof(genericIntVec) / sizeof(int), showInteger);
+//
+//    sortSelection(genericIntVec, sizeof(genericIntVec) / sizeof(int), sizeof(int), descendentIntegers);
+//    printf("\n\n");
+//
+//    showVector(genericIntVec, sizeof(int), sizeof(genericIntVec) / sizeof(int), showInteger);
+//
+//    sortSelection(genericIntVec, sizeof(genericIntVec) / sizeof(int), sizeof(int), ascendentIntegers);
+//    printf("\n\n");
+//
+//    showVector(genericIntVec, sizeof(int), sizeof(genericIntVec) / sizeof(int), showInteger);
+
+    /// FLOAT
+    printf("genericFloatVec[] without changes:\n");
+    showVector(genericFloatVec, sizeof(float), sizeof(genericFloatVec) / sizeof(int), showFloat);
+
+    sortSelection(genericFloatVec, sizeof(genericFloatVec) / sizeof(float), sizeof(float), descendentFloats);
+    printf("\n\n");
+    printf("genericFloatVec[] sorted descendingly:\n");
+    showVector(genericFloatVec, sizeof(float), sizeof(genericFloatVec) / sizeof(float), showFloat);
+
+    sortSelection(genericFloatVec, sizeof(genericFloatVec) / sizeof(float), sizeof(float), ascendentFloats);
+    printf("\n\n");
+    printf("genericFloatVec[] sorted ascendingly:\n");
+    showVector(genericFloatVec, sizeof(float), sizeof(genericFloatVec) / sizeof(float), showFloat);
 
     return 0;
 }
