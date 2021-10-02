@@ -20,6 +20,8 @@ void showVector(void* buffer, size_t element, size_t numberElements, void act(vo
 
 int descendentIntegers(const void* intA, const void* intB);
 int ascendentIntegers(const void* intA, const void* intB);
+int descendentFloats(const void* floatA, const void* floatB);
+int ascendentFloats(const void* floatA, const void* floatB);
 
 void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*));
 void sortSelection(void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*));

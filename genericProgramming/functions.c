@@ -59,6 +59,14 @@ int ascendentIntegers(const void* intA, const void* intB) {
     return *(int*)intA - *(int*)intB;
 }
 
+int descendentFloats(const void* floatA, const void* floatB) {
+    return (*(float*)floatA - *(float*)floatB);
+}
+
+int ascendentFloats(const void* floatA, const void* floatB) {
+    return (*(float*)floatB - *(float*)floatA);
+}
+
 void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
     int i;
 
