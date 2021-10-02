@@ -50,3 +50,17 @@ void showVector(void* vec, size_t element, size_t numberElements, void act(void*
         vec+= element;
     }
 }
+
+void sortSelection(void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
+    int i;
+    void* minor;
+    size_t numElem = numberElements;
+
+    for(i = 0; i < numberElements; i++) {
+        minor = findMinor(base, numElem, sizeElement, compare);
+        swap(base, minor, sizeElement);
+
+        numElem--;
+        base += sizeElement;
+    }
+}
