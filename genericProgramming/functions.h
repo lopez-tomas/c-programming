@@ -9,8 +9,8 @@ typedef struct {
 	float grade;
 } t_Students;
 
-void *mem_move(void *dest, const void *orig, size_t n);
-void swap(void *s1, void *s2, size_t n);
+void *mem_cpy(void *dest, const void *orig, size_t n);
+void swap(void *s1, void *s2, size_t sizeElement);
 
 void showInteger(void* vec);
 void showFloat(void* vec);
