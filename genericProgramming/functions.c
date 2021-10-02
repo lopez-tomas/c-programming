@@ -60,17 +60,17 @@ int ascendentIntegers(const void* intA, const void* intB) {
 }
 
 int descendentFloats(const void* floatA, const void* floatB) {
-    return (*(float*)floatA - *(float*)floatB);
+    return *(float*)floatA - *(float*)floatB;
 }
 
 int ascendentFloats(const void* floatA, const void* floatB) {
-    return (*(float*)floatB - *(float*)floatA);
+    return *(float*)floatB - *(float*)floatA;
 }
 
 void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
     int i;
-
     void* minor = (void*)base;
+
     base += sizeElement;
     for (i = 0; i < numberElements; i++) {
         if (compare(minor, base) < 0) {
@@ -84,14 +84,15 @@ void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int
 
 void sortSelection(void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
     int i;
+    void* cpy_base = base;
     void* minor;
     size_t numElem = numberElements;
 
     for(i = 0; i < numberElements; i++) {
-        minor = findMinor(base, numElem, sizeElement, compare);
-        swap(base, minor, sizeElement);
+        minor = findMinor(cpy_base, numElem, sizeElement, compare);
+        swap(cpy_base, minor, sizeElement);
 
         numElem--;
-        base += sizeElement;
+        cpy_base += sizeElement;
     }
 }
