@@ -10,3 +10,7 @@ char* special_strcpy(char* dest, char* orig) {
 
     return dest == NULL ? NULL : strcpy(dest, orig);
 }
+
+void* mem_move(void* s1, const void* s2, size_t sizeElement) {
+    return s1;
+}
