@@ -51,6 +51,21 @@ void showVector(void* vec, size_t element, size_t numberElements, void act(void*
     }
 }
 
+void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
+    int i;
+
+    void* minor = (void*)base;
+    base += sizeElement;
+    for (i = 0; i < numberElements; i++) {
+        if (compare(minor, base) < 0) {
+            minor = (void*)base;
+        }
+        base += sizeElement;
+    }
+
+    return minor;
+}
+
 void sortSelection(void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
     int i;
     void* minor;

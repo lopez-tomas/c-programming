@@ -18,6 +18,7 @@ void showStudent(void* vec);
 
 void showVector(void* buffer, size_t element, size_t numberElements, void act(void*));
 
+void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*));
 void sortSelection(void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*));
 
 #endif // FUNCTIONS_H
