@@ -4,7 +4,16 @@
 #include "main.h"
 
 int main() {
+    char palabra[1000] = "Hola mundo.";
+    char* pC;
 
+    pC = special_strcpy(pC, palabra);
+    if (pC == NULL) {
+        printf("The memory could not be obtained.\n");
+    } else {
+        printf("String: \"%s\" | Characters: %d (+ \'\\0\')\n", pC, (int)strlen(pC) + 1);
+    }
+    free(pC);
 
     return 0;
 }
