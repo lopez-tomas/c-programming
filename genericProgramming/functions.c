@@ -56,15 +56,15 @@ int descendentIntegers(const void* intA, const void* intB) {
 }
 
 int ascendentIntegers(const void* intA, const void* intB) {
-    return *(int*)intA - *(int*)intB;
+    return (*(int*)intA - *(int*)intB);
 }
 
 int descendentFloats(const void* floatA, const void* floatB) {
-    return *(float*)floatA - *(float*)floatB;
+    return ( *(float*)floatA > *(float*)floatB ? 1 : ( *(float*)floatA < *(float*)floatB ? -1 : 0 ) );
 }
 
 int ascendentFloats(const void* floatA, const void* floatB) {
-    return *(float*)floatB - *(float*)floatA;
+    return ( *(float*)floatA < *(float*)floatB ? 1 : ( *(float*)floatA > *(float*)floatB ? -1 : 0 ) );
 }
 
 void* findMinor(const void* base, size_t numberElements, size_t sizeElement, int compare(const void*, const void*)) {
