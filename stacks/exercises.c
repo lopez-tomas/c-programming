@@ -6,3 +6,6 @@
 
 #define isOpeningBracket(c) ( (c) == '[' )
 #define isClosingBracket(c) ( (c) == ']' )
+
+#define isOpeningBrace(c) ( (c) == '{' )
+#define isClosingBrace(c) ( (c) == '}' )
