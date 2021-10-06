@@ -41,3 +41,33 @@ char* special_strcpy(char* dest, const char* orig) {
 
     /*return initialPos;*/
 /*}*/
+
+int** createIntegerMatrix(unsigned numberFiles, unsigned numberColumns) {
+    int** matrix;
+    int** initialPos;
+    int sizeElement = sizeof(int);
+    int i, j;
+
+    matrix = (int**)malloc(numberFiles * sizeof(int*));
+    if(matrix == NULL) {
+        puts("Memory for matrix could not be assignated.");
+        return NULL;
+    }
+    initialPos = matrix;
+
+    for(i=0; i < numberFiles; i++, matrix++) {
+        *matrix = (int*)malloc(numberColumns * sizeElement);
+        if(matrix == NULL) {
+            puts("Memory for *matrix could not be assignated.");
+
+            for(j = 0; j < i; j++, matrix--) {
+                free(*matrix);
+            }
+
+            free(matrix);
+            return NULL;
+        }
+    }
+
+    return initialPos;
+}
