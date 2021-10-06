@@ -81,3 +81,14 @@ void fillIntegerMatrix(int** matrix, unsigned numberFiles, unsigned numberColumn
         }
     }
 }
+
+void showIntegerMatrix(int** matrix, unsigned numberFiles, unsigned numberColumns) {
+    int i, j;
+
+    for(i = 0; i < numberFiles; i++) {
+        for(j = 0; j < numberColumns; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
