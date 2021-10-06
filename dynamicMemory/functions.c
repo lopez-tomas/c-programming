@@ -71,3 +71,13 @@ int** createIntegerMatrix(unsigned numberFiles, unsigned numberColumns) {
 
     return initialPos;
 }
+
+void fillIntegerMatrix(int** matrix, unsigned numberFiles, unsigned numberColumns) {
+    int i, j;
+
+    for(i = 0; i < numberFiles; i++) {
+        for(j = 0; j < numberColumns; j++) {
+            matrix[i][j] = rand() % 10;
+        }
+    }
+}
