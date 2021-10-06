@@ -13,3 +13,5 @@ I will upload every exercise of C from my classes at university. Using CodeBlock
 5. [archives](/archives)
 6. [binaryArchives](binaryArchives)
 7. [genericProgramming](/genericProgramming)
+8. [dynamicMemory](/dynamicMemory)
+9. [stacks](/stacks)
