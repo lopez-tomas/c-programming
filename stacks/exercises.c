@@ -9,3 +9,6 @@
 
 #define isOpeningBrace(c) ( (c) == '{' )
 #define isClosingBrace(c) ( (c) == '}' )
+
+#define isOpenness(c) ( isOpeningParenthesis(c) || isOpeningBracket(c) || isOpeningBrace(c) )
+#define isClosure(c) ( isClosingParenthesis(c) || isClosingBracket(c) || isClosingBrace(c) )
