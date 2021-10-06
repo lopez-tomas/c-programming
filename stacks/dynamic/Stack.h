@@ -1,6 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
 
+#include "stdlib.h"
+
 typedef struct s_Node {
 	void* data;
 	size_t data_size;
