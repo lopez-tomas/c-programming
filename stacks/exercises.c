@@ -79,9 +79,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     while(*greater_string) {
         char_greater_string = *greater_string;
 
-        if( IS_LETTER(char_greater_string) || IS_WHITE(char_greater_string) ||
-            IS_SIGN(char_greater_string) || IS_SYMBOL(char_greater_string) || IS_ESCAPE_SEQUENCE(char_greater_string) ) {
-
+        if( !IS_NUMBER(char_greater_string) ) {
             emptyStack(&greater_number_stack);
             return;
         }
@@ -99,9 +97,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     while(*minor_string) {
         char_minor_string = *minor_string;
 
-        if( IS_LETTER(char_minor_string) || IS_WHITE(char_minor_string) ||
-            IS_SIGN(char_minor_string) || IS_SYMBOL(char_minor_string) || IS_ESCAPE_SEQUENCE(char_minor_string) ) {
-
+        if( !IS_NUMBER(char_minor_string) ) {
             emptyStack(&greater_number_stack);
             emptyStack(&minor_number_stack);
             return;
