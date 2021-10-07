@@ -37,7 +37,7 @@
                         ( INT_CAST_FOR_CHAR(c) >= 239 && INT_CAST_FOR_CHAR(c) <= 255 ) \
                      )
 
-#define IS_ESCAPE_SECUENCE(c) ( (c) == '\t' || \
+#define IS_ESCAPE_SEQUENCE(c) ( (c) == '\t' || \
                                 (c) == '\r' || \
                                 (c) == '\n' || \
                                 (c) == '\v' || \
