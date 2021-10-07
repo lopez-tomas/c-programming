@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="dynamic/Stack.h" />
+		<Unit filename="exercises.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="exercises.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
