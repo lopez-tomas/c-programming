@@ -1,5 +1,6 @@
+#include <string.h>
 #include "exercises.h"
-#include "./dynamic/Stack.h"
+#include "../schoolwork-part1/macros.h"
 
 #define isOpeningParenthesis(c) ( (c) == '(' )
 #define isClosingParenthesis(c) ( (c) == ')' )
