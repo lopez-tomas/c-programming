@@ -24,20 +24,47 @@ int main() {
 
     /*printf("\n\nDone!\n");*/
 
-    char cad[200];
+//    char cad[200];
 //    strcpy(cad, "{[()]}"); // Case 1
-    strcpy(cad, "{[()]})"); // Case 2
+//    strcpy(cad, "{[()]})"); // Case 2
 //    strcpy(cad, "()}()"); // Case 3
 //    strcpy(cad, "{{[[]()[]{}]}}"); // Case 4
 //    strcpy(cad, "{{[[]()[]{}}]}"); // Case 5
-    strcpy(cad, "{[(3 + 1)] * x + [2 * (1 + 5)]}"); // Case 6
+//    strcpy(cad, "{[(3 + 1)] * x + [2 * (1 + 5)]}"); // Case 6
+//
+//    printf("The math expression is: %s", cad);
+//    if(isMathExpressionCorrect(cad)) {
+//        printf("\nThe given math expression is correct.\n");
+//    } else {
+//        printf("\nThe given math expression is incorrect.\n");
+//    }
 
-    printf("The math expression is: %s", cad);
-    if(isMathExpressionCorrect(cad)) {
-        printf("\nThe given math expression is correct.\n");
+    char numberA[200],
+         numberB[200];
+    t_Stack result;
+    int digit;
+
+//    strcpy(numberA, "1");
+//    strcpy(numberB, "1");
+//    strcpy(numberA, "299");
+//    strcpy(numberB, "299");
+//    strcpy(numberA, "1239517937");
+//    strcpy(numberB, "3947");
+    strcpy(numberA, "99999999999999999999");
+    strcpy(numberB, "1999999999999999999999999");
+    addTwoNumbers(numberA, numberB, &result);
+
+    printf("%s + %s = ", numberA, numberB);
+    if( !isEmpty(&result) ) {
+
+        while( !isEmpty(&result) ) {
+            pop(&result, &digit, sizeof(int));
+            printf("%d ", digit);
+        }
     } else {
-        printf("\nThe given math expression is incorrect.\n");
+        printf("could not be calculated.\n");
     }
+    printf("\n");
 
     return 0;
 }
