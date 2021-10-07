@@ -21,23 +21,23 @@ int isMathExpressionCorrect(const char* mathExpression) {
     createStack(&stack);
 
     while(*mathExpression) {
-        if ( isOpenness(*mathExpression) ) {
+        if( isOpenness(*mathExpression) ) {
             push(&stack, mathExpression, sizeof(char));
         }
 
-        if ( isClosure(*mathExpression) ) {
-            if (isEmpty(&stack)) {
+        if( isClosure(*mathExpression) ) {
+            if(isEmpty(&stack)) {
                 return 0;
             }
 
             pop(&stack, &obj, sizeof(char));
-            if ( isClosingParenthesis(*mathExpression) && !isOpeningParenthesis(obj) ) { return 0; }
-            if ( isClosingBracket(*mathExpression) && !isOpeningBracket(obj) ) { return 0; }
-            if ( isClosingBrace(*mathExpression) && !isOpeningBrace(obj) ) { return 0; }
+            if( isClosingParenthesis(*mathExpression) && !isOpeningParenthesis(obj) ) { return 0; }
+            if( isClosingBracket(*mathExpression) && !isOpeningBracket(obj) ) { return 0; }
+            if( isClosingBrace(*mathExpression) && !isOpeningBrace(obj) ) { return 0; }
         }
         mathExpression++;
     }
-    if (!isEmpty(&stack)) { return 0; }
+    if(!isEmpty(&stack)) { return 0; }
 
     return 1;
 }
@@ -64,7 +64,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     int carry = 0;
 
     /// I need to know which is greater between numberA & numberB
-    if (numberA_length > numberB_length) {
+    if(numberA_length > numberB_length) {
         greater_string = (char*)numberA;
         minor_string = (char*)numberB;
     } else {
@@ -99,9 +99,10 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     while(*minor_string) {
         char_minor_string = *minor_string;
 
-        if (IS_LETTER(char_minor_string) || IS_WHITE(char_minor_string) ||
-            IS_SIGN(char_minor_string) || IS_SYMBOL(char_minor_string) || IS_ESCAPE_SEQUENCE(char_minor_string)) {
+        if( IS_LETTER(char_minor_string) || IS_WHITE(char_minor_string) ||
+            IS_SIGN(char_minor_string) || IS_SYMBOL(char_minor_string) || IS_ESCAPE_SEQUENCE(char_minor_string) ) {
 
+            emptyStack(&greater_number_stack);
             emptyStack(&minor_number_stack);
             return;
         }
@@ -110,6 +111,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
 
         /*if( !push(&minor_number_stack, minor_string, sizeof(char)) ) {*/
         if( !push(&minor_number_stack, &minor_number_digit, sizeof(int)) ) {
+            emptyStack(&greater_number_stack);
             emptyStack(&minor_number_stack);
             return;
         }
@@ -127,7 +129,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
 
         result_digit = minor_number_digit + greater_number_digit + carry;
 
-        if (result_digit >= 10) {
+        if(result_digit >= 10) {
             result_digit %= 10;
             /*result_digit_char = (char)result_digit;*/
             carry = 1;
@@ -137,8 +139,11 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
         }
 
         /*if ( !push(result, &result_digit_char, sizeof(char)) ) {*/
-        if ( !push(result, &result_digit, sizeof(int)) ) {
+        if( !push(result, &result_digit, sizeof(int)) ) {
+            emptyStack(&greater_number_stack);
+            emptyStack(&minor_number_stack);
             emptyStack(result);
+
             return;
         }
     }
@@ -151,7 +156,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
 
         result_digit = greater_number_digit + carry;
 
-        if (result_digit >= 10) {
+        if(result_digit >= 10) {
             result_digit %= 10;
             /*result_digit_char = (char)result_digit;*/
             carry = 1;
@@ -161,8 +166,11 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
         }
 
         /*if ( !push(result, &result_digit_char, sizeof(char)) ) {*/
-        if ( !push(result, &result_digit, sizeof(int)) ) {
+        if( !push(result, &result_digit, sizeof(int)) ) {
+            emptyStack(&greater_number_stack);
+            emptyStack(&minor_number_stack);
             emptyStack(result);
+
             return;
         }
     }
