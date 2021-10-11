@@ -75,11 +75,14 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     /// Stacks and digits variables
     t_Stack greater_number_stack;
     int greater_number_digit;
+//    char greater_number_digit_char;
 
     t_Stack minor_number_stack;
     int minor_number_digit;
+//    char minor_number_digit_char;
 
     int result_digit;
+//    char result_digit_char;
     int carry = 0;
 
     /// I need to know which is greater between numberA & numberB
