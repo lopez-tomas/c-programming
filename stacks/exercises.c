@@ -3,7 +3,7 @@
 #include "../schoolwork-part1/macros.h"
 
 #define IS_OPENING_PARENTHESIS(c) ( (c) == '(' )
-#define isClosingParenthesis(c) ( (c) == ')' )
+#define IS_CLOSING_PARENTHESIS(c) ( (c) == ')' )
 
 #define isOpeningBracket(c) ( (c) == '[' )
 #define isClosingBracket(c) ( (c) == ']' )
@@ -12,7 +12,7 @@
 #define isClosingBrace(c) ( (c) == '}' )
 
 #define isOpenness(c) ( IS_OPENING_PARENTHESIS(c) || isOpeningBracket(c) || isOpeningBrace(c) )
-#define isClosure(c) ( isClosingParenthesis(c) || isClosingBracket(c) || isClosingBrace(c) )
+#define isClosure(c) ( IS_CLOSING_PARENTHESIS(c) || isClosingBracket(c) || isClosingBrace(c) )
 
 int isMathExpressionCorrect(const char* mathExpression) {
     t_Stack stack;
@@ -31,7 +31,7 @@ int isMathExpressionCorrect(const char* mathExpression) {
             }
 
             pop(&stack, &obj, sizeof(char));
-            if( isClosingParenthesis(*mathExpression) && !IS_OPENING_PARENTHESIS(obj) ) { return 0; }
+            if( IS_CLOSING_PARENTHESIS(*mathExpression) && !IS_OPENING_PARENTHESIS(obj) ) { return 0; }
             if( isClosingBracket(*mathExpression) && !isOpeningBracket(obj) ) { return 0; }
             if( isClosingBrace(*mathExpression) && !isOpeningBrace(obj) ) { return 0; }
         }
