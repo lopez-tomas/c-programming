@@ -55,7 +55,8 @@ int stacking(const char* number, t_Stack* stack) {
 
         number__digit = number__char - '0';
 
-        if( !push(stack, number__digit, sizeof(int)) ) {
+        /*if( !push(stack, number, sizeof(char)) ) {*/
+        if( !push(stack, &number__digit, sizeof(int)) ) {
             return 0;
         }
         number++;
@@ -69,10 +70,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
 
     /// Auxiliar
     char* greater_string;
-    char char_greater_string;
-
     char* minor_string;
-    char char_minor_string;
 
     /// Stacks and digits variables
     t_Stack greater_number_stack;
@@ -97,42 +95,15 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     createStack(&greater_number_stack);
     createStack(&minor_number_stack);
 
-    while(*greater_string) {
-        char_greater_string = *greater_string;
-
-        if( !IS_NUMBER(char_greater_string) ) {
-            emptyStack(&greater_number_stack);
-            return;
-        }
-
-        greater_number_digit = char_greater_string - '0';
-
-        /*if( !push(&greater_number_stack, greater_string, sizeof(char)) ) {*/
-        if( !push(&greater_number_stack, &greater_number_digit, sizeof(int)) ) {
-            emptyStack(&greater_number_stack);
-            return;
-        }
-        greater_string++;
+    /// Stacking greater number
+    if( !stacking(greater_string, &greater_number_stack) ) {
+        emptyStack(&greater_number_stack);
     }
 
-    while(*minor_string) {
-        char_minor_string = *minor_string;
-
-        if( !IS_NUMBER(char_minor_string) ) {
-            emptyStack(&greater_number_stack);
-            emptyStack(&minor_number_stack);
-            return;
-        }
-
-        minor_number_digit = char_minor_string - '0';
-
-        /*if( !push(&minor_number_stack, minor_string, sizeof(char)) ) {*/
-        if( !push(&minor_number_stack, &minor_number_digit, sizeof(int)) ) {
-            emptyStack(&greater_number_stack);
-            emptyStack(&minor_number_stack);
-            return;
-        }
-        minor_string++;
+    /// Stacking minor number
+    if( !stacking(minor_string, &minor_number_stack) ) {
+        emptyStack(&greater_number_stack);
+        emptyStack(&minor_number_stack);
     }
 
     while( !isEmpty(&minor_number_stack) ) {
