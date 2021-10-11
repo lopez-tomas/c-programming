@@ -11,7 +11,7 @@
 #define IS_OPENING_BRACE(c) ( (c) == '{' )
 #define IS_CLOSING_BRACE(c) ( (c) == '}' )
 
-#define isOpenness(c) ( IS_OPENING_PARENTHESIS(c) || IS_OPENING_BRACKET(c) || IS_OPENING_BRACE(c) )
+#define IS_OPENNESS(c) ( IS_OPENING_PARENTHESIS(c) || IS_OPENING_BRACKET(c) || IS_OPENING_BRACE(c) )
 #define isClosure(c) ( IS_CLOSING_PARENTHESIS(c) || IS_CLOSING_BRACKET(c) || IS_CLOSING_BRACE(c) )
 
 int isMathExpressionCorrect(const char* mathExpression) {
@@ -21,7 +21,7 @@ int isMathExpressionCorrect(const char* mathExpression) {
     createStack(&stack);
 
     while(*mathExpression) {
-        if( isOpenness(*mathExpression) ) {
+        if( IS_OPENNESS(*mathExpression) ) {
             push(&stack, mathExpression, sizeof(char));
         }
 
