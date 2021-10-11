@@ -119,12 +119,11 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
 
         if(result_digit >= 10) {
             result_digit %= 10;
-            /*result_digit_char = (char)result_digit;*/
             carry = 1;
         } else {
-            /*result_digit_char = (char)result_digit;*/
             carry = 0;
         }
+        /*result_digit_char = (char)result_digit;*/
 
         /*if ( !push(result, &result_digit_char, sizeof(char)) ) {*/
         if( !push(result, &result_digit, sizeof(int)) ) {
@@ -146,12 +145,11 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
 
         if(result_digit >= 10) {
             result_digit %= 10;
-            /*result_digit_char = (char)result_digit;*/
             carry = 1;
         } else {
-            /*result_digit_char = (char)result_digit;*/
             carry = 0;
         }
+        /*result_digit_char = (char)result_digit;*/
 
         /*if ( !push(result, &result_digit_char, sizeof(char)) ) {*/
         if( !push(result, &result_digit, sizeof(int)) ) {
