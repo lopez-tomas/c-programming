@@ -16,6 +16,7 @@ long long int numericValueOf(const char* source);
 
 char* nextWord(char* source, unsigned* wordLength);
 void displaceWord(char* wordStart, char* wordEnd, const char* group, int displacement);
+int isLetterInGroup(char letter, const char* group);
 void invertWord(char* wordStart, char* wordEnd);
 void swapCharacters(char* letter1, char* letter2);
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted);
