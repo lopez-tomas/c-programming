@@ -263,7 +263,12 @@ void displaceWord(char* wordStart, char* wordEnd, const char* group, int displac
 }
 
 void invertWord(char* wordStart, char* wordEnd) {
+    while(wordStart < wordEnd) {
+        swapChar(wordStart, wordEnd);
 
+        wordStart++;
+        wordEnd--;
+    }
 }
 
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted) {
