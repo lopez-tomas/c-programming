@@ -2,7 +2,7 @@
 #include "exercises.h"
 #include "../schoolwork-part1/macros.h"
 
-#define isOpeningParenthesis(c) ( (c) == '(' )
+#define IS_OPENING_PARENTHESIS(c) ( (c) == '(' )
 #define isClosingParenthesis(c) ( (c) == ')' )
 
 #define isOpeningBracket(c) ( (c) == '[' )
@@ -11,7 +11,7 @@
 #define isOpeningBrace(c) ( (c) == '{' )
 #define isClosingBrace(c) ( (c) == '}' )
 
-#define isOpenness(c) ( isOpeningParenthesis(c) || isOpeningBracket(c) || isOpeningBrace(c) )
+#define isOpenness(c) ( IS_OPENING_PARENTHESIS(c) || isOpeningBracket(c) || isOpeningBrace(c) )
 #define isClosure(c) ( isClosingParenthesis(c) || isClosingBracket(c) || isClosingBrace(c) )
 
 int isMathExpressionCorrect(const char* mathExpression) {
@@ -31,7 +31,7 @@ int isMathExpressionCorrect(const char* mathExpression) {
             }
 
             pop(&stack, &obj, sizeof(char));
-            if( isClosingParenthesis(*mathExpression) && !isOpeningParenthesis(obj) ) { return 0; }
+            if( isClosingParenthesis(*mathExpression) && !IS_OPENING_PARENTHESIS(obj) ) { return 0; }
             if( isClosingBracket(*mathExpression) && !isOpeningBracket(obj) ) { return 0; }
             if( isClosingBrace(*mathExpression) && !isOpeningBrace(obj) ) { return 0; }
         }
