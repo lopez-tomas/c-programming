@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include "stringFunctions.h"
 #include "../schoolwork-part1/macros.h"
+#include "../genericProgramming/functions.h"
 
 char* str_cpy(char* destiny, char* origin) {
     char *stringMod = destiny;
@@ -190,23 +191,21 @@ long long int numericValueOf(const char* source) {
         }
         whiteFlag = 0;
 
-        if ( IS_LETTER(*source) || IS_SYMBOL(*source) || IS_ESCAPE_SEQUENCE(*source) || IS_WHITE(*source) ) {
+        if( !IS_SIGN(*source) && !IS_NUMBER(*source) ) {
             return sign * value;
         }
 
-        if (*source == '-') {
-            sign = -1;
-            source++;
+        /*if( IS_LETTER(*source) || IS_SYMBOL(*source) || IS_ESCAPE_SEQUENCE(*source) || IS_WHITE(*source) ) {*/
+            /*return sign * value;*/
+        /*}*/
 
-            if ( IS_SIGN(*source) ) {
-                return sign * value;
+        if( IS_SIGN(*source) ) {
+            if(*source == '-') {
+                sign = -1;
             }
-        }
-
-        if (*source == '+') {
             source++;
 
-            if ( IS_SIGN(*source) ) {
+            if( IS_SIGN(*source) ) {
                 return sign * value;
             }
         }
@@ -216,7 +215,7 @@ long long int numericValueOf(const char* source) {
 
             source++;
 
-            if ( IS_SIGN(*source) ) {
+            if ( !IS_NUMBER(*source) ) {
                 return sign * value;
             }
         }
