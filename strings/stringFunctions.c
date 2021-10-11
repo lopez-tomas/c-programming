@@ -226,5 +226,21 @@ long long int numericValueOf(const char* source) {
 }
 
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted) {
+    /*char* sourceEnd = source + str_len(source);*/
+    char* wordStart;
+    char* wordEnd = source;
+    unsigned wordLength;
 
+    while(*wordEnd) {
+        wordStart = nextWord(wordEnd, &wordLength);
+        wordEnd = wordStart + wordLength - 1; /*wordEnd = wordStart + wordLength; */
+
+        if(isInverted) {
+            invertWord(wordStart, wordEnd);
+        }
+
+        wordEnd++;
+    }
+
+    return source;
 }
