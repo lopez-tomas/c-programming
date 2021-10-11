@@ -224,3 +224,7 @@ long long int numericValueOf(const char* source) {
 
     return sign * value;
 }
+
+char* decryptionWithDisplacement(const char* source, const char* group, int displacement, unsigned isInverted) {
+
+}
