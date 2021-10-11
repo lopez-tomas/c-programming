@@ -42,6 +42,27 @@ int isMathExpressionCorrect(const char* mathExpression) {
     return 1;
 }
 
+int stacking(const char* number, t_Stack* stack) {
+    char number__char;
+    int number__digit;
+
+    while(*number) {
+        number__char = *number;
+
+        if( !IS_NUMBER(number__char) ) {
+            return 0;
+        }
+
+        number__digit = number__char - '0';
+
+        if( !push(stack, number__digit, sizeof(int)) ) {
+            return 0;
+        }
+        number++;
+    }
+    return 1;
+}
+
 void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     unsigned numberA_length = strlen(numberA);
     unsigned numberB_length = strlen(numberB);
