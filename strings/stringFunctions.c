@@ -190,7 +190,7 @@ long long int numericValueOf(const char* source) {
         }
         whiteFlag = 0;
 
-        if ( IS_LETTER(*source) || IS_SYMBOL(*source) || IS_ESCAPE_SECUENCE(*source) || IS_WHITE(*source) ) {
+        if ( IS_LETTER(*source) || IS_SYMBOL(*source) || IS_ESCAPE_SEQUENCE(*source) || IS_WHITE(*source) ) {
             return sign * value;
         }
 
@@ -244,13 +244,13 @@ char* nextWord(char* source, unsigned* wordLength) {
 }
 
 void displaceWord(char* wordStart, char* wordEnd, const char* group, int displacement) {
-    unsigned group_size = str_len(group);
+    unsigned group_size = str_len((char*)group);
     char* group_start = (char*)group;
-    char* group_aux = groupStart;
+    char* group_aux = group_start;
     char* letter;
 
     while(wordStart <= wordEnd) {
-        letter = str_chr(group, *wordStart);
+        letter = str_chr((char*)group, *wordStart);
 
         if(*letter) {
             group_aux += ABS(letter - group_start + displacement) % group_size;
