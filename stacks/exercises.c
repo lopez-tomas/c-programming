@@ -9,10 +9,10 @@
 #define IS_CLOSING_BRACKET(c) ( (c) == ']' )
 
 #define IS_OPENING_BRACE(c) ( (c) == '{' )
-#define isClosingBrace(c) ( (c) == '}' )
+#define IS_CLOSING_BRACE(c) ( (c) == '}' )
 
 #define isOpenness(c) ( IS_OPENING_PARENTHESIS(c) || IS_OPENING_BRACKET(c) || IS_OPENING_BRACE(c) )
-#define isClosure(c) ( IS_CLOSING_PARENTHESIS(c) || IS_CLOSING_BRACKET(c) || isClosingBrace(c) )
+#define isClosure(c) ( IS_CLOSING_PARENTHESIS(c) || IS_CLOSING_BRACKET(c) || IS_CLOSING_BRACE(c) )
 
 int isMathExpressionCorrect(const char* mathExpression) {
     t_Stack stack;
@@ -33,7 +33,7 @@ int isMathExpressionCorrect(const char* mathExpression) {
             pop(&stack, &obj, sizeof(char));
             if( IS_CLOSING_PARENTHESIS(*mathExpression) && !IS_OPENING_PARENTHESIS(obj) ) { return 0; }
             if( IS_CLOSING_BRACKET(*mathExpression) && !IS_OPENING_BRACKET(obj) ) { return 0; }
-            if( isClosingBrace(*mathExpression) && !IS_OPENING_BRACE(obj) ) { return 0; }
+            if( IS_CLOSING_BRACE(*mathExpression) && !IS_OPENING_BRACE(obj) ) { return 0; }
         }
         mathExpression++;
     }
