@@ -84,7 +84,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
             return;
         }
 
-        greater_number_digit = (*greater_string) - '0';
+        greater_number_digit = char_greater_string - '0';
 
         /*if( !push(&greater_number_stack, greater_string, sizeof(char)) ) {*/
         if( !push(&greater_number_stack, &greater_number_digit, sizeof(int)) ) {
@@ -103,7 +103,7 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
             return;
         }
 
-        minor_number_digit = (*minor_string) - '0';
+        minor_number_digit = char_minor_string - '0';
 
         /*if( !push(&minor_number_stack, minor_string, sizeof(char)) ) {*/
         if( !push(&minor_number_stack, &minor_number_digit, sizeof(int)) ) {
