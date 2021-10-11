@@ -44,7 +44,6 @@ int isMathExpressionCorrect(const char* mathExpression) {
 
 int stacking(const char* number, t_Stack* stack) {
     char number__char;
-    int number__digit;
 
     while(*number) {
         number__char = *number;
@@ -53,10 +52,7 @@ int stacking(const char* number, t_Stack* stack) {
             return 0;
         }
 
-        number__digit = number__char - '0';
-
-        /*if( !push(stack, number, sizeof(char)) ) {*/
-        if( !push(stack, &number__digit, sizeof(int)) ) {
+        if( !push(stack, &number__char, sizeof(char)) ) {
             return 0;
         }
         number++;
@@ -75,14 +71,14 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     /// Stacks and digits variables
     t_Stack greater_number_stack;
     int greater_number_digit;
-//    char greater_number_digit_char;
+    char greater_number_digit_char;
 
     t_Stack minor_number_stack;
     int minor_number_digit;
-//    char minor_number_digit_char;
+    char minor_number_digit_char;
 
     int result_digit;
-//    char result_digit_char;
+    char result_digit_char;
     int carry = 0;
 
     /// I need to know which is greater between numberA & numberB
@@ -110,13 +106,11 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     }
 
     while( !isEmpty(&minor_number_stack) ) {
-        /*pop(&minor_number_stack, &minor_number_digit_char, sizeof(char));*/
-        /*pop(&greater_number_stack, &greater_number_digit_char, sizeof(char));*/
-        pop(&minor_number_stack, &minor_number_digit, sizeof(int));
-        pop(&greater_number_stack, &greater_number_digit, sizeof(int));
+        pop(&minor_number_stack, &minor_number_digit_char, sizeof(char));
+        pop(&greater_number_stack, &greater_number_digit_char, sizeof(char));
 
-        /*greater_number_digit = greater_number_digit_char - '0';*/
-        /*minor_number_digit = minor_number_digit_char - '0';*/
+        greater_number_digit = greater_number_digit_char - '0';
+        minor_number_digit = minor_number_digit_char - '0';
 
         result_digit = minor_number_digit + greater_number_digit + carry;
 
@@ -126,10 +120,9 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
         } else {
             carry = 0;
         }
-        /*result_digit_char = (char)result_digit;*/
+        result_digit_char = (char)result_digit;
 
-        /*if ( !push(result, &result_digit_char, sizeof(char)) ) {*/
-        if( !push(result, &result_digit, sizeof(int)) ) {
+        if ( !push(result, &result_digit_char, sizeof(char)) ) {
             emptyStack(&greater_number_stack);
             emptyStack(&minor_number_stack);
             emptyStack(result);
@@ -139,10 +132,9 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
     }
 
     while( !isEmpty(&greater_number_stack) ) {
-        /*pop(&greater_number_stack, &greater_number_digit_char, sizeof(char));*/
-        pop(&greater_number_stack, &greater_number_digit, sizeof(int));
+        pop(&greater_number_stack, &greater_number_digit_char, sizeof(char));
 
-        /*greater_number_digit = greater_number_digit_char - '0';*/
+        greater_number_digit = greater_number_digit_char - '0';
 
         result_digit = greater_number_digit + carry;
 
@@ -152,10 +144,9 @@ void addTwoNumbers(const char* numberA, const char* numberB, t_Stack* result) {
         } else {
             carry = 0;
         }
-        /*result_digit_char = (char)result_digit;*/
+        result_digit_char = (char)result_digit;
 
-        /*if ( !push(result, &result_digit_char, sizeof(char)) ) {*/
-        if( !push(result, &result_digit, sizeof(int)) ) {
+        if ( !push(result, &result_digit_char, sizeof(char)) ) {
             emptyStack(&greater_number_stack);
             emptyStack(&minor_number_stack);
             emptyStack(result);
