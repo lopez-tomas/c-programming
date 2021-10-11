@@ -249,9 +249,9 @@ void displaceWord(char* wordStart, char* wordEnd, const char* group, int displac
     char* letter;
 
     while(wordStart <= wordEnd) {
-        letter = str_chr((char*)group, *wordStart);
+        if(isLetterInGroup(*wordStart, group)) {
+            letter = str_chr((char*)group, *wordStart);
 
-        if(*letter) {
             group_aux += ABS(letter - group_start + displacement) % group_size;
             *wordStart = *group_aux;
             group_aux = group_start;
@@ -259,6 +259,10 @@ void displaceWord(char* wordStart, char* wordEnd, const char* group, int displac
 
         wordStart++;
     }
+}
+
+int isLetterInGroup(char letter, const char* group) {
+    return (str_chr((char*)group, letter)) ? 1 : 0;
 }
 
 void invertWord(char* wordStart, char* wordEnd) {
