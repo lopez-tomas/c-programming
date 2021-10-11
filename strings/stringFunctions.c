@@ -252,6 +252,7 @@ char* decryptionWithDisplacement(char* source, const char* group, int displaceme
     while(*wordEnd) {
         wordStart = nextWord(wordEnd, &wordLength);
         wordEnd = wordStart + wordLength - 1; /*wordEnd = wordStart + wordLength; */
+        displaceWord(wordStart, wordEnd, group, displacement);
 
         if(isInverted) {
             invertWord(wordStart, wordEnd);
