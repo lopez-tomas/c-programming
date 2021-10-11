@@ -244,7 +244,22 @@ char* nextWord(char* source, unsigned* wordLength) {
 }
 
 void displaceWord(char* wordStart, char* wordEnd, const char* group, int displacement) {
+    unsigned group_size = str_len(group);
+    char* group_start = (char*)group;
+    char* group_aux = groupStart;
+    char* letter;
 
+    while(wordStart <= wordEnd) {
+        letter = str_chr(group, *wordStart);
+
+        if(*letter) {
+            group_aux += ABS(letter - group_start + displacement) % group_size;
+            *wordStart = *group_aux;
+            group_aux = group_start;
+        }
+
+        wordStart++;
+    }
 }
 
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted) {
