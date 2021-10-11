@@ -13,6 +13,8 @@ int str_cmpi(char* source1, char* source2);
 char* noWhiteSpaces(char* source, unsigned int* length);
 int isPalindrome(char* source);
 long long int numericValueOf(const char* source);
+
+char* nextWord(char* source, unsigned* wordLength) {
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted);
 
 #endif // STRINGFUNCTIONS_H

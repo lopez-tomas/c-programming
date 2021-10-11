@@ -225,6 +225,10 @@ long long int numericValueOf(const char* source) {
     return sign * value;
 }
 
+char* nextWord(char* source, unsigned* wordLength) {
+
+}
+
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted) {
     /*char* sourceEnd = source + str_len(source);*/
     char* wordStart;
