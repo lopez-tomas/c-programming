@@ -14,7 +14,7 @@ char* noWhiteSpaces(char* source, unsigned int* length);
 int isPalindrome(char* source);
 long long int numericValueOf(const char* source);
 
-char* nextWord(char* source, unsigned* wordLength) {
+char* nextWord(char* source, unsigned* wordLength);
 void displaceWord(char* wordStart, char* wordEnd, const char* group, int displacement);
 void invertWord(char* wordStart, char* wordEnd);
 void swapCharacters(char* letter1, char* letter2);
