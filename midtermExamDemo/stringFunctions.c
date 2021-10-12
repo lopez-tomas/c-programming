@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "stringFunctions.h"
 #include "macros.h"
 
