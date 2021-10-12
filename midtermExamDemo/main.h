@@ -3,5 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "archives.h"
 
 #endif // MAIN_H
