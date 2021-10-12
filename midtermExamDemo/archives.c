@@ -12,6 +12,26 @@
 
 static char decryption_group[] = "bcdfgaeiou";
 
+int readTextFile(const char* filename) {
+    FILE *pf;
+    char pf__line[LINE__DIM];
+
+    pf = fopen(filename, "rt");
+    if( !pf ) {
+        return ERR__READING_FILE;
+    }
+
+    fgets(pf__line, LINE__DIM - 1, pf);
+    while( !feof(pf) ) {
+        printf("%s", pf__line);
+
+        fgets(pf__line, LINE__DIM - 1, pf);
+    }
+    fclose(pf);
+
+    return SUCCESS;
+}
+
 int decryptFile(const char* encrypted_filename, const char* opening_mode__encrypted_file, const char* decrypted_filename) {
     FILE* pEncrypted_file;
     char encrypted__line[LINE__DIM];
@@ -20,7 +40,7 @@ int decryptFile(const char* encrypted_filename, const char* opening_mode__encryp
     char decrypted__line[LINE__DIM];
 
     pEncrypted_file = fopen(encrypted_filename, opening_mode__encrypted_file);
-    if( !pEncrypted_file ){
+    if( !pEncrypted_file ) {
         return ERR__ENCRYPTED_FILE;
     }
 
