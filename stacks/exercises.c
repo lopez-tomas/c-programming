@@ -26,18 +26,36 @@ int isMathExpressionCorrect(const char* mathExpression) {
         }
 
         if( IS_CLOSURE(*mathExpression) ) {
-            if(isEmpty(&stack)) {
+            if( isEmpty(&stack) ) {
                 return 0;
             }
 
             pop(&stack, &obj, sizeof(char));
-            if( IS_CLOSING_PARENTHESIS(*mathExpression) && !IS_OPENING_PARENTHESIS(obj) ) { return 0; }
-            if( IS_CLOSING_BRACKET(*mathExpression) && !IS_OPENING_BRACKET(obj) ) { return 0; }
-            if( IS_CLOSING_BRACE(*mathExpression) && !IS_OPENING_BRACE(obj) ) { return 0; }
+            if( IS_CLOSING_PARENTHESIS(*mathExpression) && !IS_OPENING_PARENTHESIS(obj) ) {
+                if( !isEmpty(&stack) ) {
+                    emptyStack(&stack);
+                }
+                return 0;
+            }
+            if( IS_CLOSING_BRACKET(*mathExpression) && !IS_OPENING_BRACKET(obj) ) {
+                if( !isEmpty(&stack) ) {
+                    emptyStack(&stack);
+                }
+                return 0;
+            }
+            if( IS_CLOSING_BRACE(*mathExpression) && !IS_OPENING_BRACE(obj) ) {
+                if( !isEmpty(&stack) ) {
+                    emptyStack(&stack);
+                }
+                return 0;
+            }
         }
         mathExpression++;
     }
-    if(!isEmpty(&stack)) { return 0; }
+    if( !isEmpty(&stack) ) {
+        emptyStack(&stack);
+        return 0;
+    }
 
     return 1;
 }
