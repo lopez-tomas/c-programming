@@ -225,7 +225,7 @@ long long int numericValueOf(const char* source) {
 }
 
 char* nextWord(char* source, unsigned* wordLength) {
-    /*unsigned letters = 0;*/
+    unsigned letters = 0;
     char* wordStart;
 
     while(*source && !IS_LETTER(*source)) {
@@ -234,10 +234,10 @@ char* nextWord(char* source, unsigned* wordLength) {
     wordStart = source;
 
     while(*source && IS_LETTER(*source)) {
-        (*wordLength)++; /*letters++;*/
+        letters++;
         source++;
     }
-    /**wordLength = letters;*/
+    *wordLength = letters;
 
     return wordStart;
 }
@@ -281,14 +281,14 @@ void swapCharacters(char* letter1, char* letter2) {
 }
 
 char* decryptionWithDisplacement(char* source, const char* group, int displacement, unsigned isInverted) {
-    /*char* sourceEnd = source + str_len(source);*/
     char* wordStart;
     char* wordEnd = source;
     unsigned wordLength;
 
     while(*wordEnd) {
         wordStart = nextWord(wordEnd, &wordLength);
-        wordEnd = wordStart + wordLength - 1; /*wordEnd = wordStart + wordLength; */
+        wordEnd = wordStart + wordLength - 1; 
+
         displaceWord(wordStart, wordEnd, group, displacement);
 
         if(isInverted) {
