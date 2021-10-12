@@ -3,8 +3,9 @@
 
 #include "archives.h"
 #include "decryption.h"
+#include "stringFunctions.h"
 
-#define ENCRYPTED_LINE__DIM 150
+#define LINE__DIM 150
 #define DISPLACEMENT 5
 #define INVERTED 1
 #define NO_INVERTED 0
@@ -13,8 +14,10 @@ static char decryption_group[] = "bcdfgaeiou";
 
 int decryptFile(const char* encrypted_filename, const char* opening_mode__encrypted_file, const char* decrypted_filename) {
     FILE* pEncrypted_file;
+    char encrypted__line[LINE__DIM];
+
     FILE* pDecrypted_file;
-    char encrypted__line[ENCRYPTED_LINE__DIM];
+    char decrypted__line[LINE__DIM];
 
     pEncrypted_file = fopen(encrypted_filename, opening_mode__encrypted_file);
     if( !pEncrypted_file ){
@@ -23,16 +26,20 @@ int decryptFile(const char* encrypted_filename, const char* opening_mode__encryp
 
     pDecrypted_file = fopen(decrypted_filename, "wt");
     if( !pDecrypted_file ) {
+        fclose(pEncrypted_file);
         return ERR__DECRYPTED_FILE;
     }
 
+    fgets(encrypted__line, LINE__DIM - 1, pEncrypted_file);
     while( !feof(pEncrypted_file) ) {
-        fgets(encrypted__line, ENCRYPTED_LINE__DIM - 1, pEncrypted_file);
-        printf("%s", encrypted__line);
+//        printf("%s", encrypted__line);
 
-        decryptionWithDisplacement(encrypted_filename, decryption_group, DISPLACEMENT, NO_INVERTED);
+        str_cpy(decrypted__line, decryptionWithDisplacement(encrypted__line, decryption_group, DISPLACEMENT, NO_INVERTED));
+        fprintf(pDecrypted_file, "%s", decrypted__line);
 
-        return SUCCESS;
+//        printf("%s\n", decrypted__line);
+
+        fgets(encrypted__line, LINE__DIM - 1, pEncrypted_file);
     }
 
     fclose(pEncrypted_file);
