@@ -1,6 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "stringFunctions.h"
 #include "macros.h"
+
+char* special_strcpy(char* dest, const char* orig) {
+    int numChars = str_len((char*)orig) + 1;
+
+    dest = calloc(numChars, sizeof(char));
+
+    return (dest == NULL ? NULL : str_cpy(dest, (char*)orig));
+}
 
 char* str_cpy(char* destiny, char* origin) {
     char *stringMod = destiny;
