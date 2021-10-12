@@ -5,6 +5,11 @@
 #include "decryption.h"
 
 #define ENCRYPTED_LINE__DIM 150
+#define DISPLACEMENT 5
+#define INVERTED 1
+#define NO_INVERTED 0
+
+static char decryption_group[] = "bcdfgaeiou";
 
 int decryptFile(const char* encrypted_filename, const char* opening_mode__encrypted_file, const char* decrypted_filename) {
     FILE* pEncrypted_file;
@@ -24,6 +29,8 @@ int decryptFile(const char* encrypted_filename, const char* opening_mode__encryp
     while( !feof(pEncrypted_file) ) {
         fgets(encrypted__line, ENCRYPTED_LINE__DIM - 1, pEncrypted_file);
         printf("%s", encrypted__line);
+
+        decryptionWithDisplacement(encrypted_filename, decryption_group, DISPLACEMENT, NO_INVERTED);
 
         return SUCCESS;
     }
