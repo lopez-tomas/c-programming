@@ -59,7 +59,7 @@ int main() {
     pStudents = fopen(studentsFile, "rt");
 
     while (fgets(line, 199, pStudents)) {
-        sscanf(lineStudent, "%d|%[^|]|%c|%f", &student.dni, student.fullName, &student.department, &student.promedy);
+        sscanf(lineStudent, "%d|%[^|]|%c|%f", student.dni, student->fullName, student.department, student.promedy);
         fprintf(stdout, "%d|%s|%c|%f", student.dni, student.fullName, student.department, student.promedy);
     }
     fclose(pStudents);
