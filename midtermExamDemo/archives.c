@@ -52,12 +52,9 @@ int decryptFile(const char* encrypted_filename, const char* opening_mode__encryp
 
     fgets(encrypted__line, LINE__DIM - 1, pEncrypted_file);
     while( !feof(pEncrypted_file) ) {
-//        printf("%s", encrypted__line);
-
         str_cpy(decrypted__line, decryptionWithDisplacement(encrypted__line, decryption_group, DISPLACEMENT, NO_INVERTED));
-        fprintf(pDecrypted_file, "%s", decrypted__line);
 
-//        printf("%s\n", decrypted__line);
+        fprintf(pDecrypted_file, "%s", decrypted__line);
 
         fgets(encrypted__line, LINE__DIM - 1, pEncrypted_file);
     }
