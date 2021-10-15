@@ -43,11 +43,14 @@ int pop(t_Queue* queue, void* data, size_t data_size) {
 	}
 
 	memcpy(data, eliminate->info, MIN(eliminate->info, data_size));
-
 	free(eliminate->info);
 
 	queue->front = eliminate->next;
 	free(eliminate);
+
+	if( !queue->front ) {
+		queue->rear = NULL;
+	}
 
 	return 1;
 }
