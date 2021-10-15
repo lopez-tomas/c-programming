@@ -2,6 +2,7 @@
 #define EXERCISES_H
 
 #include "./dynamic/Stack.h"
+//#include "./static/Stack.h"
 
 int isMathExpressionCorrect(const char* mathExpression);
 int stacking(const char* number, t_Stack* stack);
