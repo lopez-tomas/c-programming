@@ -55,7 +55,15 @@ int pop(t_Queue* queue, void* data, size_t data_size) {
 	return 1;
 }
 
-/*int front(const t_Queue* queue, void* data, size_t data_size);*/
+int front(const t_Queue* queue, void* data, size_t data_size) {
+	if( !queue->front ) {
+		return 0;
+	}
+
+	memcpy(data, queue->front->info, MIN(queue->front->info_size, data_size));
+
+	return 1;
+}
 
 int isEmpty(const t_Queue* queue) {
 	return queue->front == NULL;
@@ -79,4 +87,16 @@ int isFull(const t_Queue* queue, size_t data_size) {
 	return 0;
 }
 
-/*void emptyQueue(t_Queue* queue);*/
+void emptyQueue(t_Queue* queue) {
+	t_Node* eliminate;
+
+	while(queue->front) {
+		eliminate = queue->front;
+		queue->front = eliminate->next;	
+
+		free(eliminate->info);
+		free(eliminate);
+	}
+
+	queue->rear = NULL;
+}
