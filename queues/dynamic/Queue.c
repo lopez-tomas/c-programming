@@ -1,4 +1,7 @@
+#include <string.h>
 #include "Queue.h"
+
+#define MIN(x, y) ( (x) < (y) ? (x) : (y) )
 
 void createQueue(t_Queue* queue) {
 	queue->front = NULL;
@@ -11,7 +14,6 @@ int push(t_Queue* queue, const void* data, size_t data_size) {
 		return 0;
 	}
 
-
 	newNode->info = malloc(data_size);
 	if( !newNode->info ) {
 		free(newNode);
@@ -22,7 +24,7 @@ int push(t_Queue* queue, const void* data, size_t data_size) {
 	newNode->info_size = data_size;
 	memcpy(newNode->info, data, data_size);
 
-	if( !data->rear ) {
+	if( !data->front ) {
 		data->front = newNode;
 	} else {
 		data->rear->next = newNode;
@@ -33,7 +35,23 @@ int push(t_Queue* queue, const void* data, size_t data_size) {
 	return 1;
 }
 
-/*int pop(t_Queue* queue, void* data, size_t data_size);*/
+int pop(t_Queue* queue, void* data, size_t data_size) {
+	t_Node* eliminate = queue->front;
+
+	if( !eliminate ) {
+		return 0;
+	}
+
+	memcpy(data, eliminate->info, MIN(eliminate->info, data_size));
+
+	free(eliminate->info);
+
+	queue->front = eliminate->next;
+	free(eliminate);
+
+	return 1;
+}
+
 /*int front(const t_Queue* queue, void* data, size_t data_size);*/
 
 int isEmpty(const t_Queue* queue) {
