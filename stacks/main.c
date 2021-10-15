@@ -4,25 +4,25 @@
 #include "main.h"
 
 int main() {
-    /*int vec[] = {1, 3, 2, 4};*/
-    /*int i;*/
-    /*t_Stack stack;*/
-    /*int data;*/
+    int vec[] = {1, 3, 2, 4};
+    int i;
+    t_Stack stack;
+    int data;
 
-    /*createStack(&stack);*/
+    createStack(&stack);
 
-    /*for(i = 0; i < 4; i++) {*/
-        /*push(&stack, &vec[i], sizeof(int));*/
-    /*}*/
-    /*if (top(&stack, &data, sizeof(int))) {*/
-        /*printf("Top: %d\n\n", data);*/
-    /*}*/
+    for(i = 0; i < 4; i++) {
+        push(&stack, &vec[i], sizeof(int));
+    }
+    if (top(&stack, &data, sizeof(int))) {
+        printf("Top: %d\n\n", data);
+    }
 
-    /*while(pop(&stack, &data, sizeof(int))) {*/
-        /*printf("%d\t", data);*/
-    /*}*/
+    while(pop(&stack, &data, sizeof(int))) {
+        printf("%d\t", data);
+    }
 
-    /*printf("\n\nDone!\n");*/
+    printf("\n\nDone!\n");
 
 //    char cad[200];
 //    strcpy(cad, "{[()]}"); // Case 1
@@ -39,10 +39,10 @@ int main() {
 //        printf("\nThe given math expression is incorrect.\n");
 //    }
 
-    char numberA[200],
-         numberB[200];
-    t_Stack result;
-    int digit;
+//    char numberA[200],
+//         numberB[200];
+//    t_Stack result;
+//    int digit;
 
 //    strcpy(numberA, "1");
 //    strcpy(numberB, "1");
@@ -50,21 +50,21 @@ int main() {
 //    strcpy(numberB, "299");
 //    strcpy(numberA, "1239517937");
 //    strcpy(numberB, "3947");
-    strcpy(numberA, "99999999999999999999");
-    strcpy(numberB, "1999999999999999999999999");
-    addTwoNumbers(numberA, numberB, &result);
-
-    printf("%s + %s = ", numberA, numberB);
-    if( !isEmpty(&result) ) {
-
-        while( !isEmpty(&result) ) {
-            pop(&result, &digit, sizeof(int));
-            printf("%d ", digit);
-        }
-    } else {
-        printf("could not be calculated.\n");
-    }
-    printf("\n");
+//    strcpy(numberA, "99999999999999999999");
+//    strcpy(numberB, "1999999999999999999999999");
+//    addTwoNumbers(numberA, numberB, &result);
+//
+//    printf("%s + %s = ", numberA, numberB);
+//    if( !isEmpty(&result) ) {
+//
+//        while( !isEmpty(&result) ) {
+//            pop(&result, &digit, sizeof(int));
+//            printf("%d ", digit);
+//        }
+//    } else {
+//        printf("could not be calculated.\n");
+//    }
+//    printf("\n");
 
     return 0;
 }
