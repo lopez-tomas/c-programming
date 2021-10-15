@@ -5,7 +5,34 @@ void createQueue(t_Queue* queue) {
 	queue->rear = NULL;
 }
 
-/*int push(t_Queue* queue, const void* data, size_t data_size);*/
+int push(t_Queue* queue, const void* data, size_t data_size) {
+	t_Node* newNode = malloc(size_t(t_Node));
+	if( !newNode ) {
+		return 0;
+	}
+
+
+	newNode->info = malloc(data_size);
+	if( !newNode->info ) {
+		free(newNode);
+		return 0;
+	}
+
+	newNode->next = NULL;
+	newNode->info_size = data_size;
+	memcpy(newNode->info, data, data_size);
+
+	if( !data->rear ) {
+		data->front = newNode;
+	} else {
+		data->rear->next = newNode;
+	}
+
+	data->rear = newNode;
+
+	return 1;
+}
+
 /*int pop(t_Queue* queue, void* data, size_t data_size);*/
 /*int front(const t_Queue* queue, void* data, size_t data_size);*/
 
