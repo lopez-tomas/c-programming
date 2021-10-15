@@ -83,7 +83,7 @@ int isFull(t_Stack* stack, size_t data_size) {
 }
 
 void emptyStack(t_Stack* stack) {
-    t_Node* eliminate = *stack;
+    t_Node* eliminate;
 
     while(*stack) {
         eliminate = *stack;
