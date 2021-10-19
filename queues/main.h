@@ -1,7 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "dynamic/Queue.h"
+#include "../binaryArchives/binaryFiles.h"
+#include "../binaryArchives/binaryFiles.c"
+#include "exercises.h"
 
 #endif // MAIN_H

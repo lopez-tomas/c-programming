@@ -31,9 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="dynamic/Queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dynamic/Queue.h" />
+		<Unit filename="exercises.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="exercises.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="main.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
