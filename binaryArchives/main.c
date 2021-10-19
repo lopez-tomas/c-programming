@@ -15,36 +15,36 @@ typedef int (*tCompareFunction)(const void*, const void*);
 
 int main() {
 //    char employeesFileName[] = "archives/employees.dat";
-    char professorsFileName[] = "archives/professors.dat";
-    char noveltiesFileName[] = "archives/novelties.dat";
-    char tmp_professorsFileName[] = "archives/tmp_professors.dat";
-    char errorsFileName[] = "archives/errors.txt";
-
-//    createTestEmployeesLot(employeesFileName);
+//    char professorsFileName[] = "archives/professors.dat";
+//    char noveltiesFileName[] = "archives/novelties.dat";
+//    char tmp_professorsFileName[] = "archives/tmp_professors.dat";
+//    char errorsFileName[] = "archives/errors.txt";
 //
-//    showEmployeesFile(employeesFileName);
-//    raiseSalary(employeesFileName, 'B');
-//    puts(" ------------- ");
-//    showEmployeesFile(employeesFileName);
-
-    createTestProfessorsLot(professorsFileName);
-    createTestNoveltiesLot(noveltiesFileName);
-
-    printf("%s file:\n", professorsFileName);
-    showProfessorsFile(professorsFileName);
-
-    printf("\n\n");
-    printf("%s file:\n", noveltiesFileName);
-    showNoveltiesFile(noveltiesFileName);
+////    createTestEmployeesLot(employeesFileName);
+////
+////    showEmployeesFile(employeesFileName);
+////    raiseSalary(employeesFileName, 'B');
+////    puts(" ------------- ");
+////    showEmployeesFile(employeesFileName);
 //
-    obtainingNewProfessorsFile(professorsFileName, noveltiesFileName, tmp_professorsFileName, errorsFileName);
+//    createTestProfessorsLot(professorsFileName);
+//    createTestNoveltiesLot(noveltiesFileName);
 //
-    printf("\n\n%s file modified:\n", professorsFileName);
-    showProfessorsFile(professorsFileName);
-
-    printf("\n\n%s file:\n", errorsFileName);
-    showErrorsFile(errorsFileName);
-    printf("\n");
+//    printf("%s file:\n", professorsFileName);
+//    showProfessorsFile(professorsFileName);
+//
+//    printf("\n\n");
+//    printf("%s file:\n", noveltiesFileName);
+//    showNoveltiesFile(noveltiesFileName);
+////
+//    obtainingNewProfessorsFile(professorsFileName, noveltiesFileName, tmp_professorsFileName, errorsFileName);
+////
+//    printf("\n\n%s file modified:\n", professorsFileName);
+//    showProfessorsFile(professorsFileName);
+//
+//    printf("\n\n%s file:\n", errorsFileName);
+//    showErrorsFile(errorsFileName);
+//    printf("\n");
 
     /*short int x = 1;*/
     /*char* cp = &x;*/
@@ -66,6 +66,13 @@ int main() {
 //    showFile(stude, &emp, sizeof(emp), showEmployee);
 
 //    tStudents vAlu[] = {{1111111, "Hola hola"}, {222222, "chau chau"}, {33333, "hola chau"}};
+
+    char movements_filename[] = "archives/movements.dat";
+    t_Movements mov;
+
+    createTestMovements(movements_filename);
+
+    showFile(movements_filename, &mov, sizeof(mov), showMovement);
 
     return 0;
 }

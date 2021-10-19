@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -74,6 +73,31 @@ int createTestNoveltiesLot(const char* fileName) {
     }
 
     fwrite(nov, sizeof(nov), 1, pf);
+
+    fclose(pf);
+    return 1;
+}
+
+int createTestMovements(const char* fileName) {
+    t_Movements mov[] = {
+        {10000, 'D', 300.0},
+        {10000, 'E', 250.0},
+        {10000, 'E', 300.0},
+        {30000, 'E', 250.0},
+        {30000, 'D', 1550.0},
+        {10000, 'D', 800.0},
+        {12200, 'E', 150.0},
+        {12200, 'E', 200.0},
+        {11110, 'D', 200.0},
+        {11110, 'E', 2580.50}
+    };
+
+    FILE* pf = fopen(fileName, "wb");
+    if (!pf) {
+        return 0;
+    }
+
+    fwrite(mov, sizeof(mov), 1, pf);
 
     fclose(pf);
     return 1;
@@ -169,6 +193,11 @@ void showStudent(void* pvStu) {
 void showProfessor(void* pvProf) {
     tProfessors* prof = (tProfessors *)pvProf;
     printf("%u %s %5.2f\n", prof->dni, prof->completeName, prof->salary);
+}
+
+void showMovement(void* pvMov) {
+    t_Movements* mov = (t_Movements *)pvMov;
+    printf("%.5u | %c | %5.2f\n", mov->account_number, mov->movement, mov->value);
 }
 
 int showFile(const char* fileName, void* buffer, size_t size, void act(void*)) {

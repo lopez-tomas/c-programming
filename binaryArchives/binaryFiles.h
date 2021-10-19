@@ -1,6 +1,8 @@
 #ifndef BINARYFILES_H
 #define BINARYFILES_H
 
+#include <stdlib.h>
+
 typedef struct {
 	unsigned dni;
 	char completeName[200];
@@ -24,9 +26,17 @@ typedef struct {
 	char novelty; // a: add; r: remove; m: modify
 } tNovelties;
 
+typedef struct {
+    unsigned account_number;
+    char movement;
+    float value;
+} t_Movements;
+
 int createTestEmployeesLot(const char* fileName);
 int createTestProfessorsLot(const char* fileName);
 int createTestNoveltiesLot(const char* fileName);
+
+int createTestMovements(const char* fileName);
 
 int showEmployeesFile(const char* fileName);
 int showProfessorsFile(const char* fileName);
@@ -36,6 +46,7 @@ int showErrorsFile(const char* fileName);
 void showEmployee(void* pvEmp);
 void showStudent(void* pvStu);
 void showProfessor(void* pvProf);
+void showMovement(void* pvMov);
 
 int showFile(const char* fileName, void* buffer, size_t size, void act(void*));
 
