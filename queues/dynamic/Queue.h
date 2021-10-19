@@ -1,8 +1,6 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "stdlib.h"
-
 typedef struct s_Node {
 	void* info;
 	size_t info_size;

@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "Queue.h"
 
@@ -9,7 +11,7 @@ void createQueue(t_Queue* queue) {
 }
 
 int push(t_Queue* queue, const void* data, size_t data_size) {
-	t_Node* newNode = malloc(size_t(t_Node));
+	t_Node* newNode = malloc(sizeof(t_Node));
 	if( !newNode ) {
 		return 0;
 	}
@@ -24,13 +26,13 @@ int push(t_Queue* queue, const void* data, size_t data_size) {
 	newNode->info_size = data_size;
 	memcpy(newNode->info, data, data_size);
 
-	if( !data->front ) {
-		data->front = newNode;
+	if( !(queue->front) ) {
+		queue->front = newNode;
 	} else {
-		data->rear->next = newNode;
+		queue->rear->next = newNode;
 	}
 
-	data->rear = newNode;
+	queue->rear = newNode;
 
 	return 1;
 }
@@ -42,7 +44,7 @@ int pop(t_Queue* queue, void* data, size_t data_size) {
 		return 0;
 	}
 
-	memcpy(data, eliminate->info, MIN(eliminate->info, data_size));
+	memcpy(data, eliminate->info, MIN(eliminate->info_size, data_size));
 	free(eliminate->info);
 
 	queue->front = eliminate->next;
@@ -75,7 +77,7 @@ int isFull(const t_Queue* queue, size_t data_size) {
 		return 1;
 	}
 
-	testNode->info = malloc(sizeof(data_size));
+	testNode->info = malloc(data_size);
 	if( !testNode->info ) {
 		free(testNode);
 		return 1;
@@ -92,7 +94,7 @@ void emptyQueue(t_Queue* queue) {
 
 	while(queue->front) {
 		eliminate = queue->front;
-		queue->front = eliminate->next;	
+		queue->front = eliminate->next;
 
 		free(eliminate->info);
 		free(eliminate);
