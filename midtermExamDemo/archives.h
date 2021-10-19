@@ -10,5 +10,6 @@
 
 int readTextFile(const char* filename);
 int decryptFile(const char* encrypted_filename, const char* opening_mode__encrypted_file, const char* decrypted_filename);
+long long int findLongestWord(const char* filename);
 
 #endif // ARCHIVES_H

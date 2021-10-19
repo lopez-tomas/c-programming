@@ -56,6 +56,8 @@ int decryptFile(const char* encrypted_filename, const char* opening_mode__encryp
 
         fprintf(pDecrypted_file, "%s", decrypted__line);
 
+        /// I should stack here each word with its length
+
         fgets(encrypted__line, LINE__DIM - 1, pEncrypted_file);
     }
 
@@ -63,4 +65,26 @@ int decryptFile(const char* encrypted_filename, const char* opening_mode__encryp
     fclose(pDecrypted_file);
 
     return SUCCESS;
+}
+
+long long int findLongestWord(const char* filename) {
+    FILE* pf;
+    char pf__line[LINE__DIM];
+    char* line__pointer;
+    long long int letters = 0;
+
+    pf = fopen(filename, "rt");
+    if( !pf ) {
+        return ERR__READING_FILE;
+    }
+
+    fgets(pf__line, LINE__DIM - 1, pf);
+    while( !feof(pf) ) {
+        special_strcpy(line__pointer, pf__line);
+        nextWord(line__pointer, &letters);
+
+        fgets(pf__line, LINE__DIM - 1, pf);
+    }
+
+    return letters;
 }

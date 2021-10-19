@@ -31,9 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="archives.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="archives.h" />
+		<Unit filename="decryption.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="decryption.h" />
+		<Unit filename="macros.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="macros.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="main.h" />
+		<Unit filename="stringFunctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stringFunctions.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
