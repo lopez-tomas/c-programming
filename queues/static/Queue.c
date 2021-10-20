@@ -1,4 +1,7 @@
 #include "Queue.h"
+#include <string.h>
+
+#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
 
 void createQueue(t_Queue* queue) {
     queue->front = 0;
