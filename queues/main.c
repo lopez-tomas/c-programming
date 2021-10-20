@@ -15,6 +15,8 @@ int main() {
 //        puts("queue is empty.\n");
 //    } else if( isFull(&queue, sizeof(int)) ) {
 //        puts("queue is full.\n");
+//    } else {
+//        puts("queue has space.\n");
 //    }
 //
 //    for(i = 0; i < sizeof(vec) / sizeof(int); i++) {
@@ -37,7 +39,7 @@ int main() {
 //
 //    emptyQueue(&queue);
 //
-//     if( isEmpty(&queue) ) {
+//    if( isEmpty(&queue) ) {
 //        puts("queue is empty.\n");
 //    } else if( isFull(&queue, sizeof(int)) ) {
 //        puts("queue is full.\n");
@@ -54,29 +56,36 @@ int main() {
     int get_code;
 
     get_code = obtainingMovementsFiles(movements_all__filename, movements_greater__filename, movements_minor__filename);
+    switch( get_code ) {
+        case MOV_ALL__ERR:
+            printf("Error opening %s file.\n", movements_all__filename);
+            return MOV_ALL__ERR;
 
-    if( get_code == MOV_ALL__ERR || get_code == MOV_GREATER__ERR || get_code == MOV_MINOR__ERR ) {
-        puts("Error opening/creating files.");
-        return -1;
+        case MOV_GREATER__ERR:
+            printf("Error creating %s file.\n", movements_greater__filename);
+            return MOV_GREATER__ERR;
 
-    } else if( get_code == PUSH_QUEUE__ERR ) {
-        puts("Error pushing movements into queue.");
-        return -2;
+        case MOV_MINOR__ERR:
+            printf("Error creating %s file.\n", movements_minor__filename);
+            return MOV_MINOR__ERR;
 
-    } else {
-        printf("Movements file (original):\n\n");
-        showFile(movements_all__filename, &mov, sizeof(mov), showMovement);
+        case PUSH_QUEUE__ERR:
+            puts("Error pushing movement into queue.");
+            return PUSH_QUEUE__ERR;
 
-        puts("");
-
-//        printf("Movements greater or equal than %d:\n\n", MAX_VALUE);
-//        showFile(movements_greater__filename, &mov, sizeof(mov), showMovement);
-//
-//        puts("");
-//
-//        printf("Movements minor than %d:\n\n", MAX_VALUE);
-//        showFile(movements_minor__filename, &mov, sizeof(mov), showMovement);
+        case SUCCESS:
+            puts("Everything worked!");
     }
+
+    puts("");
+
+    printf("Movements greater or equal than %d:\n\n", MAX_VALUE);
+    showFile(movements_greater__filename, &mov, sizeof(mov), showMovement);
+
+    puts("");
+
+    printf("Movements minor than %d:\n\n", MAX_VALUE);
+    showFile(movements_minor__filename, &mov, sizeof(mov), showMovement);
 
     return 0;
 }
