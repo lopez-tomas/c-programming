@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-#include "../binaryArchives/binaryFiles.h"
-#include "dynamic/Queue.h"
 #include "exercises.h"
+#include "../binaryArchives/binaryFiles.h"
+#include "./dynamic/Queue.h"
 
 int obtainingMovementsFiles(const char* movements_all__filename, const char* movements_greater__filename, const char* movements_minor__filename) {
     FILE* p__mov_all;
@@ -45,15 +46,15 @@ int obtainingMovementsFiles(const char* movements_all__filename, const char* mov
             acum += mov.value;
 
             if( !push(&queue, &mov, sizeof(t_Movements)) ) {
-                if( !isEmpty(&queue) ) {
-                    emptyQueue(&queue);
+//                if( !isEmpty(&queue) ) {
+                emptyQueue(&queue);
 
-                    fclose(p__mov_all);
-                    fclose(p__mov_greater);
-                    fclose(p__mov_minor);
+                fclose(p__mov_all);
+                fclose(p__mov_greater);
+                fclose(p__mov_minor);
 
-                    return PUSH_QUEUE__ERR;
-                }
+                return PUSH_QUEUE__ERR;
+//                }
             }
 
             fread(&mov, sizeof(t_Movements), 1, p__mov_all);
@@ -72,6 +73,7 @@ int obtainingMovementsFiles(const char* movements_all__filename, const char* mov
         fread(&mov, sizeof(t_Movements), 1, p__mov_all);
     }
 
+    emptyQueue(&queue);
     fclose(p__mov_all);
     fclose(p__mov_greater);
     fclose(p__mov_minor);
