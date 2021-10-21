@@ -1,7 +1,7 @@
 #include "Queue.h"
 #include <string.h>
 
-#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
+#define MIN(x,y) ((x) < (y) ? (x) : (y))
 
 void createQueue(t_Queue* queue) {
     queue->front = 0;
@@ -10,6 +10,32 @@ void createQueue(t_Queue* queue) {
 }
 
 int push(t_Queue* queue, const void* data, unsigned data_size) {
+    unsigned start, end;
+
+    if( queue->available < (data_size + sizeof(unsigned))) {
+        return 0;
+    }
+
+    queue->available -= data_size + sizeof(unsigned);
+
+    // For data_size
+    start = MIN(sizeof(unsigned), QUEUE_DIM - queue->rear);
+    memcpy(queue->queue + queue->rear, &data_size, start);
+
+    end = sizeof(unsigned) - start;
+    memcpy(queue->queue, ((char*)&data_size) + start, end);
+
+    queue->rear = end ? end : queue->rear + start;
+
+    // For data
+    start = MIN(data_size, QUEUE_DIM - queue->rear);
+    memcpy(queue->queue + queue->rear, data, start);
+
+    end = data_size - start;
+    memcpy(queue->queue, ((char*)data) + start, start);
+
+    queue->rear = end ? end : queue->rear + start;
+
     return 1;
 }
 
