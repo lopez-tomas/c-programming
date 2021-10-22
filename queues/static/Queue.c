@@ -40,10 +40,68 @@ int push(t_Queue* queue, const void* data, unsigned data_size) {
 }
 
 int pop(t_Queue* queue, void* data, unsigned data_size) {
+    unsigned info_size,
+             start,
+             end;
+
+    if( queue->available == QUEUE_DIM ) {
+        return 0;
+    }
+
+    if( (start = MIN(sizeof(unsigned), QUEUE_DIM - queue->front)) != 0 ) {
+            memcpy(&info_size, queue->queue + queue->front, start);
+    }
+
+    if( (end = sizeof(unsigned) - start) != 0 ) {
+        memcpy(((char*)&info_size) + start, queue->queue, end);
+    }
+
+    queue->front = end ? end : queue->front + start;
+    queue->available += sizeof(unsigned) + info_size;
+    info_size = MIN(info_size, data_size);
+
+    if( (start = MIN(info_size, QUEUE_DIM - queue->front)) != 0 ) {
+        memcpy(data, queue->queue + queue->front, start);
+    }
+
+    if( (end = info_size - start) != 0 ) {
+        memcpy(((char*)data) + start, queue->queue, end);
+    }
+
+    queue->front = end ? end : queue->front + start;
+
     return 1;
 }
 
 int front(const t_Queue* queue, void* data, unsigned data_size) {
+    unsigned info_size,
+             start,
+             end,
+             pos = queue->front;
+
+    if(queue->available == QUEUE_DIM) {
+        return 0;
+    }
+
+    if( (start = MIN(sizeof(unsigned), QUEUE_DIM - pos)) != 0 ) {
+        memcpy(&info_size, queue->queue + pos, start);
+    }
+
+    if( (end = sizeof(unsigned) - start) != 0 ) {
+        memcpy(((char*)&info_size) + start, queue->queue, end);
+    }
+
+    pos = end ? end : pos + start;
+    info_size = MIN(info_size, data_size);
+
+    if( (start = MIN(info_size, QUEUE_DIM - pos)) != 0 ) {
+        memcpy(data, queue->queue + pos, start);
+    }
+
+    if( (end = info_size - start) != 0 ) {
+        memcpy(((char*)data) + start, queue->queue, end);
+    }
+
     return 1;
 }
 
