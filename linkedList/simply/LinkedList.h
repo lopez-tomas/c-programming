@@ -7,4 +7,6 @@ typedef struct s_Node {
 	struct s_Node* next;
 } t_Node;
 
+typedef t_Node* t_LinkedList;
+
 #endif // LINKEDLIST_H
