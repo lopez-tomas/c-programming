@@ -9,4 +9,6 @@ typedef struct s_Node {
 
 typedef t_Node* t_LinkedList;
 
+void createLinkedList(t_LinkedList* list);
+
 #endif // LINKEDLIST_H
