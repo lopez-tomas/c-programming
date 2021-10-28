@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="dynamic/Stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dynamic/Stack.h" />
 		<Unit filename="exercises.c">
 			<Option compilerVar="CC" />
 		</Unit>
