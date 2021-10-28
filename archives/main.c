@@ -60,7 +60,7 @@ int main() {
 
     while (fgets(line, 199, pStudents)) {
         sscanf(lineStudent, "%d|%[^|]|%c|%f", student.dni, student->fullName, student.department, student.promedy);
-        fprintf(stdout, "%d|%s|%c|%f", student.dni, student.fullName, student.department, student.promedy);
+        fprintf(stdout, "%s|%c|%f", student.dni, student.fullName, student.department, student.promedy);
     }
     fclose(pStudents);
 
