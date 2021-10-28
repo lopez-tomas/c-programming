@@ -74,5 +74,9 @@ int main() {
 
     showFile(movements_filename, &mov, sizeof(mov), showMovement);
 
+    puts("\n");
+
+    showFile(movements_filename, &mov, sizeof(mov), showMovement);
+
     return 0;
 }
