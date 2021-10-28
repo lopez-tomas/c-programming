@@ -55,34 +55,40 @@ int main() {
 
     int get_code;
 
-    get_code = obtainingMovementsFiles(movements_all__filename, movements_greater__filename, movements_minor__filename);
-    switch( get_code ) {
-        case MOV_ALL__ERR:
-            printf("Error opening %s file.\n", movements_all__filename);
-            return MOV_ALL__ERR;
 
-        case MOV_GREATER__ERR:
-            printf("Error creating %s file.\n", movements_greater__filename);
-            return MOV_GREATER__ERR;
+    puts("Movements file:\n");
+    showFile(movements_all__filename, &mov, sizeof(mov), showMovement);
 
-        case MOV_MINOR__ERR:
-            printf("Error creating %s file.\n", movements_minor__filename);
-            return MOV_MINOR__ERR;
+    puts("");
 
-        case PUSH_QUEUE__ERR:
-            puts("Error pushing movement into queue.");
-            return PUSH_QUEUE__ERR;
-
-        case SUCCESS:
-            puts("Everything worked!");
-    }
+//    get_code = obtainingMovementsFiles(movements_all__filename, movements_greater__filename, movements_minor__filename);
+//    switch( get_code ) {
+//        case MOV_ALL__ERR:
+//            printf("Error opening %s file.\n", movements_all__filename);
+//            return MOV_ALL__ERR;
+//
+//        case MOV_GREATER__ERR:
+//            printf("Error creating %s file.\n", movements_greater__filename);
+//            return MOV_GREATER__ERR;
+//
+//        case MOV_MINOR__ERR:
+//            printf("Error creating %s file.\n", movements_minor__filename);
+//            return MOV_MINOR__ERR;
+//
+//        case PUSH_QUEUE__ERR:
+//            puts("Error pushing movement into queue.");
+//            return PUSH_QUEUE__ERR;
+//
+//        case SUCCESS:
+//            puts("Everything worked!");
+//    }
 
     puts("");
 
     printf("Movements greater or equal than %d:\n\n", MAX_VALUE);
     showFile(movements_greater__filename, &mov, sizeof(mov), showMovement);
 
-    puts("");
+    puts("\n");
 
     printf("Movements minor than %d:\n\n", MAX_VALUE);
     showFile(movements_minor__filename, &mov, sizeof(mov), showMovement);

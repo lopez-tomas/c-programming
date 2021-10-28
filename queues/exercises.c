@@ -14,6 +14,7 @@ int obtainingMovementsFiles(const char* movements_all__filename, const char* mov
     t_Movements mov;
 
     unsigned acc_num;
+    unsigned registro = 1;
     float acum;
 
     createQueue(&queue);
@@ -45,7 +46,8 @@ int obtainingMovementsFiles(const char* movements_all__filename, const char* mov
         while( mov.account_number == acc_num ) {
             acum += mov.value;
 
-            if( !push(&queue, &mov, sizeof(t_Movements)) ) {
+            if( !push(&queue, &mov, sizeof(mov)) ) {
+                printf("No more memory available. Register nro. %d could not be pushed.\n", registro);
 //                if( !isEmpty(&queue) ) {
                 emptyQueue(&queue);
 
@@ -56,8 +58,10 @@ int obtainingMovementsFiles(const char* movements_all__filename, const char* mov
                 return PUSH_QUEUE__ERR;
 //                }
             }
+//            printf("Register nro. %d pushed.\n", registro);
 
             fread(&mov, sizeof(t_Movements), 1, p__mov_all);
+            registro++;
         }
 
         while( !isEmpty(&queue) ) {
@@ -71,6 +75,7 @@ int obtainingMovementsFiles(const char* movements_all__filename, const char* mov
         }
 
         fread(&mov, sizeof(t_Movements), 1, p__mov_all);
+        registro++;
     }
 
     emptyQueue(&queue);
