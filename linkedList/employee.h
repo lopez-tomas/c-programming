@@ -19,5 +19,4 @@ int cmpEmployeeFullName__desc(const void*,const void*);
 int cmpEmployeeFileNumber__asc(const void*,const void*);
 int cmpEmployeeFileNumber__desc(const void*,const void*);
 
-
 #endif // EMPLOYEE_H
