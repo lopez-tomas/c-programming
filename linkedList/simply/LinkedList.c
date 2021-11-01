@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LinkedList.h"
+#include "../employee.h"
 
 void createLinkedList(t_LinkedList* list) {
     *list = NULL;
@@ -34,3 +35,23 @@ int insertInPosition(t_LinkedList* list, const void* data, size_t data_size, con
     return 1;
 }
 
+void filter(t_LinkedList* list, int action(const void*)) {
+    t_Node* aux;
+
+    while( *list ) { // list != NULL ???
+        if( action((*list)->info) ) {
+            aux = *list;
+
+            *list = aux->next;
+            free(aux->info);
+            free(aux);
+        }
+        list = &(*list)->next;
+    }
+}
+
+int action(const void* vPunt) {
+    t_Employee* emp = (t_Employee*)vPunt;
+
+    return emp->salary < 100.0;
+}
