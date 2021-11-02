@@ -22,6 +22,13 @@ int main() {
         printf("%d\t", data);
     }
 
+    emptyStack(&stack);
+    if( isEmpty(&stack) ) {
+        puts("\nStack is empty.");
+    } else {
+        puts("\nStack has element(s)");
+    }
+
     printf("\n\nDone!\n");
 
 //    char cad[200];
