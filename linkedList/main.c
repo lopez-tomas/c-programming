@@ -21,7 +21,7 @@ int main() {
 
     for(i = 0; i < sizeof(t_Employee) / sizeof(employee); i++) {
 //        insertSorted(&employee_list, )
-        insertInPosition(&employee_list, &employee[i], sizeof(t_Employee), cmpEmployeeFileNumber__desc);
+//        insertInPosition(&employee_list, &employee[i], sizeof(t_Employee), cmpEmployeeFileNumber__desc);
     }
 
     return 0;

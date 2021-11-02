@@ -14,5 +14,6 @@ int insertInPosition(t_LinkedList* list, const void* data, size_t data_size, uns
 int insertSorted(t_LinkedList* list, const void* data, size_t data_size, int cmp(const void*, const void*));
 
 void filter(t_LinkedList* list, int action(const void*));
+int salaryMinorThan(const void* vPunt);
 
 #endif // LINKEDLIST_H

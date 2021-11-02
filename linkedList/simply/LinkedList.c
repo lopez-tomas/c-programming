@@ -50,7 +50,7 @@ void filter(t_LinkedList* list, int action(const void*)) {
     }
 }
 
-int action(const void* vPunt) {
+int salaryMinorThan(const void* vPunt) {
     t_Employee* emp = (t_Employee*)vPunt;
 
     return emp->salary < 100.0;
