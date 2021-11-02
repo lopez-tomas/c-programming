@@ -31,22 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="dynamic/Stack.c">
+		<Unit filename="dynamic_circular/Stack.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="dynamic/Stack.h" />
-		<Unit filename="exercises.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="exercises.h" />
+		<Unit filename="dynamic_circular/Stack.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
-		<Unit filename="static/Stack.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="static/Stack.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
